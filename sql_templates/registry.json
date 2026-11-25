@@ -1,0 +1,32 @@
+{
+  "total_sales": {
+    "file": "total_sales.sql",
+    "description": "Aggregate total sales with optional filters and grouping dimensions.",
+    "required_tokens": ["source_table", "filters", "dimensions_select", "dimensions_group_by"]
+  },
+  "market_share": {
+    "file": "market_share.sql",
+    "description": "Calculate scoped market-share percentages against the full matching market denominator.",
+    "required_tokens": ["source_table", "filters", "market_filters", "dimensions_select", "dimensions_group_by", "dimension_join", "dimensions_output"]
+  },
+  "growth": {
+    "file": "growth.sql",
+    "description": "Calculate sales growth between a previous and current fiscal year.",
+    "required_tokens": ["source_table", "filters", "dimensions_select", "dimensions_group_by", "previous_year", "current_year"]
+  },
+  "comparison": {
+    "file": "comparison.sql",
+    "description": "Compare total sales across requested dimensions.",
+    "required_tokens": ["source_table", "filters", "dimensions_select", "dimensions_group_by"]
+  },
+  "ranking": {
+    "file": "ranking.sql",
+    "description": "Rank dimensions by total sales using a caller-provided direction and limit.",
+    "required_tokens": ["source_table", "filters", "dimensions_select", "dimensions_group_by", "order_direction", "limit"]
+  },
+  "trend": {
+    "file": "trend.sql",
+    "description": "Aggregate monthly sales trend with optional filters.",
+    "required_tokens": ["source_table", "filters"]
+  }
+}

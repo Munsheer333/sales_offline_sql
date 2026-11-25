@@ -1,0 +1,1121 @@
+{
+  "tables": [
+    {
+      "table_name": "m60_level",
+      "total_rows": 1000,
+      "columns": [
+        {
+          "original_name": "SBU",
+          "clean_name": "sbu",
+          "pg_type": "INTEGER",
+          "null_count": 0,
+          "unique_count": 4,
+          "total_rows": 1000,
+          "description": "Column containing sbu details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "SBU_Name",
+          "clean_name": "sbu_name",
+          "pg_type": "TEXT",
+          "null_count": 0,
+          "unique_count": 4,
+          "total_rows": 1000,
+          "description": "Column containing sbu_name details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "ZONE",
+          "clean_name": "zone",
+          "pg_type": "TEXT",
+          "null_count": 0,
+          "unique_count": 17,
+          "total_rows": 1000,
+          "description": "Column containing zone details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "Zone_Name",
+          "clean_name": "zone_name",
+          "pg_type": "TEXT",
+          "null_count": 0,
+          "unique_count": 16,
+          "total_rows": 1000,
+          "description": "Column containing zone_name details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "REGION",
+          "clean_name": "region",
+          "pg_type": "TEXT",
+          "null_count": 0,
+          "unique_count": 131,
+          "total_rows": 1000,
+          "description": "Column containing region details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "Region_Name",
+          "clean_name": "region_name",
+          "pg_type": "TEXT",
+          "null_count": 0,
+          "unique_count": 132,
+          "total_rows": 1000,
+          "description": "Column containing region_name details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "SA",
+          "clean_name": "sa",
+          "pg_type": "TEXT",
+          "null_count": 0,
+          "unique_count": 307,
+          "total_rows": 1000,
+          "description": "Column containing sa details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "SalesArea_Name",
+          "clean_name": "salesarea_name",
+          "pg_type": "TEXT",
+          "null_count": 0,
+          "unique_count": 307,
+          "total_rows": 1000,
+          "description": "Column containing salesarea_name details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "PRODUCT",
+          "clean_name": "product",
+          "pg_type": "NUMERIC(18,4)",
+          "null_count": 20,
+          "unique_count": 22,
+          "total_rows": 1000,
+          "description": "Column containing product details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "ProductName",
+          "clean_name": "productname",
+          "pg_type": "TEXT",
+          "null_count": 0,
+          "unique_count": 23,
+          "total_rows": 1000,
+          "description": "Column containing productname details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "UOM",
+          "clean_name": "uom",
+          "pg_type": "TEXT",
+          "null_count": 0,
+          "unique_count": 3,
+          "total_rows": 1000,
+          "description": "Column containing uom details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "INVOICE_DT",
+          "clean_name": "invoice_dt",
+          "pg_type": "INTEGER",
+          "null_count": 0,
+          "unique_count": 24,
+          "total_rows": 1000,
+          "description": "Column containing invoice_dt details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "TARGET_QTY_KL",
+          "clean_name": "target_qty_kl",
+          "pg_type": "INTEGER",
+          "null_count": 0,
+          "unique_count": 219,
+          "total_rows": 1000,
+          "description": "Column containing target_qty_kl details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "TARGET_QTY_TMT",
+          "clean_name": "target_qty_tmt",
+          "pg_type": "NUMERIC(18,4)",
+          "null_count": 0,
+          "unique_count": 315,
+          "total_rows": 1000,
+          "description": "Column containing target_qty_tmt details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "fiscal_year",
+          "clean_name": "fiscal_year",
+          "pg_type": "TEXT",
+          "null_count": 0,
+          "unique_count": 2,
+          "total_rows": 1000,
+          "description": "Column containing fiscal_year details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "CUR_FISCAL_YEAR",
+          "clean_name": "cur_fiscal_year",
+          "pg_type": "INTEGER",
+          "null_count": 0,
+          "unique_count": 2,
+          "total_rows": 1000,
+          "description": "Column containing cur_fiscal_year details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "ORGSBUCD",
+          "clean_name": "orgsbucd",
+          "pg_type": "NUMERIC(18,4)",
+          "null_count": 953,
+          "unique_count": 3,
+          "total_rows": 1000,
+          "description": "Column containing orgsbucd details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "ORGSBUNAME",
+          "clean_name": "orgsbuname",
+          "pg_type": "TEXT",
+          "null_count": 953,
+          "unique_count": 3,
+          "total_rows": 1000,
+          "description": "Column containing orgsbuname details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "ORGZONECD",
+          "clean_name": "orgzonecd",
+          "pg_type": "TEXT",
+          "null_count": 163,
+          "unique_count": 12,
+          "total_rows": 1000,
+          "description": "Column containing orgzonecd details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "ORGZONENAME",
+          "clean_name": "orgzonename",
+          "pg_type": "TEXT",
+          "null_count": 953,
+          "unique_count": 12,
+          "total_rows": 1000,
+          "description": "Column containing orgzonename details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "ORGROCD",
+          "clean_name": "orgrocd",
+          "pg_type": "TEXT",
+          "null_count": 953,
+          "unique_count": 38,
+          "total_rows": 1000,
+          "description": "Column containing orgrocd details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "ORGRONAME",
+          "clean_name": "orgroname",
+          "pg_type": "TEXT",
+          "null_count": 953,
+          "unique_count": 38,
+          "total_rows": 1000,
+          "description": "Column containing orgroname details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "ORGSACD",
+          "clean_name": "orgsacd",
+          "pg_type": "NUMERIC(18,4)",
+          "null_count": 953,
+          "unique_count": 45,
+          "total_rows": 1000,
+          "description": "Column containing orgsacd details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "ORGSANAME",
+          "clean_name": "orgsaname",
+          "pg_type": "TEXT",
+          "null_count": 953,
+          "unique_count": 45,
+          "total_rows": 1000,
+          "description": "Column containing orgsaname details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "PRODUCTCODE",
+          "clean_name": "productcode",
+          "pg_type": "NUMERIC(18,4)",
+          "null_count": 953,
+          "unique_count": 11,
+          "total_rows": 1000,
+          "description": "Column containing productcode details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "MATERIALGROUPNAME",
+          "clean_name": "materialgroupname",
+          "pg_type": "TEXT",
+          "null_count": 953,
+          "unique_count": 11,
+          "total_rows": 1000,
+          "description": "Column containing materialgroupname details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "CURFISCALYEAR",
+          "clean_name": "curfiscalyear",
+          "pg_type": "NUMERIC(18,4)",
+          "null_count": 953,
+          "unique_count": 2,
+          "total_rows": 1000,
+          "description": "Column containing curfiscalyear details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "FISCALYEAR",
+          "clean_name": "fiscalyear",
+          "pg_type": "TEXT",
+          "null_count": 953,
+          "unique_count": 2,
+          "total_rows": 1000,
+          "description": "Column containing fiscalyear details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "YEARMONTH",
+          "clean_name": "yearmonth",
+          "pg_type": "NUMERIC(18,4)",
+          "null_count": 953,
+          "unique_count": 15,
+          "total_rows": 1000,
+          "description": "Column containing yearmonth details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "NETWEIGHT_UOM",
+          "clean_name": "netweight_uom",
+          "pg_type": "TEXT",
+          "null_count": 953,
+          "unique_count": 1,
+          "total_rows": 1000,
+          "description": "Column containing netweight_uom details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "NETWEIGHT_KG",
+          "clean_name": "netweight_kg",
+          "pg_type": "NUMERIC(18,4)",
+          "null_count": 953,
+          "unique_count": 47,
+          "total_rows": 1000,
+          "description": "Column containing netweight_kg details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "NETWEIGHT_TMT",
+          "clean_name": "netweight_tmt",
+          "pg_type": "NUMERIC(18,4)",
+          "null_count": 0,
+          "unique_count": 48,
+          "total_rows": 1000,
+          "description": "Column containing netweight_tmt details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "Total_Days_Till_PresentDay",
+          "clean_name": "total_days_till_presentday",
+          "pg_type": "INTEGER",
+          "null_count": 0,
+          "unique_count": 1,
+          "total_rows": 1000,
+          "description": "Column containing total_days_till_presentday details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "Number_Of_Sundays_Till_PresentDay",
+          "clean_name": "number_of_sundays_till_presentday",
+          "pg_type": "INTEGER",
+          "null_count": 0,
+          "unique_count": 1,
+          "total_rows": 1000,
+          "description": "Column containing number_of_sundays_till_presentday details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "TARGET_ROUND",
+          "clean_name": "target_round",
+          "pg_type": "NUMERIC(18,4)",
+          "null_count": 0,
+          "unique_count": 252,
+          "total_rows": 1000,
+          "description": "Column containing target_round details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "Actual_ROUND",
+          "clean_name": "actual_round",
+          "pg_type": "NUMERIC(18,4)",
+          "null_count": 953,
+          "unique_count": 43,
+          "total_rows": 1000,
+          "description": "Column containing actual_round details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "FinalSum",
+          "clean_name": "finalsum",
+          "pg_type": "NUMERIC(18,4)",
+          "null_count": 0,
+          "unique_count": 1,
+          "total_rows": 1000,
+          "description": "Column containing finalsum details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "FinalActualSum",
+          "clean_name": "finalactualsum",
+          "pg_type": "NUMERIC(18,4)",
+          "null_count": 0,
+          "unique_count": 1,
+          "total_rows": 1000,
+          "description": "Column containing finalactualsum details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "MaxPendingDays",
+          "clean_name": "maxpendingdays",
+          "pg_type": "INTEGER",
+          "null_count": 0,
+          "unique_count": 1,
+          "total_rows": 1000,
+          "description": "Column containing maxpendingdays details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "Working_Days_Till_PresentDay_WithoutSundays",
+          "clean_name": "working_days_till_presentday_withoutsundays",
+          "pg_type": "INTEGER",
+          "null_count": 0,
+          "unique_count": 1,
+          "total_rows": 1000,
+          "description": "Column containing working_days_till_presentday_withoutsundays details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "Rate_Per_Day_Required_MMT",
+          "clean_name": "rate_per_day_required_mmt",
+          "pg_type": "NUMERIC(18,4)",
+          "null_count": 0,
+          "unique_count": 1,
+          "total_rows": 1000,
+          "description": "Column containing rate_per_day_required_mmt details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "Rate_per_day_current_MMT",
+          "clean_name": "rate_per_day_current_mmt",
+          "pg_type": "INTEGER",
+          "null_count": 0,
+          "unique_count": 1,
+          "total_rows": 1000,
+          "description": "Column containing rate_per_day_current_mmt details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "Total_Days_in_FY",
+          "clean_name": "total_days_in_fy",
+          "pg_type": "INTEGER",
+          "null_count": 0,
+          "unique_count": 1,
+          "total_rows": 1000,
+          "description": "Column containing total_days_in_fy details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "Pending_Days",
+          "clean_name": "pending_days",
+          "pg_type": "INTEGER",
+          "null_count": 0,
+          "unique_count": 1,
+          "total_rows": 1000,
+          "description": "Column containing pending_days details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "month_year",
+          "clean_name": "month_year",
+          "pg_type": "INTEGER",
+          "null_count": 0,
+          "unique_count": 12,
+          "total_rows": 1000,
+          "description": "Column containing month_year details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "month_name",
+          "clean_name": "month_name",
+          "pg_type": "TEXT",
+          "null_count": 0,
+          "unique_count": 12,
+          "total_rows": 1000,
+          "description": "Column containing month_name details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "fy_month",
+          "clean_name": "fy_month",
+          "pg_type": "INTEGER",
+          "null_count": 0,
+          "unique_count": 12,
+          "total_rows": 1000,
+          "description": "Column containing fy_month details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "year_monthname",
+          "clean_name": "year_monthname",
+          "pg_type": "DATE",
+          "null_count": 0,
+          "unique_count": 24,
+          "total_rows": 1000,
+          "description": "Column containing year_monthname details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "Target_Quantity_TMTT",
+          "clean_name": "target_quantity_tmtt",
+          "pg_type": "NUMERIC(18,4)",
+          "null_count": 653,
+          "unique_count": 64,
+          "total_rows": 1000,
+          "description": "Column containing target_quantity_tmtt details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "Prediction_Value",
+          "clean_name": "prediction_value",
+          "pg_type": "NUMERIC(18,4)",
+          "null_count": 0,
+          "unique_count": 17,
+          "total_rows": 1000,
+          "description": "Column containing prediction_value details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "Act_Tgt_Achievement",
+          "clean_name": "act_tgt_achievement",
+          "pg_type": "NUMERIC(18,4)",
+          "null_count": 0,
+          "unique_count": 19,
+          "total_rows": 1000,
+          "description": "Column containing act_tgt_achievement details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "Zone_Region_Achievement",
+          "clean_name": "zone_region_achievement",
+          "pg_type": "NUMERIC(18,4)",
+          "null_count": 0,
+          "unique_count": 129,
+          "total_rows": 1000,
+          "description": "Column containing zone_region_achievement details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "Product_Achievement",
+          "clean_name": "product_achievement",
+          "pg_type": "NUMERIC(18,4)",
+          "null_count": 0,
+          "unique_count": 21,
+          "total_rows": 1000,
+          "description": "Column containing product_achievement details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "engine_id",
+          "clean_name": "engine_id",
+          "pg_type": "TEXT",
+          "null_count": 0,
+          "unique_count": 1000,
+          "total_rows": 1000,
+          "description": "Column containing engine_id details.",
+          "is_likely_pk": false
+        }
+      ],
+      "basic_ddl": "CREATE TABLE m60_level (\n    sbu INTEGER,\n    sbu_name TEXT,\n    zone TEXT,\n    zone_name TEXT,\n    region TEXT,\n    region_name TEXT,\n    sa TEXT,\n    salesarea_name TEXT,\n    product NUMERIC(18,4),\n    productname TEXT,\n    uom TEXT,\n    invoice_dt INTEGER,\n    target_qty_kl INTEGER,\n    target_qty_tmt NUMERIC(18,4),\n    fiscal_year TEXT,\n    cur_fiscal_year INTEGER,\n    orgsbucd NUMERIC(18,4),\n    orgsbuname TEXT,\n    orgzonecd TEXT,\n    orgzonename TEXT,\n    orgrocd TEXT,\n    orgroname TEXT,\n    orgsacd NUMERIC(18,4),\n    orgsaname TEXT,\n    productcode NUMERIC(18,4),\n    materialgroupname TEXT,\n    curfiscalyear NUMERIC(18,4),\n    fiscalyear TEXT,\n    yearmonth NUMERIC(18,4),\n    netweight_uom TEXT,\n    netweight_kg NUMERIC(18,4),\n    netweight_tmt NUMERIC(18,4),\n    total_days_till_presentday INTEGER,\n    number_of_sundays_till_presentday INTEGER,\n    target_round NUMERIC(18,4),\n    actual_round NUMERIC(18,4),\n    finalsum NUMERIC(18,4),\n    finalactualsum NUMERIC(18,4),\n    maxpendingdays INTEGER,\n    working_days_till_presentday_withoutsundays INTEGER,\n    rate_per_day_required_mmt NUMERIC(18,4),\n    rate_per_day_current_mmt INTEGER,\n    total_days_in_fy INTEGER,\n    pending_days INTEGER,\n    month_year INTEGER,\n    month_name TEXT,\n    fy_month INTEGER,\n    year_monthname DATE,\n    target_quantity_tmtt NUMERIC(18,4),\n    prediction_value NUMERIC(18,4),\n    act_tgt_achievement NUMERIC(18,4),\n    zone_region_achievement NUMERIC(18,4),\n    product_achievement NUMERIC(18,4),\n    engine_id TEXT\n);",
+      "description": "Table containing m60_level metrics and business details.",
+      "llm_context": "Table: m60_level (1,000 rows) - Table containing m60_level metrics and business details.\n\n  Column: sbu | Type: INTEGER | Description: Column containing sbu details.\n  Column: sbu_name | Type: TEXT | Description: Column containing sbu_name details.\n  Column: zone | Type: TEXT | Description: Column containing zone details.\n  Column: zone_name | Type: TEXT | Description: Column containing zone_name details.\n  Column: region | Type: TEXT | Description: Column containing region details.\n  Column: region_name | Type: TEXT | Description: Column containing region_name details.\n  Column: sa | Type: TEXT | Description: Column containing sa details.\n  Column: salesarea_name | Type: TEXT | Description: Column containing salesarea_name details.\n  Column: product | Type: NUMERIC(18,4) | Description: Column containing product details.\n  Column: productname | Type: TEXT | Description: Column containing productname details.\n  Column: uom | Type: TEXT | Description: Column containing uom details.\n  Column: invoice_dt | Type: INTEGER | Description: Column containing invoice_dt details.\n  Column: target_qty_kl | Type: INTEGER | Description: Column containing target_qty_kl details.\n  Column: target_qty_tmt | Type: NUMERIC(18,4) | Description: Column containing target_qty_tmt details.\n  Column: fiscal_year | Type: TEXT | Description: Column containing fiscal_year details.\n  Column: cur_fiscal_year | Type: INTEGER | Description: Column containing cur_fiscal_year details.\n  Column: orgsbucd | Type: NUMERIC(18,4) | Description: Column containing orgsbucd details.\n  Column: orgsbuname | Type: TEXT | Description: Column containing orgsbuname details.\n  Column: orgzonecd | Type: TEXT | Description: Column containing orgzonecd details.\n  Column: orgzonename | Type: TEXT | Description: Column containing orgzonename details.\n  Column: orgrocd | Type: TEXT | Description: Column containing orgrocd details.\n  Column: orgroname | Type: TEXT | Description: Column containing orgroname details.\n  Column: orgsacd | Type: NUMERIC(18,4) | Description: Column containing orgsacd details.\n  Column: orgsaname | Type: TEXT | Description: Column containing orgsaname details.\n  Column: productcode | Type: NUMERIC(18,4) | Description: Column containing productcode details.\n  Column: materialgroupname | Type: TEXT | Description: Column containing materialgroupname details.\n  Column: curfiscalyear | Type: NUMERIC(18,4) | Description: Column containing curfiscalyear details.\n  Column: fiscalyear | Type: TEXT | Description: Column containing fiscalyear details.\n  Column: yearmonth | Type: NUMERIC(18,4) | Description: Column containing yearmonth details.\n  Column: netweight_uom | Type: TEXT | Description: Column containing netweight_uom details.\n  Column: netweight_kg | Type: NUMERIC(18,4) | Description: Column containing netweight_kg details.\n  Column: netweight_tmt | Type: NUMERIC(18,4) | Description: Column containing netweight_tmt details.\n  Column: total_days_till_presentday | Type: INTEGER | Description: Column containing total_days_till_presentday details.\n  Column: number_of_sundays_till_presentday | Type: INTEGER | Description: Column containing number_of_sundays_till_presentday details.\n  Column: target_round | Type: NUMERIC(18,4) | Description: Column containing target_round details.\n  Column: actual_round | Type: NUMERIC(18,4) | Description: Column containing actual_round details.\n  Column: finalsum | Type: NUMERIC(18,4) | Description: Column containing finalsum details.\n  Column: finalactualsum | Type: NUMERIC(18,4) | Description: Column containing finalactualsum details.\n  Column: maxpendingdays | Type: INTEGER | Description: Column containing maxpendingdays details.\n  Column: working_days_till_presentday_withoutsundays | Type: INTEGER | Description: Column containing working_days_till_presentday_withoutsundays details.\n  Column: rate_per_day_required_mmt | Type: NUMERIC(18,4) | Description: Column containing rate_per_day_required_mmt details.\n  Column: rate_per_day_current_mmt | Type: INTEGER | Description: Column containing rate_per_day_current_mmt details.\n  Column: total_days_in_fy | Type: INTEGER | Description: Column containing total_days_in_fy details.\n  Column: pending_days | Type: INTEGER | Description: Column containing pending_days details.\n  Column: month_year | Type: INTEGER | Description: Column containing month_year details.\n  Column: month_name | Type: TEXT | Description: Column containing month_name details.\n  Column: fy_month | Type: INTEGER | Description: Column containing fy_month details.\n  Column: year_monthname | Type: DATE | Description: Column containing year_monthname details.\n  Column: target_quantity_tmtt | Type: NUMERIC(18,4) | Description: Column containing target_quantity_tmtt details.\n  Column: prediction_value | Type: NUMERIC(18,4) | Description: Column containing prediction_value details.\n  Column: act_tgt_achievement | Type: NUMERIC(18,4) | Description: Column containing act_tgt_achievement details.\n  Column: zone_region_achievement | Type: NUMERIC(18,4) | Description: Column containing zone_region_achievement details.\n  Column: product_achievement | Type: NUMERIC(18,4) | Description: Column containing product_achievement details.\n  Column: engine_id | Type: TEXT | Description: Column containing engine_id details."
+    },
+    {
+      "table_name": "mom_level",
+      "total_rows": 1000,
+      "columns": [
+        {
+          "original_name": "ORGSBUCD",
+          "clean_name": "orgsbucd",
+          "pg_type": "INTEGER",
+          "null_count": 0,
+          "unique_count": 1,
+          "total_rows": 1000,
+          "description": "Column containing orgsbucd details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "SBU_Name",
+          "clean_name": "sbu_name",
+          "pg_type": "TEXT",
+          "null_count": 0,
+          "unique_count": 1,
+          "total_rows": 1000,
+          "description": "Strategic Business Unit name. When Retail SBU is specified, it should be added in the WHERE clause. Always exclude common or non-operational business units: sbu_name != '0' AND sbu_name NOT IN ('Common', 'Mumbai Ref', 'Renewable Energy', 'Visakh Ref')",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "ORGZONECD",
+          "clean_name": "orgzonecd",
+          "pg_type": "TEXT",
+          "null_count": 0,
+          "unique_count": 12,
+          "total_rows": 1000,
+          "description": "Column containing orgzonecd details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "Zone_Name",
+          "clean_name": "zone_name",
+          "pg_type": "TEXT",
+          "null_count": 0,
+          "unique_count": 12,
+          "total_rows": 1000,
+          "description": "Column containing zone_name details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "ORGROCD",
+          "clean_name": "orgrocd",
+          "pg_type": "TEXT",
+          "null_count": 0,
+          "unique_count": 67,
+          "total_rows": 1000,
+          "description": "Column containing orgrocd details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "Region_Name",
+          "clean_name": "region_name",
+          "pg_type": "TEXT",
+          "null_count": 0,
+          "unique_count": 67,
+          "total_rows": 1000,
+          "description": "Column containing region_name details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "ORGSACD",
+          "clean_name": "orgsacd",
+          "pg_type": "INTEGER",
+          "null_count": 0,
+          "unique_count": 304,
+          "total_rows": 1000,
+          "description": "Column containing orgsacd details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "SalesArea_Name",
+          "clean_name": "salesarea_name",
+          "pg_type": "TEXT",
+          "null_count": 0,
+          "unique_count": 304,
+          "total_rows": 1000,
+          "description": "Column containing salesarea_name details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "PRODUCTCODE",
+          "clean_name": "productcode",
+          "pg_type": "INTEGER",
+          "null_count": 0,
+          "unique_count": 5,
+          "total_rows": 1000,
+          "description": "Column containing productcode details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "ProductName",
+          "clean_name": "productname",
+          "pg_type": "TEXT",
+          "null_count": 0,
+          "unique_count": 5,
+          "total_rows": 1000,
+          "description": "Filters data based on specific product names (e.g. ms, hsd, propane, etc.) when mentioned in prompt.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "CURFISCALYEAR",
+          "clean_name": "curfiscalyear",
+          "pg_type": "INTEGER",
+          "null_count": 0,
+          "unique_count": 1,
+          "total_rows": 1000,
+          "description": "Column containing curfiscalyear details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "FISCALYEAR",
+          "clean_name": "fiscalyear",
+          "pg_type": "TEXT",
+          "null_count": 0,
+          "unique_count": 1,
+          "total_rows": 1000,
+          "description": "Column containing fiscalyear details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "YEARMONTH",
+          "clean_name": "yearmonth",
+          "pg_type": "INTEGER",
+          "null_count": 0,
+          "unique_count": 1,
+          "total_rows": 1000,
+          "description": "Column containing yearmonth details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "NETWEIGHT_UOM",
+          "clean_name": "netweight_uom",
+          "pg_type": "TEXT",
+          "null_count": 0,
+          "unique_count": 1,
+          "total_rows": 1000,
+          "description": "Column containing netweight_uom details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "NETWEIGHT_KG",
+          "clean_name": "netweight_kg",
+          "pg_type": "NUMERIC(18,4)",
+          "null_count": 0,
+          "unique_count": 580,
+          "total_rows": 1000,
+          "description": "Column containing netweight_kg details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "NETWEIGHT_TMT",
+          "clean_name": "netweight_tmt",
+          "pg_type": "NUMERIC(18,4)",
+          "null_count": 0,
+          "unique_count": 580,
+          "total_rows": 1000,
+          "description": "Used to calculate total sales values in TMT (Thousand Metric Tonnes). If MT (Metric Tonnes) is specified in prompt, convert by multiplying netweight_tmt by 1000.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "fiscal_year",
+          "clean_name": "fiscal_year",
+          "pg_type": "TEXT",
+          "null_count": 0,
+          "unique_count": 1,
+          "total_rows": 1000,
+          "description": "Column containing fiscal_year details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "engine_id",
+          "clean_name": "engine_id",
+          "pg_type": "TEXT",
+          "null_count": 0,
+          "unique_count": 1000,
+          "total_rows": 1000,
+          "description": "Column containing engine_id details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "month_name",
+          "clean_name": "month_name",
+          "pg_type": "TEXT",
+          "null_count": 0,
+          "unique_count": 1,
+          "total_rows": 1000,
+          "description": "Column containing month_name details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "DAY_ID",
+          "clean_name": "day_id",
+          "pg_type": "DATE",
+          "null_count": 0,
+          "unique_count": 2,
+          "total_rows": 1000,
+          "description": "Day or date ID. If a date or period is specified, the query should include the appropriate date range conditions on day_id (e.g. day_id BETWEEN '2025-12-01' AND '2025-12-15').",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "DISTRIBUTION_CHANNEL_CD",
+          "clean_name": "distribution_channel_cd",
+          "pg_type": "INTEGER",
+          "null_count": 0,
+          "unique_count": 3,
+          "total_rows": 1000,
+          "description": "Column containing distribution_channel_cd details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "MATERIAL_GROUP_CD",
+          "clean_name": "material_group_cd",
+          "pg_type": "INTEGER",
+          "null_count": 0,
+          "unique_count": 5,
+          "total_rows": 1000,
+          "description": "Column containing material_group_cd details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "plant_cd",
+          "clean_name": "plant_cd",
+          "pg_type": "INTEGER",
+          "null_count": 0,
+          "unique_count": 144,
+          "total_rows": 1000,
+          "description": "Column containing plant_cd details.",
+          "is_likely_pk": false
+        }
+      ],
+      "basic_ddl": "CREATE TABLE mom_level (\n    orgsbucd INTEGER,\n    sbu_name TEXT,\n    orgzonecd TEXT,\n    zone_name TEXT,\n    orgrocd TEXT,\n    region_name TEXT,\n    orgsacd INTEGER,\n    salesarea_name TEXT,\n    productcode INTEGER,\n    productname TEXT,\n    curfiscalyear INTEGER,\n    fiscalyear TEXT,\n    yearmonth INTEGER,\n    netweight_uom TEXT,\n    netweight_kg NUMERIC(18,4),\n    netweight_tmt NUMERIC(18,4),\n    fiscal_year TEXT,\n    engine_id TEXT,\n    month_name TEXT,\n    day_id DATE,\n    distribution_channel_cd INTEGER,\n    material_group_cd INTEGER,\n    plant_cd INTEGER\n);",
+      "description": "Table containing mom_level metrics and business details.",
+      "llm_context": "Table: mom_level (1,000 rows) - Table containing mom_level metrics and business details.\n\n  Column: orgsbucd | Type: INTEGER | Description: Column containing orgsbucd details.\n  Column: sbu_name | Type: TEXT | Description: Strategic Business Unit name. When Retail SBU is specified, it should be added in the WHERE clause. Always exclude common or non-operational business units: sbu_name != '0' AND sbu_name NOT IN ('Common', 'Mumbai Ref', 'Renewable Energy', 'Visakh Ref')\n  Column: orgzonecd | Type: TEXT | Description: Column containing orgzonecd details.\n  Column: zone_name | Type: TEXT | Description: Column containing zone_name details.\n  Column: orgrocd | Type: TEXT | Description: Column containing orgrocd details.\n  Column: region_name | Type: TEXT | Description: Column containing region_name details.\n  Column: orgsacd | Type: INTEGER | Description: Column containing orgsacd details.\n  Column: salesarea_name | Type: TEXT | Description: Column containing salesarea_name details.\n  Column: productcode | Type: INTEGER | Description: Column containing productcode details.\n  Column: productname | Type: TEXT | Description: Filters data based on specific product names (e.g. ms, hsd, propane, etc.) when mentioned in prompt.\n  Column: curfiscalyear | Type: INTEGER | Description: Column containing curfiscalyear details.\n  Column: fiscalyear | Type: TEXT | Description: Column containing fiscalyear details.\n  Column: yearmonth | Type: INTEGER | Description: Column containing yearmonth details.\n  Column: netweight_uom | Type: TEXT | Description: Column containing netweight_uom details.\n  Column: netweight_kg | Type: NUMERIC(18,4) | Description: Column containing netweight_kg details.\n  Column: netweight_tmt | Type: NUMERIC(18,4) | Description: Used to calculate total sales values in TMT (Thousand Metric Tonnes). If MT (Metric Tonnes) is specified in prompt, convert by multiplying netweight_tmt by 1000.\n  Column: fiscal_year | Type: TEXT | Description: Column containing fiscal_year details.\n  Column: engine_id | Type: TEXT | Description: Column containing engine_id details.\n  Column: month_name | Type: TEXT | Description: Column containing month_name details.\n  Column: day_id | Type: DATE | Description: Day or date ID. If a date or period is specified, the query should include the appropriate date range conditions on day_id (e.g. day_id BETWEEN '2025-12-01' AND '2025-12-15').\n  Column: distribution_channel_cd | Type: INTEGER | Description: Column containing distribution_channel_cd details.\n  Column: material_group_cd | Type: INTEGER | Description: Column containing material_group_cd details.\n  Column: plant_cd | Type: INTEGER | Description: Column containing plant_cd details."
+    },
+    {
+      "table_name": "industry_performance",
+      "total_rows": 4001,
+      "columns": [
+        {
+          "original_name": "prod1_1",
+          "clean_name": "prod1_1",
+          "pg_type": "TEXT",
+          "null_count": 1,
+          "unique_count": 25,
+          "total_rows": 4001,
+          "description": "Column containing prod1_1 details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "category",
+          "clean_name": "category",
+          "pg_type": "TEXT",
+          "null_count": 3245,
+          "unique_count": 3,
+          "total_rows": 4001,
+          "description": "To classify data categories. While querying, exclude the letter 'O' while retaining uncategorized rows (e.g. category != 'O' OR category IS NULL).",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "sbu_name",
+          "clean_name": "sbu_name",
+          "pg_type": "TEXT",
+          "null_count": 1,
+          "unique_count": 4,
+          "total_rows": 4001,
+          "description": "Identifies the Strategic Business Unit name when specified in the user prompt. Values Include: RETAIL, LPG, I&C, AVIATION, PETCHEM, GAS, LUBES.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "statename",
+          "clean_name": "statename",
+          "pg_type": "TEXT",
+          "null_count": 1,
+          "unique_count": 36,
+          "total_rows": 4001,
+          "description": "Used to filter data by state name (e.g. ASSAM, BIHAR, PUNJAB, etc.) if mentioned in the prompt.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "company_name",
+          "clean_name": "company_name",
+          "pg_type": "TEXT",
+          "null_count": 1,
+          "unique_count": 3,
+          "total_rows": 4001,
+          "description": "Column containing company_name details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "distname",
+          "clean_name": "distname",
+          "pg_type": "TEXT",
+          "null_count": 1,
+          "unique_count": 667,
+          "total_rows": 4001,
+          "description": "Filters data by district if the district name (e.g. AGRA, AKOLA, ANANTAPUR, etc.) is mentioned.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "prod2",
+          "clean_name": "prod2",
+          "pg_type": "TEXT",
+          "null_count": 1,
+          "unique_count": 13,
+          "total_rows": 4001,
+          "description": "Column containing prod2 details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "comname",
+          "clean_name": "comname",
+          "pg_type": "TEXT",
+          "null_count": 1,
+          "unique_count": 11,
+          "total_rows": 4001,
+          "description": "Extracts company-related data when the company name is present in the user input. Examples of Companies: HPCL, IOCL, BPCL, GAIL, SMA, OIL, etc.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "psu_pvt",
+          "clean_name": "psu_pvt",
+          "pg_type": "TEXT",
+          "null_count": 1,
+          "unique_count": 2,
+          "total_rows": 4001,
+          "description": "Column containing psu_pvt details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "statecode",
+          "clean_name": "statecode",
+          "pg_type": "TEXT",
+          "null_count": 1,
+          "unique_count": 36,
+          "total_rows": 4001,
+          "description": "Column containing statecode details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "orgrocd",
+          "clean_name": "orgrocd",
+          "pg_type": "NUMERIC(18,4)",
+          "null_count": 1,
+          "unique_count": 5,
+          "total_rows": 4001,
+          "description": "Column containing orgrocd details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "dist",
+          "clean_name": "dist",
+          "pg_type": "TEXT",
+          "null_count": 1,
+          "unique_count": 667,
+          "total_rows": 4001,
+          "description": "Column containing dist details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "productname_org",
+          "clean_name": "productname_org",
+          "pg_type": "TEXT",
+          "null_count": 1,
+          "unique_count": 70,
+          "total_rows": 4001,
+          "description": "Column containing productname_org details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "total",
+          "clean_name": "total",
+          "pg_type": "NUMERIC(18,4)",
+          "null_count": 1,
+          "unique_count": 3004,
+          "total_rows": 4001,
+          "description": "Column containing total details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "distcode",
+          "clean_name": "distcode",
+          "pg_type": "TEXT",
+          "null_count": 1,
+          "unique_count": 672,
+          "total_rows": 4001,
+          "description": "Column containing distcode details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "comcode",
+          "clean_name": "comcode",
+          "pg_type": "NUMERIC(18,4)",
+          "null_count": 1,
+          "unique_count": 12,
+          "total_rows": 4001,
+          "description": "Column containing comcode details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "code",
+          "clean_name": "code",
+          "pg_type": "TEXT",
+          "null_count": 1,
+          "unique_count": 853,
+          "total_rows": 4001,
+          "description": "Column containing code details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "productcode",
+          "clean_name": "productcode",
+          "pg_type": "NUMERIC(18,4)",
+          "null_count": 1,
+          "unique_count": 70,
+          "total_rows": 4001,
+          "description": "Column containing productcode details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "zone_name",
+          "clean_name": "zone_name",
+          "pg_type": "TEXT",
+          "null_count": 5,
+          "unique_count": 7,
+          "total_rows": 4001,
+          "description": "Used to filter data based on zone names mentioned in the prompt. Examples of Zones: ECZ, NZ, NCZ, etc.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "region_name",
+          "clean_name": "region_name",
+          "pg_type": "TEXT",
+          "null_count": 1,
+          "unique_count": 5,
+          "total_rows": 4001,
+          "description": "Column containing region_name details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "newcode",
+          "clean_name": "newcode",
+          "pg_type": "TEXT",
+          "null_count": 1,
+          "unique_count": 672,
+          "total_rows": 4001,
+          "description": "Column containing newcode details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "fiscal_year",
+          "clean_name": "fiscal_year",
+          "pg_type": "TEXT",
+          "null_count": 1,
+          "unique_count": 3,
+          "total_rows": 4001,
+          "description": "Determines the fiscal year of the data to be displayed. Logic: If the fiscal year is explicitly mentioned in the prompt, use that. If not specified, dynamically fetch the current fiscal year and the previous fiscal year. Avoid hardcoding; calculate based on the current date. Example Format: 2025-2026",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "coname",
+          "clean_name": "coname",
+          "pg_type": "TEXT",
+          "null_count": 1,
+          "unique_count": 11,
+          "total_rows": 4001,
+          "description": "Column containing coname details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "month_name",
+          "clean_name": "month_name",
+          "pg_type": "TEXT",
+          "null_count": 1,
+          "unique_count": 10,
+          "total_rows": 4001,
+          "description": "Retrieves data based on the specified month (e.g., APR, MAR, JUN, JUL, etc.).",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "netweight_tmt",
+          "clean_name": "netweight_tmt",
+          "pg_type": "NUMERIC(18,4)",
+          "null_count": 1,
+          "unique_count": 1966,
+          "total_rows": 4001,
+          "description": "Used to calculate total sales values. Logic: By default, display values in TMT (Thousand Metric Tonnes). If MT (Metric Tonnes) is specified in the prompt, convert and display accordingly by multiplying netweight_tmt by 1000.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "com_type",
+          "clean_name": "com_type",
+          "pg_type": "TEXT",
+          "null_count": 1,
+          "unique_count": 2,
+          "total_rows": 4001,
+          "description": "Column containing com_type details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "productname",
+          "clean_name": "productname",
+          "pg_type": "TEXT",
+          "null_count": 1,
+          "unique_count": 25,
+          "total_rows": 4001,
+          "description": "Filters data based on specific product names mentioned in the prompt (e.g. MS, HSD, PROPANE, etc.).",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "prod1",
+          "clean_name": "prod1",
+          "pg_type": "TEXT",
+          "null_count": 1,
+          "unique_count": 25,
+          "total_rows": 4001,
+          "description": "Column containing prod1 details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "entity_id",
+          "clean_name": "entity_id",
+          "pg_type": "NUMERIC(18,4)",
+          "null_count": 4001,
+          "unique_count": 0,
+          "total_rows": 4001,
+          "description": "Column containing entity_id details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "updated_at",
+          "clean_name": "updated_at",
+          "pg_type": "DATE",
+          "null_count": 1,
+          "unique_count": 3,
+          "total_rows": 4001,
+          "description": "Column containing updated_at details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "created_at",
+          "clean_name": "created_at",
+          "pg_type": "DATE",
+          "null_count": 1,
+          "unique_count": 3,
+          "total_rows": 4001,
+          "description": "Column containing created_at details.",
+          "is_likely_pk": false
+        },
+        {
+          "original_name": "ro",
+          "clean_name": "ro",
+          "pg_type": "TEXT",
+          "null_count": 1,
+          "unique_count": 48,
+          "total_rows": 4001,
+          "description": "Filters data by region name when specified in the prompt (e.g. NELLORE, MUMBAI, KADAPA, etc.)",
+          "is_likely_pk": false
+        }
+      ],
+      "basic_ddl": "CREATE TABLE industry_performance (\n    prod1_1 TEXT,\n    category TEXT,\n    sbu_name TEXT,\n    statename TEXT,\n    company_name TEXT,\n    distname TEXT,\n    prod2 TEXT,\n    comname TEXT,\n    psu_pvt TEXT,\n    statecode TEXT,\n    orgrocd NUMERIC(18,4),\n    dist TEXT,\n    productname_org TEXT,\n    total NUMERIC(18,4),\n    distcode TEXT,\n    comcode NUMERIC(18,4),\n    code TEXT,\n    productcode NUMERIC(18,4),\n    zone_name TEXT,\n    region_name TEXT,\n    newcode TEXT,\n    fiscal_year TEXT,\n    coname TEXT,\n    month_name TEXT,\n    netweight_tmt NUMERIC(18,4),\n    com_type TEXT,\n    productname TEXT,\n    prod1 TEXT,\n    entity_id NUMERIC(18,4),\n    updated_at DATE,\n    created_at DATE,\n    ro TEXT\n);",
+      "description": "Table containing industry_performance metrics and business details.",
+      "llm_context": "Table: industry_performance (4,001 rows) - Table containing industry_performance metrics and business details.\n\n  Column: prod1_1 | Type: TEXT | Description: Column containing prod1_1 details.\n  Column: category | Type: TEXT | Description: To classify data categories. While querying, exclude the letter 'O' while retaining uncategorized rows (e.g. category != 'O' OR category IS NULL).\n  Column: sbu_name | Type: TEXT | Description: Identifies the Strategic Business Unit name when specified in the user prompt. Values Include: RETAIL, LPG, I&C, AVIATION, PETCHEM, GAS, LUBES.\n  Column: statename | Type: TEXT | Description: Used to filter data by state name (e.g. ASSAM, BIHAR, PUNJAB, etc.) if mentioned in the prompt.\n  Column: company_name | Type: TEXT | Description: Column containing company_name details.\n  Column: distname | Type: TEXT | Description: Filters data by district if the district name (e.g. AGRA, AKOLA, ANANTAPUR, etc.) is mentioned.\n  Column: prod2 | Type: TEXT | Description: Column containing prod2 details.\n  Column: comname | Type: TEXT | Description: Extracts company-related data when the company name is present in the user input. Examples of Companies: HPCL, IOCL, BPCL, GAIL, SMA, OIL, etc.\n  Column: psu_pvt | Type: TEXT | Description: Column containing psu_pvt details.\n  Column: statecode | Type: TEXT | Description: Column containing statecode details.\n  Column: orgrocd | Type: NUMERIC(18,4) | Description: Column containing orgrocd details.\n  Column: dist | Type: TEXT | Description: Column containing dist details.\n  Column: productname_org | Type: TEXT | Description: Column containing productname_org details.\n  Column: total | Type: NUMERIC(18,4) | Description: Column containing total details.\n  Column: distcode | Type: TEXT | Description: Column containing distcode details.\n  Column: comcode | Type: NUMERIC(18,4) | Description: Column containing comcode details.\n  Column: code | Type: TEXT | Description: Column containing code details.\n  Column: productcode | Type: NUMERIC(18,4) | Description: Column containing productcode details.\n  Column: zone_name | Type: TEXT | Description: Used to filter data based on zone names mentioned in the prompt. Examples of Zones: ECZ, NZ, NCZ, etc.\n  Column: region_name | Type: TEXT | Description: Column containing region_name details.\n  Column: newcode | Type: TEXT | Description: Column containing newcode details.\n  Column: fiscal_year | Type: TEXT | Description: Determines the fiscal year of the data to be displayed. Logic: If the fiscal year is explicitly mentioned in the prompt, use that. If not specified, dynamically fetch the current fiscal year and the previous fiscal year. Avoid hardcoding; calculate based on the current date. Example Format: 2025-2026\n  Column: coname | Type: TEXT | Description: Column containing coname details.\n  Column: month_name | Type: TEXT | Description: Retrieves data based on the specified month (e.g., APR, MAR, JUN, JUL, etc.).\n  Column: netweight_tmt | Type: NUMERIC(18,4) | Description: Used to calculate total sales values. Logic: By default, display values in TMT (Thousand Metric Tonnes). If MT (Metric Tonnes) is specified in the prompt, convert and display accordingly by multiplying netweight_tmt by 1000.\n  Column: com_type | Type: TEXT | Description: Column containing com_type details.\n  Column: productname | Type: TEXT | Description: Filters data based on specific product names mentioned in the prompt (e.g. MS, HSD, PROPANE, etc.).\n  Column: prod1 | Type: TEXT | Description: Column containing prod1 details.\n  Column: entity_id | Type: NUMERIC(18,4) | Description: Column containing entity_id details.\n  Column: updated_at | Type: DATE | Description: Column containing updated_at details.\n  Column: created_at | Type: DATE | Description: Column containing created_at details.\n  Column: ro | Type: TEXT | Description: Filters data by region name when specified in the prompt (e.g. NELLORE, MUMBAI, KADAPA, etc.)"
+    }
+  ]
+}

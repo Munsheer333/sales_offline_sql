@@ -1,0 +1,261 @@
+{
+  "_meta": {
+    "description": "Alias definitions for entity resolution in the NLPSQL pipeline.",
+    "version": "1.0",
+    "note": "Add new aliases here. The alias engine loads this file at startup. No code changes needed."
+  },
+
+  "companies": {
+    "HPCL": {
+      "canonical": "HPCL",
+      "aliases": [
+        "hpcl", "hindustan petroleum", "hindustan petroleum corporation",
+        "hindustan petroleum corporation limited", "hp", "hpcl ltd"
+      ],
+      "column": "comname",
+      "table": "industry_performance"
+    },
+    "IOCL": {
+      "canonical": "IOCL",
+      "aliases": [
+        "iocl", "indian oil", "indian oil corporation", "indian oil corporation limited",
+        "ioc", "indian oil ltd", "indianoil"
+      ],
+      "column": "comname",
+      "table": "industry_performance"
+    },
+    "BPCL": {
+      "canonical": "BPCL",
+      "aliases": [
+        "bpcl", "bharat petroleum", "bharat petroleum corporation",
+        "bharat petroleum corporation limited", "bp", "bpcl ltd", "bharat petro"
+      ],
+      "column": "comname",
+      "table": "industry_performance"
+    },
+    "GAIL": {
+      "canonical": "GAIL",
+      "aliases": [
+        "gail", "gail india", "gas authority", "gas authority of india",
+        "gas authority of india limited", "gail ltd"
+      ],
+      "column": "comname",
+      "table": "industry_performance"
+    },
+    "SHELL": {
+      "canonical": "SHELL",
+      "aliases": ["shell", "shell india", "shell petroleum"],
+      "column": "comname",
+      "table": "industry_performance"
+    },
+    "HMEL": {
+      "canonical": "HMEL",
+      "aliases": ["hmel", "hpcl mittal energy", "hpcl mittal energy limited"],
+      "column": "comname",
+      "table": "industry_performance"
+    },
+    "CPCL": {
+      "canonical": "CPCL",
+      "aliases": ["cpcl", "chennai petroleum", "chennai petroleum corporation", "cpc"],
+      "column": "comname",
+      "table": "industry_performance"
+    },
+    "MRPL": {
+      "canonical": "MRPL",
+      "aliases": ["mrpl", "mangalore refinery", "mangalore refinery and petrochemicals", "mangalore refinery and petrochemicals limited"],
+      "column": "comname",
+      "table": "industry_performance"
+    },
+    "NRL": {
+      "canonical": "NRL",
+      "aliases": ["nrl", "numaligarh refinery", "numaligarh refinery limited"],
+      "column": "comname",
+      "table": "industry_performance"
+    },
+    "RIL": {
+      "canonical": "RIL",
+      "aliases": ["ril", "reliance", "reliance industries", "reliance industries limited", "jio"],
+      "column": "comname",
+      "table": "industry_performance"
+    }
+  },
+
+  "sbus": {
+    "RETAIL": {
+      "canonical": "RETAIL",
+      "aliases": [
+        "retail", "ms hsd", "petrol diesel", "fuel station", "auto fuel",
+        "retail sbu", "retail division"
+      ],
+      "column": "sbu_name",
+      "tables": ["industry_performance", "mom_level"]
+    },
+    "LPG": {
+      "canonical": "LPG",
+      "aliases": [
+        "lpg", "liquefied petroleum gas", "cooking gas", "cylinder gas",
+        "lpg cylinder", "gas cylinder", "domestic gas"
+      ],
+      "column": "sbu_name",
+      "tables": ["industry_performance", "mom_level"]
+    },
+    "I&C": {
+      "canonical": "I&C",
+      "aliases": [
+        "i&c", "i and c", "iand c", "industrial and commercial",
+        "industrial commercial", "industrial & commercial",
+        "ng", "natural gas", "industrial gas", "commercial gas", "ioc"
+      ],
+      "column": "sbu_name",
+      "tables": ["industry_performance", "mom_level"]
+    },
+    "LUBES": {
+      "canonical": "LUBES",
+      "aliases": [
+        "lubes", "lubricants", "lube", "lube oil", "lubricant oil",
+        "engine oil", "gear oil"
+      ],
+      "column": "sbu_name",
+      "tables": ["industry_performance", "mom_level"]
+    }
+  },
+
+  "products": {
+    "MS": {
+      "canonical": "MS",
+      "aliases": [
+        "ms", "motor spirit", "petrol", "gasoline", "unleaded petrol",
+        "petrol fuel", "ms fuel"
+      ],
+      "column": "productname",
+      "tables": ["industry_performance", "mom_level"]
+    },
+    "HSD": {
+      "canonical": "HSD",
+      "aliases": [
+        "hsd", "high speed diesel", "diesel", "auto diesel", "diesel fuel",
+        "hsd fuel", "speed diesel"
+      ],
+      "column": "productname",
+      "tables": ["industry_performance", "mom_level"]
+    },
+    "SKO": {
+      "canonical": "SKO",
+      "aliases": [
+        "sko", "kerosene", "superior kerosene oil", "kerosene oil", "iko"
+      ],
+      "column": "productname",
+      "tables": ["industry_performance", "mom_level"]
+    },
+    "LPG-PKD DOM": {
+      "canonical": "LPG-PKD DOM",
+      "aliases": [
+        "lpg pkd dom", "lpg packed domestic", "domestic lpg", "household lpg",
+        "cooking gas cylinder", "indane", "hp gas", "bharat gas"
+      ],
+      "column": "productname",
+      "tables": ["industry_performance", "mom_level"]
+    },
+    "LPG-BULK": {
+      "canonical": "LPG-BULK",
+      "aliases": [
+        "lpg bulk", "bulk lpg", "bulk gas", "industrial lpg"
+      ],
+      "column": "productname",
+      "tables": ["industry_performance", "mom_level"]
+    },
+    "NAPHTHA": {
+      "canonical": "NAPHTHA",
+      "aliases": [
+        "naphtha", "naptha", "light naphtha", "heavy naphtha"
+      ],
+      "column": "productname",
+      "tables": ["industry_performance", "mom_level"]
+    },
+    "PROPANE": {
+      "canonical": "PROPANE",
+      "aliases": ["propane", "propane gas", "lp gas"],
+      "column": "productname",
+      "tables": ["industry_performance", "mom_level"]
+    },
+    "LUBES": {
+      "canonical": "LUBES",
+      "aliases": [
+        "lubes", "lubricants", "lube oil", "engine oil", "gear oil", "motor oil"
+      ],
+      "column": "productname",
+      "tables": ["industry_performance", "mom_level"]
+    },
+    "FO": {
+      "canonical": "FO",
+      "aliases": [
+        "fo", "fuel oil", "furnace oil", "heavy fuel oil", "hfo"
+      ],
+      "column": "productname",
+      "tables": ["industry_performance", "mom_level"]
+    },
+    "BITUMEN-BULK": {
+      "canonical": "BITUMEN-BULK",
+      "aliases": [
+        "bitumen bulk", "bitumen", "asphalt", "road bitumen", "bulk bitumen"
+      ],
+      "column": "productname",
+      "tables": ["industry_performance", "mom_level"]
+    },
+    "CNG": {
+      "canonical": "CNG",
+      "aliases": [
+        "cng", "compressed natural gas", "natural gas vehicle", "city gas"
+      ],
+      "column": "productname",
+      "tables": ["industry_performance", "mom_level"]
+    },
+    "TMT": {
+      "canonical": "TMT",
+      "aliases": [
+        "tmt", "tmt bar", "tmt bars", "thermo mechanically treated"
+      ],
+      "column": "productname",
+      "tables": ["industry_performance", "mom_level", "m60_level"]
+    }
+  },
+
+  "zones": {
+    "NCZ": {
+      "canonical": "NCZ",
+      "aliases": ["ncz", "north central zone", "north central"],
+      "column": "zone_name",
+      "tables": ["industry_performance", "mom_level"]
+    },
+    "NZ": {
+      "canonical": "NZ",
+      "aliases": ["nz", "north zone", "northern zone"],
+      "column": "zone_name",
+      "tables": ["industry_performance", "mom_level"]
+    },
+    "EZ": {
+      "canonical": "EZ",
+      "aliases": ["ez", "east zone", "eastern zone"],
+      "column": "zone_name",
+      "tables": ["industry_performance", "mom_level"]
+    },
+    "ECZ": {
+      "canonical": "ECZ",
+      "aliases": ["ecz", "east central zone", "east central"],
+      "column": "zone_name",
+      "tables": ["industry_performance", "mom_level"]
+    },
+    "WZ": {
+      "canonical": "WZ",
+      "aliases": ["wz", "west zone", "western zone"],
+      "column": "zone_name",
+      "tables": ["industry_performance", "mom_level"]
+    },
+    "SZ": {
+      "canonical": "SZ",
+      "aliases": ["sz", "south zone", "southern zone"],
+      "column": "zone_name",
+      "tables": ["industry_performance", "mom_level"]
+    }
+  }
+}

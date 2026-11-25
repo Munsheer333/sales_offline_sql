@@ -1,0 +1,103 @@
+Industry Performance Schema
+
+1. category
+
+• Purpose: To classify data categories.
+
+• Usage Rule: While querying, exclude the letter “O” from the category field.
+
+
+2. sbu_name (Strategic Business Unit Name)
+
+• Purpose: Identifies the business unit when specified in the user prompt.
+
+• Values Include: RETAIL, LPG, I&C, AVIATION, PETCHEM, GAS.
+
+
+3. Statename (State Names)
+
+• Purpose: Used to filter data by state name if mentioned in the prompt.
+
+• Examples of States: ASSAM, BIHAR, PUNJAB, etc.
+
+
+4. comname (Company Names)
+
+• Purpose: Extracts company-related data when the company name is present in the user input.
+
+• Examples of Companies: HPCL, IOCL, BPCL, GAIL, etc.
+
+
+5. distname (District Names)
+
+• Purpose: Filters data by district if the district name is mentioned.
+
+• Examples of Districts: AGRA, AKOLA, ANANTAPUR, etc.
+
+
+6. zone_name (Zones)
+
+• Purpose: Used to filter data based on zone names mentioned in the prompt.
+
+• Examples of Zones: ECZ, NZ, NCZ, etc.
+
+
+7. fiscal_year
+
+• Purpose: Determines the fiscal year of the data to be displayed.
+
+• Logic:
+
+    ○ If the fiscal year is explicitly mentioned in the prompt, use that.
+
+    ○ If not specified, dynamically fetch the current fiscal year and the previous fiscal year. Avoid hardcoding; calculate based on the current date.
+
+    ○ Example Format: 2025-2026
+
+
+8. month_name
+
+• Purpose: Retrieves data based on the specified month.
+
+• Examples: APR, MAR, JUN, JUL, etc.
+
+
+9. netweight_tmt
+
+• Purpose: Used to calculate total sales values.
+
+• Logic:
+
+    ○ By default, display values in TMT (Thousand Metric Tonnes).
+
+    ○ If MT (Metric Tonnes) is specified in the prompt, convert and display accordingly.
+
+
+10. Productname (Products)
+
+• Purpose: Filters data based on specific product names mentioned in the prompt.
+
+• Examples of Products: MS, HSD, PROPANE, etc.
+
+
+11. ro (Regions)
+
+• Purpose: Filters data by region name when specified in the prompt.
+
+• Examples of Regions: NELLORE, MUMBAI, KADAPA, etc.
+
+
+SELECT
+ROUND(SUM("MOM_DAY_LEVEL_DATA"."NETWEIGHT_TMT")::numeric, 2) AS
+"ACTUAL_TMT_SALES"
+FROM "MOM_DAY_LEVEL_DATA"
+WHERE
+"SBU_Name" != '0'
+AND "SBU_Name" NOT IN ('Common', 'Mumbai Ref', 'Renewable Energy', 'Visakh
+Ref') AND "SBU_Name" = 'Retail' AND "ProductName"  = 'HSD' AND  "DAY_ID" BETWEEN '20251201' AND '20251215'
+
+When the Retail SBU is specified, it should be added in the WHERE clause.
+Similarly, when a specific product is mentioned, the product condition should also be added in the WHERE clause.
+If a date or period is specified, the query should include the appropriate date range conditions.
+
+

@@ -1,0 +1,42 @@
+[
+  {
+    "question": "What is the actual sales in TMT for Retail HSD from Dec 1 2025 to Dec 15 2025?",
+    "sql": "SELECT round(sum(netweight_tmt)::numeric, 2) AS actual_tmt_sales FROM mom_level WHERE sbu_name != '0' AND sbu_name NOT IN ('Common', 'Mumbai Ref', 'Renewable Energy', 'Visakh Ref') AND sbu_name = 'Retail' AND productname = 'HSD' AND day_id BETWEEN '2025-12-01' AND '2025-12-15';",
+    "complexity": "MEDIUM"
+  },
+  {
+    "question": "Show actual sales for product MS in MT for Retail in Oct 2025.",
+    "sql": "SELECT round(sum(netweight_tmt * 1000)::numeric, 2) AS actual_mt_sales FROM mom_level WHERE sbu_name != '0' AND sbu_name NOT IN ('Common', 'Mumbai Ref', 'Renewable Energy', 'Visakh Ref') AND sbu_name = 'Retail' AND productname = 'MS' AND yearmonth = 202510;",
+    "complexity": "HARD"
+  },
+  {
+    "question": "Rank companies by industry performance sales in AP state.",
+    "sql": "SELECT comname, round(sum(netweight_tmt)::numeric, 2) AS total_sales_tmt FROM industry_performance WHERE (category != 'O' OR category IS NULL) AND statename = 'ANDHRA PRADESH' GROUP BY comname ORDER BY total_sales_tmt DESC;",
+    "complexity": "ADVANCED"
+  },
+  {
+    "question": "Show industry performance for HPCL in district AGRA for fiscal year 2021-2022.",
+    "sql": "SELECT * FROM industry_performance WHERE (category != 'O' OR category IS NULL) AND comname = 'HPCL' AND distname = 'AGRA' AND fiscal_year = '2021-2022';",
+    "complexity": "MEDIUM"
+  },
+  {
+    "question": "Get the total target quantity in KL from M60_LEVEL for strategic business unit I&C in North zone.",
+    "sql": "SELECT sum(target_qty_kl) AS total_target_kl FROM m60_level WHERE sbu_name = 'I&C' AND zone_name = 'North';",
+    "complexity": "MEDIUM"
+  },
+  {
+    "question": "Which company has the lowest market share in fiscal year 2024-2025?",
+    "sql": "WITH company_sales AS (SELECT comname, SUM(netweight_tmt) AS company_total FROM industry_performance WHERE (category != 'O' OR category IS NULL) AND fiscal_year = '2024-2025' GROUP BY comname), total_market AS (SELECT SUM(netweight_tmt) AS market_total FROM industry_performance WHERE (category != 'O' OR category IS NULL) AND fiscal_year = '2024-2025') SELECT cs.comname, ROUND((cs.company_total * 100.0) / tm.market_total, 2) AS market_share_percentage FROM company_sales cs CROSS JOIN total_market tm ORDER BY market_share_percentage ASC LIMIT 1;",
+    "complexity": "ADVANCED"
+  },
+  {
+    "question": "Show the industry performance total sales in TMT for IOCL for the strategic business unit I&C in the current fiscal year.",
+    "sql": "SELECT ROUND(SUM(netweight_tmt)::numeric, 2) AS total_sales_tmt FROM industry_performance WHERE (category != 'O' OR category IS NULL) AND comname = 'IOCL' AND sbu_name = 'I&C' AND fiscal_year = (CASE WHEN EXTRACT(MONTH FROM NOW()) >= 4 THEN EXTRACT(YEAR FROM NOW())::text || '-' || (EXTRACT(YEAR FROM NOW()) + 1)::text ELSE (EXTRACT(YEAR FROM NOW()) - 1)::text || '-' || EXTRACT(YEAR FROM NOW())::text END);",
+    "complexity": "ADVANCED"
+  },
+  {
+    "question": "Find states whose sales are above average.",
+    "sql": "WITH state_sales AS (SELECT statename, SUM(netweight_tmt) AS total_sales FROM industry_performance WHERE (category != 'O' OR category IS NULL) GROUP BY statename) SELECT statename, ROUND(total_sales::numeric, 2) AS total_sales_tmt FROM state_sales WHERE total_sales > (SELECT AVG(total_sales) FROM state_sales) ORDER BY total_sales DESC;",
+    "complexity": "ADVANCED"
+  }
+]

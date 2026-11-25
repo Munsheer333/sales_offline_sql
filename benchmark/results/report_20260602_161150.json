@@ -1,0 +1,9 @@
+{
+  "timestamp": "20260602_161150",
+  "total_queries": 7,
+  "successful_pipelines": 6,
+  "pipeline_success_rate": 85.71,
+  "sql_execution_matches": 4,
+  "execution_match_rate": 57.14,
+  "average_duration_ms": 1179.56
+}

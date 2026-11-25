@@ -1,0 +1,77 @@
+import os
+import json
+
+EDGE_CASES = [
+  {
+    "category": "unknown_company",
+    "question": "What is the total sales for Tesla SBU Retail in FY 2024-2025?",
+    "invalid_entities": ["Tesla"],
+    "expected_behavior": "validation_failure"
+  },
+  {
+    "category": "unknown_company",
+    "question": "Show market share for Microsoft in fiscal year 2024-2025.",
+    "invalid_entities": ["Microsoft"],
+    "expected_behavior": "validation_failure"
+  },
+  {
+    "category": "unknown_sbu",
+    "question": "Get actual sales for HPCL in SBU Marketing.",
+    "invalid_entities": ["SBU Marketing"],
+    "expected_behavior": "validation_failure"
+  },
+  {
+    "category": "unknown_sbu",
+    "question": "What is the sales volume for IOCL under SBU Digital in FY 2024-2025?",
+    "invalid_entities": ["SBU Digital"],
+    "expected_behavior": "validation_failure"
+  },
+  {
+    "category": "unknown_region",
+    "question": "What is actual sales for Retail in Antarctica region?",
+    "invalid_entities": ["Antarctica region"],
+    "expected_behavior": "validation_failure"
+  },
+  {
+    "category": "unknown_region",
+    "question": "Show sales performance in Sahara zone.",
+    "invalid_entities": ["Sahara zone"],
+    "expected_behavior": "validation_failure"
+  },
+  {
+    "category": "invalid_year",
+    "question": "Show industry performance for HPCL in district AGRA for fiscal year 1999-2000.",
+    "invalid_entities": ["1999-2000"],
+    "expected_behavior": "validation_failure"
+  },
+  {
+    "category": "invalid_year",
+    "question": "What is total sales for Retail MS in FY 2040-2041?",
+    "invalid_entities": ["2040-2041"],
+    "expected_behavior": "validation_failure"
+  },
+  {
+    "category": "conflicting_filters",
+    "question": "Show sales for Retail HSD product inside Aviation SBU.",
+    "conflicting_dimensions": ["sbu_name = 'Retail'", "sbu_name = 'Aviation'"],
+    "expected_behavior": "semantic_clash_or_empty_result"
+  },
+  {
+    "category": "conflicting_filters",
+    "question": "Compare HPCL and IOCL sales in South zone for zone North in FY 2024-2025.",
+    "conflicting_dimensions": ["zone_name = 'South'", "zone_name = 'North'"],
+    "expected_behavior": "semantic_clash_or_empty_result"
+  }
+]
+
+def generate_edge_cases():
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    output_path = os.path.join(base_dir, "edge_cases.json")
+    
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(EDGE_CASES, f, indent=2)
+        
+    print(f"Successfully generated {len(EDGE_CASES)} edge cases at {output_path}")
+
+if __name__ == "__main__":
+    generate_edge_cases()

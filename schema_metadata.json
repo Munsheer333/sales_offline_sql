@@ -1,0 +1,1379 @@
+{
+  "industry_performance": {
+    "columns": [
+      {
+        "name": "prod1_1",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "category",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "sbu_name",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "statename",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "company_name",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "distname",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "prod2",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "comname",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "psu_pvt",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "statecode",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "orgrocd",
+        "data_type": "numeric",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "dist",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "productname_org",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "total",
+        "data_type": "numeric",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "distcode",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "comcode",
+        "data_type": "numeric",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "code",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "productcode",
+        "data_type": "numeric",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "zone_name",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "region_name",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "newcode",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "fiscal_year",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "coname",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "month_name",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "netweight_tmt",
+        "data_type": "numeric",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "com_type",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "productname",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "prod1",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "entity_id",
+        "data_type": "numeric",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "updated_at",
+        "data_type": "date",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "created_at",
+        "data_type": "date",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "ro",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      }
+    ],
+    "primary_key": "",
+    "foreign_keys": []
+  },
+  "m60_level": {
+    "columns": [
+      {
+        "name": "sbu",
+        "data_type": "integer",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "sbu_name",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "zone",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "zone_name",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "region",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "region_name",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "sa",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "salesarea_name",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "product",
+        "data_type": "numeric",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "productname",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "uom",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "invoice_dt",
+        "data_type": "integer",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "target_qty_kl",
+        "data_type": "integer",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "target_qty_tmt",
+        "data_type": "numeric",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "fiscal_year",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "cur_fiscal_year",
+        "data_type": "integer",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "orgsbucd",
+        "data_type": "numeric",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "orgsbuname",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "orgzonecd",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "orgzonename",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "orgrocd",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "orgroname",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "orgsacd",
+        "data_type": "numeric",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "orgsaname",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "productcode",
+        "data_type": "numeric",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "materialgroupname",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "curfiscalyear",
+        "data_type": "numeric",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "fiscalyear",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "yearmonth",
+        "data_type": "numeric",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "netweight_uom",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "netweight_kg",
+        "data_type": "numeric",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "netweight_tmt",
+        "data_type": "numeric",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "total_days_till_presentday",
+        "data_type": "integer",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "number_of_sundays_till_presentday",
+        "data_type": "integer",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "target_round",
+        "data_type": "numeric",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "actual_round",
+        "data_type": "numeric",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "finalsum",
+        "data_type": "numeric",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "finalactualsum",
+        "data_type": "numeric",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "maxpendingdays",
+        "data_type": "integer",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "working_days_till_presentday_withoutsundays",
+        "data_type": "integer",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "rate_per_day_required_mmt",
+        "data_type": "numeric",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "rate_per_day_current_mmt",
+        "data_type": "integer",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "total_days_in_fy",
+        "data_type": "integer",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "pending_days",
+        "data_type": "integer",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "month_year",
+        "data_type": "integer",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "month_name",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "fy_month",
+        "data_type": "integer",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "year_monthname",
+        "data_type": "date",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "target_quantity_tmtt",
+        "data_type": "numeric",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "prediction_value",
+        "data_type": "numeric",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "act_tgt_achievement",
+        "data_type": "numeric",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "zone_region_achievement",
+        "data_type": "numeric",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "product_achievement",
+        "data_type": "numeric",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "engine_id",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      }
+    ],
+    "primary_key": "",
+    "foreign_keys": []
+  },
+  "mom_level": {
+    "columns": [
+      {
+        "name": "orgsbucd",
+        "data_type": "integer",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "sbu_name",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "orgzonecd",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "zone_name",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "orgrocd",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "region_name",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "orgsacd",
+        "data_type": "integer",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "salesarea_name",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "productcode",
+        "data_type": "integer",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "productname",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "curfiscalyear",
+        "data_type": "integer",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "fiscalyear",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "yearmonth",
+        "data_type": "integer",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "netweight_uom",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "netweight_kg",
+        "data_type": "numeric",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "netweight_tmt",
+        "data_type": "numeric",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "fiscal_year",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "engine_id",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "month_name",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "day_id",
+        "data_type": "date",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "distribution_channel_cd",
+        "data_type": "integer",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "material_group_cd",
+        "data_type": "integer",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "plant_cd",
+        "data_type": "integer",
+        "nullable": true,
+        "default": null
+      }
+    ],
+    "primary_key": "",
+    "foreign_keys": []
+  },
+  "nl_sql_pairs": {
+    "columns": [
+      {
+        "name": "id",
+        "data_type": "integer",
+        "nullable": false,
+        "default": "nextval('nl_sql_pairs_id_seq'::regclass)"
+      },
+      {
+        "name": "question",
+        "data_type": "text",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "sql_query",
+        "data_type": "text",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "intent",
+        "data_type": "character varying",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "question_embedding",
+        "data_type": "USER-DEFINED",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "embedding_model",
+        "data_type": "text",
+        "nullable": false,
+        "default": "'legacy'::text"
+      },
+      {
+        "name": "created_at",
+        "data_type": "timestamp without time zone",
+        "nullable": true,
+        "default": "now()"
+      }
+    ],
+    "primary_key": "id",
+    "foreign_keys": []
+  },
+  "nlpsql_business_rule_embeddings": {
+    "columns": [
+      {
+        "name": "id",
+        "data_type": "integer",
+        "nullable": false,
+        "default": "nextval('nlpsql_business_rule_embeddings_id_seq'::regclass)"
+      },
+      {
+        "name": "rule_id",
+        "data_type": "text",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "name",
+        "data_type": "text",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "description",
+        "data_type": "text",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "condition",
+        "data_type": "text",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "action",
+        "data_type": "text",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "sql_template",
+        "data_type": "text",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "embedding",
+        "data_type": "USER-DEFINED",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "tsv",
+        "data_type": "tsvector",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "created_at",
+        "data_type": "timestamp without time zone",
+        "nullable": true,
+        "default": "now()"
+      }
+    ],
+    "primary_key": "id",
+    "foreign_keys": []
+  },
+  "nlpsql_join_path_embeddings": {
+    "columns": [
+      {
+        "name": "id",
+        "data_type": "integer",
+        "nullable": false,
+        "default": "nextval('nlpsql_join_path_embeddings_id_seq'::regclass)"
+      },
+      {
+        "name": "source_table",
+        "data_type": "text",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "target_table",
+        "data_type": "text",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "join_condition",
+        "data_type": "text",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "description",
+        "data_type": "text",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "embedding",
+        "data_type": "USER-DEFINED",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "tsv",
+        "data_type": "tsvector",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "created_at",
+        "data_type": "timestamp without time zone",
+        "nullable": true,
+        "default": "now()"
+      }
+    ],
+    "primary_key": "id",
+    "foreign_keys": []
+  },
+  "nlpsql_kpi_embeddings": {
+    "columns": [
+      {
+        "name": "id",
+        "data_type": "integer",
+        "nullable": false,
+        "default": "nextval('nlpsql_kpi_embeddings_id_seq'::regclass)"
+      },
+      {
+        "name": "kpi_name",
+        "data_type": "text",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "description",
+        "data_type": "text",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "formula",
+        "data_type": "text",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "embedding",
+        "data_type": "USER-DEFINED",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "tsv",
+        "data_type": "tsvector",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "created_at",
+        "data_type": "timestamp without time zone",
+        "nullable": true,
+        "default": "now()"
+      }
+    ],
+    "primary_key": "id",
+    "foreign_keys": []
+  },
+  "nlpsql_ontology_embeddings": {
+    "columns": [
+      {
+        "name": "id",
+        "data_type": "integer",
+        "nullable": false,
+        "default": "nextval('nlpsql_ontology_embeddings_id_seq'::regclass)"
+      },
+      {
+        "name": "concept_key",
+        "data_type": "text",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "canonical_name",
+        "data_type": "text",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "definition",
+        "data_type": "text",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "synonyms",
+        "data_type": "text",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "embedding",
+        "data_type": "USER-DEFINED",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "tsv",
+        "data_type": "tsvector",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "created_at",
+        "data_type": "timestamp without time zone",
+        "nullable": true,
+        "default": "now()"
+      }
+    ],
+    "primary_key": "id",
+    "foreign_keys": []
+  },
+  "nlpsql_query_history": {
+    "columns": [
+      {
+        "name": "id",
+        "data_type": "integer",
+        "nullable": false,
+        "default": "nextval('nlpsql_query_history_id_seq'::regclass)"
+      },
+      {
+        "name": "question",
+        "data_type": "text",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "generated_sql",
+        "data_type": "text",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "complexity",
+        "data_type": "character varying",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "was_valid",
+        "data_type": "boolean",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "execution_time_ms",
+        "data_type": "integer",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "row_count",
+        "data_type": "integer",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "error_message",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "feedback",
+        "data_type": "integer",
+        "nullable": true,
+        "default": "0"
+      },
+      {
+        "name": "created_at",
+        "data_type": "timestamp without time zone",
+        "nullable": true,
+        "default": "CURRENT_TIMESTAMP"
+      }
+    ],
+    "primary_key": "id",
+    "foreign_keys": []
+  },
+  "nlpsql_query_pattern_cache": {
+    "columns": [
+      {
+        "name": "execution_fingerprint",
+        "data_type": "text",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "pattern_id",
+        "data_type": "text",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "question_fingerprint",
+        "data_type": "text",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "sql_fingerprint",
+        "data_type": "text",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "question",
+        "data_type": "text",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "sql",
+        "data_type": "text",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "parameterized_sql",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "params_json",
+        "data_type": "jsonb",
+        "nullable": false,
+        "default": "'[]'::jsonb"
+      },
+      {
+        "name": "columns_json",
+        "data_type": "jsonb",
+        "nullable": false,
+        "default": "'[]'::jsonb"
+      },
+      {
+        "name": "rows_json",
+        "data_type": "jsonb",
+        "nullable": false,
+        "default": "'[]'::jsonb"
+      },
+      {
+        "name": "row_count",
+        "data_type": "integer",
+        "nullable": false,
+        "default": "0"
+      },
+      {
+        "name": "execution_time_ms",
+        "data_type": "integer",
+        "nullable": false,
+        "default": "0"
+      },
+      {
+        "name": "created_at",
+        "data_type": "timestamp without time zone",
+        "nullable": true,
+        "default": "now()"
+      },
+      {
+        "name": "updated_at",
+        "data_type": "timestamp without time zone",
+        "nullable": true,
+        "default": "now()"
+      },
+      {
+        "name": "hit_count",
+        "data_type": "integer",
+        "nullable": false,
+        "default": "0"
+      },
+      {
+        "name": "verification_status",
+        "data_type": "text",
+        "nullable": false,
+        "default": "'candidate'::text"
+      }
+    ],
+    "primary_key": "execution_fingerprint",
+    "foreign_keys": []
+  },
+  "nlpsql_rejected_sql": {
+    "columns": [
+      {
+        "name": "question_fingerprint",
+        "data_type": "text",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "normalized_question",
+        "data_type": "text",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "question",
+        "data_type": "text",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "sql_fingerprint",
+        "data_type": "text",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "sql",
+        "data_type": "text",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "source_query_id",
+        "data_type": "integer",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "rejection_reason",
+        "data_type": "text",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "created_at",
+        "data_type": "timestamp without time zone",
+        "nullable": true,
+        "default": "now()"
+      },
+      {
+        "name": "updated_at",
+        "data_type": "timestamp without time zone",
+        "nullable": true,
+        "default": "now()"
+      }
+    ],
+    "primary_key": [
+      "question_fingerprint",
+      "sql_fingerprint"
+    ],
+    "foreign_keys": []
+  },
+  "nlpsql_schema_embeddings": {
+    "columns": [
+      {
+        "name": "id",
+        "data_type": "integer",
+        "nullable": false,
+        "default": "nextval('nlpsql_schema_embeddings_id_seq'::regclass)"
+      },
+      {
+        "name": "table_name",
+        "data_type": "text",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "column_name",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "description",
+        "data_type": "text",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "embedding",
+        "data_type": "USER-DEFINED",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "embedding_model",
+        "data_type": "text",
+        "nullable": false,
+        "default": "'legacy'::text"
+      },
+      {
+        "name": "metadata",
+        "data_type": "jsonb",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "created_at",
+        "data_type": "timestamp without time zone",
+        "nullable": true,
+        "default": "now()"
+      }
+    ],
+    "primary_key": "id",
+    "foreign_keys": []
+  },
+  "nlpsql_semantic_cache": {
+    "columns": [
+      {
+        "name": "id",
+        "data_type": "integer",
+        "nullable": false,
+        "default": "nextval('nlpsql_semantic_cache_id_seq'::regclass)"
+      },
+      {
+        "name": "question",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "sql_query",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "created_at",
+        "data_type": "timestamp without time zone",
+        "nullable": true,
+        "default": "CURRENT_TIMESTAMP"
+      },
+      {
+        "name": "embedding",
+        "data_type": "USER-DEFINED",
+        "nullable": true,
+        "default": null
+      }
+    ],
+    "primary_key": "id",
+    "foreign_keys": []
+  },
+  "nlpsql_verified_sql_cache": {
+    "columns": [
+      {
+        "name": "id",
+        "data_type": "integer",
+        "nullable": false,
+        "default": "nextval('nlpsql_verified_sql_cache_id_seq'::regclass)"
+      },
+      {
+        "name": "question_fingerprint",
+        "data_type": "text",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "normalized_question",
+        "data_type": "text",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "question",
+        "data_type": "text",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "sql",
+        "data_type": "text",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "sql_fingerprint",
+        "data_type": "text",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "schema_fingerprint",
+        "data_type": "text",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "cache_version",
+        "data_type": "text",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "compiler_version",
+        "data_type": "text",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "ontology_version",
+        "data_type": "text",
+        "nullable": false,
+        "default": null
+      },
+      {
+        "name": "status",
+        "data_type": "text",
+        "nullable": false,
+        "default": "'candidate'::text"
+      },
+      {
+        "name": "source_query_id",
+        "data_type": "integer",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "rejection_reason",
+        "data_type": "text",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "verified_at",
+        "data_type": "timestamp without time zone",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "rejected_at",
+        "data_type": "timestamp without time zone",
+        "nullable": true,
+        "default": null
+      },
+      {
+        "name": "created_at",
+        "data_type": "timestamp without time zone",
+        "nullable": true,
+        "default": "now()"
+      },
+      {
+        "name": "updated_at",
+        "data_type": "timestamp without time zone",
+        "nullable": true,
+        "default": "now()"
+      },
+      {
+        "name": "hit_count",
+        "data_type": "integer",
+        "nullable": false,
+        "default": "0"
+      }
+    ],
+    "primary_key": "id",
+    "foreign_keys": []
+  }
+}

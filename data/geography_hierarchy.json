@@ -1,0 +1,1372 @@
+{
+  "hierarchy_levels": [
+    "country",
+    "state",
+    "region",
+    "zone",
+    "district"
+  ],
+  "root": {
+    "name": "INDIA",
+    "level": "country",
+    "states": {
+      "ANDAMAN & NICOBAR ISLANDS": {
+        "name": "ANDAMAN & NICOBAR ISLANDS",
+        "level": "state",
+        "regions": {
+          "EAST": {
+            "name": "EAST",
+            "level": "region",
+            "zones": {
+              "EZ": {
+                "name": "EZ",
+                "level": "zone",
+                "districts": [
+                  "NORTH MIDDLE ANDAMANS"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "ANDHRA PRADESH": {
+        "name": "ANDHRA PRADESH",
+        "level": "state",
+        "regions": {
+          "SOUTH": {
+            "name": "SOUTH",
+            "level": "region",
+            "zones": {
+              "SCZ": {
+                "name": "SCZ",
+                "level": "zone",
+                "districts": [
+                  "ALLURI SITHARAMA RAJU",
+                  "ANAKAPALLI",
+                  "ANANTAPUR",
+                  "ANNAMAYYA",
+                  "BAPATLA",
+                  "CHITTOOR",
+                  "EAST GODAVARI",
+                  "ELURU",
+                  "GUNTUR",
+                  "KAKINADA",
+                  "KONASEEMA",
+                  "KRISHNA",
+                  "KURNOOL",
+                  "NANDYAL",
+                  "NTR",
+                  "PALNADU",
+                  "PARVATHIPURAM MANYAM",
+                  "PRAKASAM",
+                  "SRI POTTI SRIRAMULU NELLORE",
+                  "SRI SATHYA SAI",
+                  "SRIKAKULAM",
+                  "TIRUPATI",
+                  "VISAKHAPATNAM",
+                  "VIZIANAGARAM",
+                  "WEST GODAVARI",
+                  "Y.S.R KADAPA"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "ARUNACHAL PRADESH": {
+        "name": "ARUNACHAL PRADESH",
+        "level": "state",
+        "regions": {
+          "NORTH EAST": {
+            "name": "NORTH EAST",
+            "level": "region",
+            "zones": {
+              "EZ": {
+                "name": "EZ",
+                "level": "zone",
+                "districts": [
+                  "EAST KAMENG",
+                  "LONGDING",
+                  "LOWER SIANG",
+                  "LOWER SUBANSIRI",
+                  "PAPUM PARE",
+                  "TAWANG",
+                  "WEST KAMENG"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "ASSAM": {
+        "name": "ASSAM",
+        "level": "state",
+        "regions": {
+          "NORTH EAST": {
+            "name": "NORTH EAST",
+            "level": "region",
+            "zones": {
+              "EZ": {
+                "name": "EZ",
+                "level": "zone",
+                "districts": [
+                  "BARPETA",
+                  "BASKA",
+                  "BISWANATH",
+                  "BONGAIGAON",
+                  "CACHAR",
+                  "CHARAIDEO",
+                  "CHIRANG",
+                  "DARRANG",
+                  "DHEMAJI",
+                  "DHUBRI",
+                  "DIMA HASAO",
+                  "GOALPARA",
+                  "GOLAGHAT",
+                  "HAILAKANDI",
+                  "HOJAI",
+                  "JORHAT",
+                  "KAMRUP",
+                  "KAMRUP METROPOLITAN",
+                  "KARBI ANGLONG",
+                  "KARIMGANJ",
+                  "KOKRAJHAR",
+                  "LAKHIMPUR",
+                  "MARIGAON",
+                  "NAGAON",
+                  "NALBARI",
+                  "SIBSAGAR",
+                  "SONITPUR",
+                  "TINSUKIA",
+                  "UDALGURI"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "BIHAR": {
+        "name": "BIHAR",
+        "level": "state",
+        "regions": {
+          "EAST": {
+            "name": "EAST",
+            "level": "region",
+            "zones": {
+              "NCZ": {
+                "name": "NCZ",
+                "level": "zone",
+                "districts": [
+                  "ARARIA",
+                  "ARWAL",
+                  "AURANGABAD",
+                  "BEGUSARAI",
+                  "BHAGALPUR",
+                  "BHOJPUR",
+                  "BUXAR",
+                  "CHAMPARAN-EAST",
+                  "CHAMPARAN-WEST",
+                  "DARBHANGA",
+                  "GAYA",
+                  "GOPALGANJ",
+                  "JAMUI",
+                  "JEHANABAD",
+                  "KAIMUR",
+                  "KATIHAR",
+                  "KHAGARIA",
+                  "KISHENGANJ",
+                  "LAKHISARAI",
+                  "MADHEPURA",
+                  "MADHUBANI",
+                  "MUNGER",
+                  "MUZZAFARPUR",
+                  "NALANDA",
+                  "NAWADA",
+                  "PATNA",
+                  "PURNIA",
+                  "ROHTAS",
+                  "SAHARSA",
+                  "SAMASTIPUR",
+                  "SARAN",
+                  "SHEOHAR",
+                  "SITAMARHI",
+                  "SIWAN",
+                  "SUPAUL",
+                  "VAISHALI"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "CHANDIGARH": {
+        "name": "CHANDIGARH",
+        "level": "state",
+        "regions": {
+          "NORTH": {
+            "name": "NORTH",
+            "level": "region",
+            "zones": {
+              "NZ": {
+                "name": "NZ",
+                "level": "zone",
+                "districts": [
+                  "CHANDIGARH"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "CHHATTISGARH": {
+        "name": "CHHATTISGARH",
+        "level": "state",
+        "regions": {
+          "WEST": {
+            "name": "WEST",
+            "level": "region",
+            "zones": {
+              "EZ": {
+                "name": "EZ",
+                "level": "zone",
+                "districts": [
+                  "BALOD",
+                  "BALODABAZAR",
+                  "BALRAMPUR",
+                  "BASTAR",
+                  "BEMETARA",
+                  "BILASPUR",
+                  "DANTEWADA",
+                  "DHAMTARI",
+                  "DURG",
+                  "JANJGIR CHAMPA",
+                  "JASHPUR",
+                  "KANKER",
+                  "KONDAGAON",
+                  "KORBA",
+                  "KOREA",
+                  "MAHASAMUND",
+                  "MUNGELI",
+                  "NARAINPUR",
+                  "RAIPUR",
+                  "RAJNANDGAON",
+                  "SUKMA",
+                  "SURAJPUR",
+                  "SURGUJA"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "DADRA & NAGAR HAVELI AND DAMAN & DIU": {
+        "name": "DADRA & NAGAR HAVELI AND DAMAN & DIU",
+        "level": "state",
+        "regions": {
+          "WEST": {
+            "name": "WEST",
+            "level": "region",
+            "zones": {
+              "NWZ": {
+                "name": "NWZ",
+                "level": "zone",
+                "districts": [
+                  "DADRA & NAGAR HAVELI",
+                  "DAMAN",
+                  "DIU"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "DELHI": {
+        "name": "DELHI",
+        "level": "state",
+        "regions": {
+          "NORTH": {
+            "name": "NORTH",
+            "level": "region",
+            "zones": {
+              "NZ": {
+                "name": "NZ",
+                "level": "zone",
+                "districts": [
+                  "CENTRAL DELHI",
+                  "EAST DELHI",
+                  "NEW DELHI",
+                  "NORTH DELHI",
+                  "NORTH EAST DELHI",
+                  "NORTH WEST DELHI",
+                  "SHAHDARA",
+                  "SOUTH DELHI",
+                  "SOUTH EAST DELHI",
+                  "SOUTH WEST DELHI",
+                  "WEST DELHI"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "GOA": {
+        "name": "GOA",
+        "level": "state",
+        "regions": {
+          "WEST": {
+            "name": "WEST",
+            "level": "region",
+            "zones": {
+              "WZ": {
+                "name": "WZ",
+                "level": "zone",
+                "districts": [
+                  "NORTH GOA"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "GUJARAT": {
+        "name": "GUJARAT",
+        "level": "state",
+        "regions": {
+          "WEST": {
+            "name": "WEST",
+            "level": "region",
+            "zones": {
+              "NWZ": {
+                "name": "NWZ",
+                "level": "zone",
+                "districts": [
+                  "AHMEDABAD",
+                  "AMRELI",
+                  "ANAND",
+                  "ARVALLI",
+                  "BANAS KANTHA",
+                  "BHARUCH",
+                  "BHAVNAGAR",
+                  "BOTAD",
+                  "CHHOTAUDEPUR",
+                  "DAHOD",
+                  "DEVBHUMI DWARKA",
+                  "GANDHINAGAR",
+                  "GIR SOMNATH",
+                  "JAMNAGAR",
+                  "JUNAGADH",
+                  "KHEDA",
+                  "KUTCH",
+                  "MAHISAGAR",
+                  "MEHSANA",
+                  "MORBI",
+                  "NARMADA",
+                  "NAVSARI",
+                  "PANCH MAHALS",
+                  "PATAN",
+                  "PORBANDAR",
+                  "RAJKOT",
+                  "SABARKANTHA",
+                  "SURAT",
+                  "SURENDRANAGAR",
+                  "TAPI",
+                  "VADODARA",
+                  "VALSAD"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "HARYANA": {
+        "name": "HARYANA",
+        "level": "state",
+        "regions": {
+          "NORTH": {
+            "name": "NORTH",
+            "level": "region",
+            "zones": {
+              "NZ": {
+                "name": "NZ",
+                "level": "zone",
+                "districts": [
+                  "AMBALA",
+                  "BHIWANI",
+                  "CHARKI DADRI",
+                  "FARIDABAD",
+                  "FATEHABAD",
+                  "GURUGRAM",
+                  "HISAR",
+                  "JHAJJAR",
+                  "JIND",
+                  "KAITHAL",
+                  "KARNAL",
+                  "KURUKSHETRA",
+                  "MAHENDRAGARH",
+                  "MEWAT",
+                  "PALWAL",
+                  "PANCHKULA",
+                  "PANIPAT",
+                  "ROHTAK",
+                  "SIRSA",
+                  "SONIPAT",
+                  "YAMUNA NAGAR"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "HIMACHAL PRADESH": {
+        "name": "HIMACHAL PRADESH",
+        "level": "state",
+        "regions": {
+          "NORTH": {
+            "name": "NORTH",
+            "level": "region",
+            "zones": {
+              "NZ": {
+                "name": "NZ",
+                "level": "zone",
+                "districts": [
+                  "BILASPUR",
+                  "CHAMBA",
+                  "KANGRA",
+                  "KINNAUR",
+                  "KULU",
+                  "LAHAUL & SPITI",
+                  "SHIMLA",
+                  "SIRMAUR",
+                  "SOLON",
+                  "UNA"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "JAMMU & KASHMIR": {
+        "name": "JAMMU & KASHMIR",
+        "level": "state",
+        "regions": {
+          "NORTH": {
+            "name": "NORTH",
+            "level": "region",
+            "zones": {
+              "NZ": {
+                "name": "NZ",
+                "level": "zone",
+                "districts": [
+                  "ANANTNAG",
+                  "BANDIPORA",
+                  "BARAMULLA",
+                  "BUDGAM",
+                  "DODA",
+                  "GANDERBAL",
+                  "JAMMU",
+                  "KATHUA",
+                  "KISHTWAR",
+                  "KULGAM",
+                  "KUPWARA",
+                  "POONCH",
+                  "PULWAMA",
+                  "RAJOURI",
+                  "RAMBAN",
+                  "REASI",
+                  "SAMBA",
+                  "SHOPIAN",
+                  "SRINAGAR",
+                  "UDHAMPUR"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "JHARKHAND": {
+        "name": "JHARKHAND",
+        "level": "state",
+        "regions": {
+          "EAST": {
+            "name": "EAST",
+            "level": "region",
+            "zones": {
+              "EZ": {
+                "name": "EZ",
+                "level": "zone",
+                "districts": [
+                  "BOKARO",
+                  "CHATRA",
+                  "DEOGHAR",
+                  "DHANBAD",
+                  "DUMKA",
+                  "EAST SINGHBHUM",
+                  "GARHWA",
+                  "GIRIDIH",
+                  "GODDA",
+                  "GUMLA",
+                  "HAZARIBAGH",
+                  "JAMTARA",
+                  "KHUNTI",
+                  "KODERMA",
+                  "LATEHAR",
+                  "LOHARDAGA",
+                  "PAKAUR",
+                  "PALAMAU",
+                  "RAMGARH",
+                  "RANCHI",
+                  "SAHIBGANJ",
+                  "SARAIKELA KHARASAWAN",
+                  "SIMDEGA",
+                  "WEST SINGHBHUM"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "KARNATAKA": {
+        "name": "KARNATAKA",
+        "level": "state",
+        "regions": {
+          "SOUTH": {
+            "name": "SOUTH",
+            "level": "region",
+            "zones": {
+              "SZ": {
+                "name": "SZ",
+                "level": "zone",
+                "districts": [
+                  "BAGALKOT",
+                  "BANGALORE RURAL",
+                  "BANGALORE URBAN",
+                  "BELGAUM",
+                  "BELLARY",
+                  "BIDAR",
+                  "BIJAPUR",
+                  "CHAMARAJANAGAR",
+                  "CHICKAMAGALUR",
+                  "CHICKBALLAPUR",
+                  "CHITRADURGA",
+                  "DAKSHIN KANNADA- MANGALORE",
+                  "DAVANGERE",
+                  "DHARWAD",
+                  "GADAG",
+                  "GULBARGA",
+                  "HASSAN",
+                  "HAVERI",
+                  "KODAGU",
+                  "KOLAR",
+                  "KOPPAL",
+                  "MANDYA",
+                  "MYSORE",
+                  "RAICHUR",
+                  "RAMNAGARAM",
+                  "SHIMOGA",
+                  "TUMKUR",
+                  "UDUPI",
+                  "UTTAR KANNADA",
+                  "VIJAYANAGARA",
+                  "YADGIR"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "KERALA": {
+        "name": "KERALA",
+        "level": "state",
+        "regions": {
+          "SOUTH": {
+            "name": "SOUTH",
+            "level": "region",
+            "zones": {
+              "SZ": {
+                "name": "SZ",
+                "level": "zone",
+                "districts": [
+                  "ALAPPUZHA",
+                  "ERNAKULAM",
+                  "IDUKKI",
+                  "KANNUR",
+                  "KASARAGOD",
+                  "KOLLAM",
+                  "KOTTAYAM",
+                  "KOZHIKODE",
+                  "MALAPPURAM",
+                  "PALAKKAD",
+                  "PATHANAMTHITTA",
+                  "THIRUVANANTHAPURAM",
+                  "THRISSUR",
+                  "WAYANAD"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "LADAKH": {
+        "name": "LADAKH",
+        "level": "state",
+        "regions": {
+          "NORTH": {
+            "name": "NORTH",
+            "level": "region",
+            "zones": {
+              "NZ": {
+                "name": "NZ",
+                "level": "zone",
+                "districts": [
+                  "KARGIL",
+                  "LEH"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "LAKSHADWEEP": {
+        "name": "LAKSHADWEEP",
+        "level": "state",
+        "regions": {
+          "SOUTH": {
+            "name": "SOUTH",
+            "level": "region",
+            "zones": {
+              "SZ": {
+                "name": "SZ",
+                "level": "zone",
+                "districts": [
+                  "LAKSHADWEEP"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "MADHYA PRADESH": {
+        "name": "MADHYA PRADESH",
+        "level": "state",
+        "regions": {
+          "WEST": {
+            "name": "WEST",
+            "level": "region",
+            "zones": {
+              "NWZ": {
+                "name": "NWZ",
+                "level": "zone",
+                "districts": [
+                  "AGAR MALWA",
+                  "ALIRAJPUR",
+                  "ANUPUR",
+                  "ASHOKNAGAR",
+                  "BADWANI",
+                  "BALAGHAT",
+                  "BETUL",
+                  "BHIND",
+                  "BHOPAL",
+                  "BURHANPUR",
+                  "CHHATARPUR",
+                  "CHHINDWARE",
+                  "DAMOH",
+                  "DATIA",
+                  "DEWAS",
+                  "DHAR",
+                  "DINDORI",
+                  "GUNA",
+                  "GWALIOR",
+                  "HARDA",
+                  "HOSHANGABAD",
+                  "INDORE",
+                  "JABALPUR",
+                  "JAHBUA",
+                  "KATNI",
+                  "KHANDWA",
+                  "KHARGONE",
+                  "MANDLA",
+                  "MANDSAUR",
+                  "MORENA",
+                  "NARSIMHAPUR",
+                  "NEEMACH",
+                  "NIWARI",
+                  "PANNA",
+                  "RAISEN",
+                  "RAJGARH",
+                  "RATLAM",
+                  "REWA",
+                  "SAGAR",
+                  "SATNA",
+                  "SEHORE",
+                  "SEONI",
+                  "SHAHDOL",
+                  "SHAJAPUR",
+                  "SHEOPUR",
+                  "SHIVPURI",
+                  "SIDHI",
+                  "SINGRAULI",
+                  "TIKAMGARH",
+                  "UJJAIN",
+                  "UMARIA",
+                  "VIDISHA"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "MAHARASHTRA": {
+        "name": "MAHARASHTRA",
+        "level": "state",
+        "regions": {
+          "WEST": {
+            "name": "WEST",
+            "level": "region",
+            "zones": {
+              "WZ": {
+                "name": "WZ",
+                "level": "zone",
+                "districts": [
+                  "AHMEDNAGAR",
+                  "AKOLA",
+                  "AMRAVATI",
+                  "AURANGABAD",
+                  "BEED",
+                  "BHANDARA",
+                  "BHULDANA",
+                  "CHANDRAPUR",
+                  "DHULE",
+                  "GADCHIROLI",
+                  "GONDIA",
+                  "HINGOLI",
+                  "JALGAON",
+                  "JALNA",
+                  "KOLHAPUR",
+                  "LATUR",
+                  "MUMBAI CITY",
+                  "MUMBAI SUBURBAN",
+                  "NAGPUR",
+                  "NANDED",
+                  "NANDURBAR",
+                  "NASIK",
+                  "OSMANABAD",
+                  "PALGHAR",
+                  "PARBHANI",
+                  "PUNE",
+                  "RAIGAD",
+                  "RATNAGIRI",
+                  "SANGLI",
+                  "SATARA",
+                  "SHOLAPUR",
+                  "SINDHUDURG",
+                  "THANA",
+                  "WARDHA",
+                  "WASHIM",
+                  "YAVATMAL"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "MANIPUR": {
+        "name": "MANIPUR",
+        "level": "state",
+        "regions": {
+          "NORTH EAST": {
+            "name": "NORTH EAST",
+            "level": "region",
+            "zones": {
+              "EZ": {
+                "name": "EZ",
+                "level": "zone",
+                "districts": [
+                  "BISHNUPUR",
+                  "IMPHAL WEST",
+                  "JIRIBAM",
+                  "KAKCHING",
+                  "KANGPOKPI",
+                  "THOUBAL"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "MEGHALAYA": {
+        "name": "MEGHALAYA",
+        "level": "state",
+        "regions": {
+          "NORTH EAST": {
+            "name": "NORTH EAST",
+            "level": "region",
+            "zones": {
+              "EZ": {
+                "name": "EZ",
+                "level": "zone",
+                "districts": [
+                  "EAST KHASI HILLS",
+                  "NORTH GARO HILLS",
+                  "SOUTH WEST GARO HILLS",
+                  "WEST GARO HILLS"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "MIZORAM": {
+        "name": "MIZORAM",
+        "level": "state",
+        "regions": {
+          "NORTH EAST": {
+            "name": "NORTH EAST",
+            "level": "region",
+            "zones": {
+              "EZ": {
+                "name": "EZ",
+                "level": "zone",
+                "districts": [
+                  "AIZAWL",
+                  "LAWNGTLAI",
+                  "LUNGLEI",
+                  "SAIHA"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "NAGALAND": {
+        "name": "NAGALAND",
+        "level": "state",
+        "regions": {
+          "NORTH EAST": {
+            "name": "NORTH EAST",
+            "level": "region",
+            "zones": {
+              "EZ": {
+                "name": "EZ",
+                "level": "zone",
+                "districts": [
+                  "DIMAPUR",
+                  "KOHIMA",
+                  "MOKOKCHUNG",
+                  "TSEMINYU",
+                  "WOKHA"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "ODISHA": {
+        "name": "ODISHA",
+        "level": "state",
+        "regions": {
+          "EAST": {
+            "name": "EAST",
+            "level": "region",
+            "zones": {
+              "EZ": {
+                "name": "EZ",
+                "level": "zone",
+                "districts": [
+                  "ANGUL",
+                  "BALASORE",
+                  "BARGARH",
+                  "BHADRAK",
+                  "BOLANGIR",
+                  "BOUDH",
+                  "CUTTACK",
+                  "DEOGARH",
+                  "DHENKANAL",
+                  "GAJAPATI",
+                  "GANJAM",
+                  "JAGATSINGHAPUR",
+                  "JAJPUR",
+                  "JHARSUGUDA",
+                  "KALAHANDI",
+                  "KANDHAMAL",
+                  "KENDRAPARA",
+                  "KEONJHAR",
+                  "KHURDA",
+                  "KORAPUT",
+                  "MALKANGIRI",
+                  "MAYURBHANJ",
+                  "NABARANGAPUR",
+                  "NAYAGARH",
+                  "NUAPADA",
+                  "PURI",
+                  "RAYAGADA",
+                  "SAMBALPUR",
+                  "SONEPUR",
+                  "SUNDARGARH"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "PUDUCHERRY": {
+        "name": "PUDUCHERRY",
+        "level": "state",
+        "regions": {
+          "SOUTH": {
+            "name": "SOUTH",
+            "level": "region",
+            "zones": {
+              "SCZ": {
+                "name": "SCZ",
+                "level": "zone",
+                "districts": [
+                  "YANAM"
+                ]
+              },
+              "SZ": {
+                "name": "SZ",
+                "level": "zone",
+                "districts": [
+                  "KARAIKAL",
+                  "MAHE",
+                  "PONDICHERRY"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "PUNJAB": {
+        "name": "PUNJAB",
+        "level": "state",
+        "regions": {
+          "NORTH": {
+            "name": "NORTH",
+            "level": "region",
+            "zones": {
+              "NZ": {
+                "name": "NZ",
+                "level": "zone",
+                "districts": [
+                  "AMRITSAR",
+                  "BARNALA",
+                  "BATHINDA",
+                  "FATEHGARH SAHIB",
+                  "FAZILKA",
+                  "FIROZPUR",
+                  "GURDASPUR",
+                  "HOSHIARPUR",
+                  "JALANDHAR",
+                  "KAPURTHALA",
+                  "LUDHIANA",
+                  "MALERKOTLA",
+                  "MANSA",
+                  "MOGA",
+                  "PATHANKOT",
+                  "PATIALA",
+                  "ROOPNAGAR",
+                  "S.A.S. NAGAR",
+                  "S.B.S. NAGAR",
+                  "SANGRUR",
+                  "SHRI MUKTSAR SAHIB",
+                  "TARNTARAN"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "RAJASTHAN": {
+        "name": "RAJASTHAN",
+        "level": "state",
+        "regions": {
+          "NORTH": {
+            "name": "NORTH",
+            "level": "region",
+            "zones": {
+              "NWZ": {
+                "name": "NWZ",
+                "level": "zone",
+                "districts": [
+                  "AJMER",
+                  "ALWAR",
+                  "BANSWARA",
+                  "BARAN",
+                  "BARMER",
+                  "BHARATPUR",
+                  "BHILWARA",
+                  "BIKANER",
+                  "BUNDI",
+                  "CHHITTORGARH",
+                  "CHURU",
+                  "DAUSA",
+                  "DHOLPUR",
+                  "DUNGARPUR",
+                  "HANUMANGARH",
+                  "JAIPUR",
+                  "JAISALMER",
+                  "JALORE",
+                  "JHALAWAR",
+                  "JHUNJUNU",
+                  "JODHPUR",
+                  "KARAULI",
+                  "KOTA",
+                  "NAGAUR",
+                  "PALI",
+                  "PRATAPGARH",
+                  "RAJSAMAND",
+                  "SAWAIMADHOPUR",
+                  "SIKAR",
+                  "SIROHI",
+                  "SRI GANGANAGAR",
+                  "TONK",
+                  "UDAIPUR"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "SIKKIM": {
+        "name": "SIKKIM",
+        "level": "state",
+        "regions": {
+          "NORTH EAST": {
+            "name": "NORTH EAST",
+            "level": "region",
+            "zones": {
+              "EZ": {
+                "name": "EZ",
+                "level": "zone",
+                "districts": [
+                  "GANGTOK",
+                  "GYALSHING",
+                  "MANGAN"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "TAMIL NADU": {
+        "name": "TAMIL NADU",
+        "level": "state",
+        "regions": {
+          "SOUTH": {
+            "name": "SOUTH",
+            "level": "region",
+            "zones": {
+              "SZ": {
+                "name": "SZ",
+                "level": "zone",
+                "districts": [
+                  "ARIYALUR",
+                  "CHENNAI",
+                  "COIMBATORE",
+                  "CUDDALORE",
+                  "Chengalpattu",
+                  "DHARMAPURI",
+                  "DINDIGUL",
+                  "ERODE",
+                  "KANCHEEPURAM",
+                  "KANYA-KUMARI",
+                  "KARUR",
+                  "KRISHNAGIRI",
+                  "Kallakurichi",
+                  "MADURAI",
+                  "MAYILADUTHURAI",
+                  "NAGAPATTINAM",
+                  "NAMAKKAL",
+                  "PERAMBALUR",
+                  "PUDUKKOTTAI",
+                  "RAMANATHAPURAM-Ennore",
+                  "Ranipet",
+                  "SALEM",
+                  "SIVAGANGA",
+                  "THANJAVUR",
+                  "THE NILGIRIS",
+                  "THENI",
+                  "TIRUCHIRAPPALLI",
+                  "TIRUNELVELI",
+                  "TIRUPPUR",
+                  "TIRUVALLUR",
+                  "TIRUVANNAMALAI",
+                  "TIRUVARUR",
+                  "TUTICORIN",
+                  "Tenkasi",
+                  "Tirupathur",
+                  "VELLORE",
+                  "VILUPPURAM",
+                  "VIRUDHUNAGAR"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "TELANGANA": {
+        "name": "TELANGANA",
+        "level": "state",
+        "regions": {
+          "SOUTH": {
+            "name": "SOUTH",
+            "level": "region",
+            "zones": {
+              "SCZ": {
+                "name": "SCZ",
+                "level": "zone",
+                "districts": [
+                  "ADILABAD",
+                  "BHADRADRI KOTHAGUDEM",
+                  "HYDERABAD",
+                  "JAGITIAL",
+                  "JANGOAN",
+                  "JAYASHANKAR-BHUPALPALLI",
+                  "KAMAREDDY",
+                  "KARIMNAGAR",
+                  "KHAMMAM",
+                  "KUMURAM BHEEM",
+                  "MAHABUBNAGAR",
+                  "MANCHERIAL",
+                  "MEDAK",
+                  "MEDCHAL-MALKAJGIRI",
+                  "NAGARKURUNOOL",
+                  "NALGONDA",
+                  "NARAYANPET",
+                  "NIRMAL",
+                  "NIZAMABAD",
+                  "PEDDAPALLI",
+                  "RAJANNA SIRCILLA",
+                  "RANGAREDDY",
+                  "SIDDIPET",
+                  "SURYAPET",
+                  "VIKARABAD",
+                  "WANAPARTHY",
+                  "WARANGAL RURAL",
+                  "WARANGAL URBAN",
+                  "YADADRI BHUVANAGIRI"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "TRIPURA": {
+        "name": "TRIPURA",
+        "level": "state",
+        "regions": {
+          "NORTH EAST": {
+            "name": "NORTH EAST",
+            "level": "region",
+            "zones": {
+              "EZ": {
+                "name": "EZ",
+                "level": "zone",
+                "districts": [
+                  "GOMATI",
+                  "SEPAHIJALA",
+                  "TRIPURA NORTH",
+                  "TRIPURA SOUTH"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "UTTAR PRADESH": {
+        "name": "UTTAR PRADESH",
+        "level": "state",
+        "regions": {
+          "NORTH": {
+            "name": "NORTH",
+            "level": "region",
+            "zones": {
+              "NCZ": {
+                "name": "NCZ",
+                "level": "zone",
+                "districts": [
+                  "AGRA",
+                  "ALIGARH",
+                  "ALLAHABAD",
+                  "AMBEDKAR NAGAR",
+                  "AMETHI",
+                  "AURAIYA",
+                  "AZAMGARH",
+                  "BAGHPAT",
+                  "BAHRAICH",
+                  "BALLIA",
+                  "BALRAMPUR",
+                  "BANDA",
+                  "BARA BANKI",
+                  "BAREILLY",
+                  "BASTI",
+                  "BIJNOR",
+                  "BUDAUN",
+                  "BULANDSHAHR",
+                  "CHANDAULI",
+                  "CHITRUKUT",
+                  "DEORIA",
+                  "ETAH",
+                  "ETAWAH",
+                  "FAIZABAD",
+                  "FARRUKHABAD",
+                  "FATEHPUR",
+                  "FIROZABAD",
+                  "GAUTAM BUDH NAGAR",
+                  "GHAZIABAD",
+                  "GHAZIPUR",
+                  "GONDA",
+                  "GORAKHPUR",
+                  "HAMIRPUR",
+                  "HAPUR",
+                  "HARDOI",
+                  "HATHRAS",
+                  "JALAUN",
+                  "JAUNPUR",
+                  "JHANSI",
+                  "KANNAUJ",
+                  "KANPUR DEHAT",
+                  "KANPUR NAGAR",
+                  "KAUSHAMBI",
+                  "KUSHINAGAR",
+                  "LAKHIMPUR",
+                  "LALITPUR",
+                  "LUCKNOW",
+                  "MAHARAJGANJ",
+                  "MAHOBA",
+                  "MAINPURI",
+                  "MATHURA",
+                  "MAU",
+                  "MEERUT",
+                  "MIRZAPUR",
+                  "MORADABAD",
+                  "MUZAFFARNAGAR",
+                  "PILBHIT",
+                  "PRATAPGARH",
+                  "RAE-BAREILLY",
+                  "RAMPUR",
+                  "SAHARANPUR",
+                  "SAMBHAL",
+                  "SANT KABIR NAGAR",
+                  "SANT RAVI DAS NAGAR",
+                  "SHAHJAHANPUR",
+                  "SHAMLI",
+                  "SHRAVASTI",
+                  "SIDHARATH NAGAR",
+                  "SITAPUR",
+                  "SONBHADRA",
+                  "SULTANPUR",
+                  "UNNAO",
+                  "VARANASI"
+                ]
+              },
+              "NZ": {
+                "name": "NZ",
+                "level": "zone",
+                "districts": [
+                  "AGRA",
+                  "ALIGARH",
+                  "AMROHA",
+                  "BAGHPAT",
+                  "BAREILLY",
+                  "BIJNOR",
+                  "BUDAUN",
+                  "BULANDSHAHR",
+                  "ETAH",
+                  "FARRUKHABAD",
+                  "FIROZABAD",
+                  "GAUTAM BUDH NAGAR",
+                  "GHAZIABAD",
+                  "HAPUR",
+                  "HATHRAS",
+                  "KASHI RAM NAGAR",
+                  "MAINPURI",
+                  "MATHURA",
+                  "MEERUT",
+                  "MORADABAD",
+                  "MUZAFFARNAGAR",
+                  "PILBHIT",
+                  "RAMPUR",
+                  "SAHARANPUR",
+                  "SAMBHAL",
+                  "SHAHJAHANPUR",
+                  "SHAMLI"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "UTTARAKHAND": {
+        "name": "UTTARAKHAND",
+        "level": "state",
+        "regions": {
+          "NORTH": {
+            "name": "NORTH",
+            "level": "region",
+            "zones": {
+              "NZ": {
+                "name": "NZ",
+                "level": "zone",
+                "districts": [
+                  "ALMORA",
+                  "BAGESHWAR",
+                  "CHAMOLI",
+                  "CHAMPAWAT",
+                  "DEHRADUN",
+                  "HARIDWAR",
+                  "NAINITAL",
+                  "PAURI GARHWAL",
+                  "PITHORAGARH",
+                  "RUDRAPRAYAG",
+                  "TEHRI GARHWAL",
+                  "UDHAM SINGH NAGAR",
+                  "UTTARKASHI"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "WEST BENGAL": {
+        "name": "WEST BENGAL",
+        "level": "state",
+        "regions": {
+          "EAST": {
+            "name": "EAST",
+            "level": "region",
+            "zones": {
+              "EZ": {
+                "name": "EZ",
+                "level": "zone",
+                "districts": [
+                  "ALIPURDUAR",
+                  "BANKURA",
+                  "BIRBHUM",
+                  "COOCHBEHAR",
+                  "DAKSHIN DINAJPUR",
+                  "DARJEELING",
+                  "HOOGHLY",
+                  "HOWRAH",
+                  "JALPAIGURI",
+                  "JHARGRAM",
+                  "KOLKATA",
+                  "MALDA",
+                  "MURSHIDABAD",
+                  "NADIA",
+                  "NORTH 24 PARGANAS",
+                  "PASCHIM BARDHAMAN",
+                  "PURBA BARDHAMAN",
+                  "PURBA MEDINIPUR",
+                  "PURULIA",
+                  "SOUTH 24 PARGANAS",
+                  "UTTAR DINAJPUR"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

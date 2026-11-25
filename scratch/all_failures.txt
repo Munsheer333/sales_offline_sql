@@ -1,0 +1,538 @@
+Total failures: 67
+
+--- Failure 1 ---
+Q: Show products having growth of more than 5% in actual volume in current fiscal year.
+Category: actual_volume
+Checks: Intent=True, Entities=True, Planner=False, Exec=True, Biz=True
+Error: None
+Gen SQL: SELECT productname, ROUND((SUM(netweight_tmt) - SUM(target_qty_tmt)) * 100.0 / SUM(target_qty_tmt), 2) AS growth_percentage FROM m60_level WHERE m60_level.fiscal_year = '2025-2026' GROUP BY productname HAVING ROUND((SUM(netweight_tmt) - SUM(target_qty_tmt)) * 100.0 / SUM(target_qty_tmt), 2) > 5;
+Exp SQL: SELECT productname, ROUND((SUM(netweight_tmt) - SUM(target_qty_tmt)) * 100.0 / SUM(target_qty_tmt), 2) AS growth_percentage FROM m60_level WHERE fiscal_year = '2025-2026' GROUP BY productname HAVING ROUND((SUM(netweight_tmt) - SUM(target_qty_tmt)) * 100.0 / SUM(target_qty_tmt), 2) > 5;
+
+--- Failure 2 ---
+Q: Compare HPCL and IOCL sales in West zone for FY 2024-2025.
+Category: comparison
+Checks: Intent=True, Entities=True, Planner=True, Exec=False, Biz=True
+Error: None
+Gen SQL: SELECT comname, ROUND(SUM(netweight_tmt)::numeric, 2) AS total_sales FROM industry_performance WHERE zone_name = 'WZ' AND fiscal_year = '2024-2025' AND comname IN ('HPCL', 'IOCL') GROUP BY comname;
+Exp SQL: SELECT comname, round(sum(netweight_tmt)::numeric, 2) AS total_sales FROM industry_performance WHERE comname IN ('HPCL', 'IOCL') AND zone_name = 'West' AND fiscal_year = '2024-2025' GROUP BY comname;
+
+--- Failure 3 ---
+Q: What is the sales growth percentage for NRL in HPCL Mkt FO SBU from FY 2023-2024 to FY FY 2025-2026?
+Category: growth
+Checks: Intent=True, Entities=True, Planner=True, Exec=False, Biz=False
+Error: Compiler refused plan: Sales comparison requires comparison-aware compilation
+Gen SQL: -- Compilation failed: Sales comparison requires comparison-aware compilation
+Exp SQL: WITH y1 AS (SELECT SUM(netweight_tmt) AS s1 FROM industry_performance WHERE comname = 'NRL' AND sbu_name = 'Retail' AND fiscal_year = '2023-2024'), y2 AS (SELECT SUM(netweight_tmt) AS s2 FROM industry_performance WHERE comname = 'NRL' AND sbu_name = 'Retail' AND fiscal_year = 'FY 2025-2026') SELECT ROUND(((y2.s2 - y1.s1) * 100.0) / y1.s1, 2) AS sales_growth_percentage FROM y1, y2;
+
+--- Failure 4 ---
+Q: Get the total target quantity in KL from M60_LEVEL for strategic business unit HPCL Mkt MS in NZ zone.
+Category: total_sales
+Checks: Intent=True, Entities=True, Planner=False, Exec=True, Biz=True
+Error: None
+Gen SQL: SELECT sum(target_qty_kl) AS total_target_kl FROM m60_level WHERE sbu_name = 'HPCL Mkt MS' AND zone_name = 'NZ';
+Exp SQL: SELECT sum(target_qty_kl) AS total_target_kl FROM m60_level WHERE sbu_name = 'HPCL Mkt MS' AND zone_name = 'NZ';
+
+--- Failure 5 ---
+Q: Get the total target quantity in KL from M60_LEVEL for strategic business unit LUBES in North West Frontier zone.
+Category: total_sales
+Checks: Intent=True, Entities=True, Planner=True, Exec=False, Biz=True
+Error: None
+Gen SQL: SELECT ROUND(SUM(target_qty_kl)::numeric, 2) AS sum_target_kl FROM m60_level WHERE sbu_name = 'Lubes' AND zone_name = 'North West Frontier';
+Exp SQL: SELECT ROUND(SUM(m60_level.target_qty_kl)::numeric, 2) AS sum_target_kl FROM m60_level WHERE m60_level.sbu_name = 'Lubes' AND m60_level.zone_name = 'North';
+
+--- Failure 6 ---
+Q: Get the total target quantity in KL from M60_LEVEL for strategic business unit Lubes in North Frontier zone.
+Category: total_sales
+Checks: Intent=True, Entities=True, Planner=True, Exec=False, Biz=True
+Error: None
+Gen SQL: SELECT ROUND(SUM(target_qty_kl)::numeric, 2) AS sum_target_kl FROM m60_level WHERE sbu_name = 'Lubes' AND zone_name = 'North Frontier Zone';
+Exp SQL: SELECT ROUND(SUM(m60_level.target_qty_kl)::numeric, 2) AS sum_target_kl FROM m60_level WHERE m60_level.sbu_name = 'Lubes' AND m60_level.zone_name = 'North';
+
+--- Failure 7 ---
+Q: Compare MRPL and IOCL sales in East zone for FY 2022-2023.
+Category: comparison
+Checks: Intent=True, Entities=True, Planner=True, Exec=False, Biz=True
+Error: None
+Gen SQL: SELECT comname, ROUND(SUM(netweight_tmt)::numeric, 2) AS total_sales FROM industry_performance WHERE zone_name = 'EZ' AND fiscal_year = '2022-2023' AND comname IN ('IOCL', 'MRPL') GROUP BY comname;
+Exp SQL: SELECT comname, round(sum(netweight_tmt)::numeric, 2) AS total_sales FROM industry_performance WHERE comname IN ('MRPL', 'IOCL') AND zone_name = 'East Zone' AND fiscal_year = '2022-2023' GROUP BY comname;
+
+--- Failure 8 ---
+Q: Find company wise market share percentage in East during 2025-2026.
+Category: market_share
+Checks: Intent=True, Entities=True, Planner=True, Exec=True, Biz=False
+Error: None
+Gen SQL: WITH company_sales AS (SELECT SUM(industry_performance.netweight_tmt) AS company_total FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.fiscal_year = '2025-2026'), total_market AS (SELECT SUM(industry_performance.netweight_tmt) AS market_total FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.fiscal_year = '2025-2026') SELECT ROUND((company_sales.company_total * 100.0) / NULLIF(total_market.market_total, 0), 2) AS market_share_percentage FROM company_sales CROSS JOIN total_market;
+Exp SQL: WITH company_sales AS (SELECT SUM(industry_performance.netweight_tmt) AS company_total FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.fiscal_year = '2025-2026'), total_market AS (SELECT SUM(industry_performance.netweight_tmt) AS market_total FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.fiscal_year = '2025-2026') SELECT ROUND((company_sales.company_total * 100.0) / NULLIF(total_market.market_total, 0), 2) AS market_share_percentage FROM company_sales CROSS JOIN total_market;
+
+--- Failure 9 ---
+Q: Find company wise market share percentage in SCZ during 2024-2025.
+Category: market_share
+Checks: Intent=True, Entities=True, Planner=True, Exec=True, Biz=False
+Error: None
+Gen SQL: WITH company_sales AS (SELECT SUM(industry_performance.netweight_tmt) AS company_total FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.fiscal_year = '2024-2025'), total_market AS (SELECT SUM(industry_performance.netweight_tmt) AS market_total FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.fiscal_year = '2024-2025') SELECT ROUND((company_sales.company_total * 100.0) / NULLIF(total_market.market_total, 0), 2) AS market_share_percentage FROM company_sales CROSS JOIN total_market;
+Exp SQL: WITH company_sales AS (SELECT SUM(industry_performance.netweight_tmt) AS company_total FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.fiscal_year = '2024-2025'), total_market AS (SELECT SUM(industry_performance.netweight_tmt) AS market_total FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.fiscal_year = '2024-2025') SELECT ROUND((company_sales.company_total * 100.0) / NULLIF(total_market.market_total, 0), 2) AS market_share_percentage FROM company_sales CROSS JOIN total_market;
+
+--- Failure 10 ---
+Q: Find company wise market share percentage in North West LPG during 2025-2026.
+Category: market_share
+Checks: Intent=True, Entities=True, Planner=True, Exec=True, Biz=False
+Error: None
+Gen SQL: WITH company_sales AS (SELECT SUM(industry_performance.netweight_tmt) AS company_total FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.productname = 'LPG' AND industry_performance.sbu_name = 'LPG' AND industry_performance.fiscal_year = '2025-2026'), total_market AS (SELECT SUM(industry_performance.netweight_tmt) AS market_total FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.productname = 'LPG' AND industry_performance.sbu_name = 'LPG' AND industry_performance.fiscal_year = '2025-2026') SELECT ROUND((company_sales.company_total * 100.0) / NULLIF(total_market.market_total, 0), 2) AS market_share_percentage FROM company_sales CROSS JOIN total_market;
+Exp SQL: WITH company_sales AS (SELECT SUM(industry_performance.netweight_tmt) AS company_total FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.productname = 'LPG' AND industry_performance.sbu_name = 'LPG' AND industry_performance.fiscal_year = '2025-2026'), total_market AS (SELECT SUM(industry_performance.netweight_tmt) AS market_total FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.productname = 'LPG' AND industry_performance.sbu_name = 'LPG' AND industry_performance.fiscal_year = '2025-2026') SELECT ROUND((company_sales.company_total * 100.0) / NULLIF(total_market.market_total, 0), 2) AS market_share_percentage FROM company_sales CROSS JOIN total_market;
+
+--- Failure 11 ---
+Q: Find company wise market share percentage in North Central Retail during 2025-2026.
+Category: market_share
+Checks: Intent=True, Entities=True, Planner=True, Exec=True, Biz=False
+Error: None
+Gen SQL: WITH company_sales AS (SELECT SUM(industry_performance.netweight_tmt) AS company_total FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.sbu_name = 'RETAIL' AND industry_performance.fiscal_year = '2025-2026'), total_market AS (SELECT SUM(industry_performance.netweight_tmt) AS market_total FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.sbu_name = 'RETAIL' AND industry_performance.fiscal_year = '2025-2026') SELECT ROUND((company_sales.company_total * 100.0) / NULLIF(total_market.market_total, 0), 2) AS market_share_percentage FROM company_sales CROSS JOIN total_market;
+Exp SQL: WITH company_sales AS (SELECT SUM(industry_performance.netweight_tmt) AS company_total FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.sbu_name = 'RETAIL' AND industry_performance.fiscal_year = '2025-2026'), total_market AS (SELECT SUM(industry_performance.netweight_tmt) AS market_total FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.sbu_name = 'RETAIL' AND industry_performance.fiscal_year = '2025-2026') SELECT ROUND((company_sales.company_total * 100.0) / NULLIF(total_market.market_total, 0), 2) AS market_share_percentage FROM company_sales CROSS JOIN total_market;
+
+--- Failure 12 ---
+Q: Find company wise market share percentage in EZ during 2022-2023.
+Category: market_share
+Checks: Intent=True, Entities=True, Planner=True, Exec=True, Biz=False
+Error: None
+Gen SQL: WITH company_sales AS (SELECT SUM(industry_performance.netweight_tmt) AS company_total FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.fiscal_year = '2022-2023'), total_market AS (SELECT SUM(industry_performance.netweight_tmt) AS market_total FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.fiscal_year = '2022-2023') SELECT ROUND((company_sales.company_total * 100.0) / NULLIF(total_market.market_total, 0), 2) AS market_share_percentage FROM company_sales CROSS JOIN total_market;
+Exp SQL: WITH company_sales AS (SELECT SUM(industry_performance.netweight_tmt) AS company_total FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.fiscal_year = '2022-2023'), total_market AS (SELECT SUM(industry_performance.netweight_tmt) AS market_total FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.fiscal_year = '2022-2023') SELECT ROUND((company_sales.company_total * 100.0) / NULLIF(total_market.market_total, 0), 2) AS market_share_percentage FROM company_sales CROSS JOIN total_market;
+
+--- Failure 13 ---
+Q: Find company wise market share percentage in South Central Retail during 2021-2022.
+Category: market_share
+Checks: Intent=True, Entities=True, Planner=True, Exec=True, Biz=False
+Error: None
+Gen SQL: WITH company_sales AS (SELECT SUM(industry_performance.netweight_tmt) AS company_total FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.sbu_name = 'RETAIL' AND industry_performance.fiscal_year = '2021-2022'), total_market AS (SELECT SUM(industry_performance.netweight_tmt) AS market_total FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.sbu_name = 'RETAIL' AND industry_performance.fiscal_year = '2021-2022') SELECT ROUND((company_sales.company_total * 100.0) / NULLIF(total_market.market_total, 0), 2) AS market_share_percentage FROM company_sales CROSS JOIN total_market;
+Exp SQL: WITH company_sales AS (SELECT SUM(industry_performance.netweight_tmt) AS company_total FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.sbu_name = 'RETAIL' AND industry_performance.fiscal_year = '2021-2022'), total_market AS (SELECT SUM(industry_performance.netweight_tmt) AS market_total FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.sbu_name = 'RETAIL' AND industry_performance.fiscal_year = '2021-2022') SELECT ROUND((company_sales.company_total * 100.0) / NULLIF(total_market.market_total, 0), 2) AS market_share_percentage FROM company_sales CROSS JOIN total_market;
+
+--- Failure 14 ---
+Q: Find company wise market share percentage in East during 2021-2022.
+Category: market_share
+Checks: Intent=True, Entities=True, Planner=True, Exec=True, Biz=False
+Error: None
+Gen SQL: WITH company_sales AS (SELECT SUM(industry_performance.netweight_tmt) AS company_total FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.fiscal_year = '2021-2022'), total_market AS (SELECT SUM(industry_performance.netweight_tmt) AS market_total FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.fiscal_year = '2021-2022') SELECT ROUND((company_sales.company_total * 100.0) / NULLIF(total_market.market_total, 0), 2) AS market_share_percentage FROM company_sales CROSS JOIN total_market;
+Exp SQL: WITH company_sales AS (SELECT SUM(industry_performance.netweight_tmt) AS company_total FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.fiscal_year = '2021-2022'), total_market AS (SELECT SUM(industry_performance.netweight_tmt) AS market_total FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.fiscal_year = '2021-2022') SELECT ROUND((company_sales.company_total * 100.0) / NULLIF(total_market.market_total, 0), 2) AS market_share_percentage FROM company_sales CROSS JOIN total_market;
+
+--- Failure 15 ---
+Q: Provide market share breakdown for all companies under SBU HPCL Mkt Retail for 2025-2026.
+Category: market_share
+Checks: Intent=True, Entities=True, Planner=True, Exec=True, Biz=False
+Error: None
+Gen SQL: WITH company_sales AS (SELECT SUM(industry_performance.netweight_tmt) AS company_total FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.comname = 'HPCL' AND industry_performance.sbu_name = 'RETAIL' AND industry_performance.fiscal_year = '2025-2026'), total_market AS (SELECT SUM(industry_performance.netweight_tmt) AS market_total FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.sbu_name = 'RETAIL' AND industry_performance.fiscal_year = '2025-2026') SELECT ROUND((company_sales.company_total * 100.0) / NULLIF(total_market.market_total, 0), 2) AS market_share_percentage FROM company_sales CROSS JOIN total_market;
+Exp SQL: WITH company_sales AS (SELECT SUM(industry_performance.netweight_tmt) AS company_total FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.comname = 'HPCL' AND industry_performance.sbu_name = 'RETAIL' AND industry_performance.fiscal_year = '2025-2026'), total_market AS (SELECT SUM(industry_performance.netweight_tmt) AS market_total FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.sbu_name = 'RETAIL' AND industry_performance.fiscal_year = '2025-2026') SELECT ROUND((company_sales.company_total * 100.0) / NULLIF(total_market.market_total, 0), 2) AS market_share_percentage FROM company_sales CROSS JOIN total_market;
+
+--- Failure 16 ---
+Q: Provide market share breakdown for all companies under SBU HPCL Mkt LPG for 2025-2026.
+Category: market_share
+Checks: Intent=True, Entities=True, Planner=True, Exec=True, Biz=False
+Error: None
+Gen SQL: WITH company_sales AS (SELECT SUM(industry_performance.netweight_tmt) AS company_total FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.comname = 'HPCL' AND industry_performance.productname = 'LPG' AND industry_performance.sbu_name = 'LPG' AND industry_performance.fiscal_year = '2025-2026'), total_market AS (SELECT SUM(industry_performance.netweight_tmt) AS market_total FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.productname = 'LPG' AND industry_performance.sbu_name = 'LPG' AND industry_performance.fiscal_year = '2025-2026') SELECT ROUND((company_sales.company_total * 100.0) / NULLIF(total_market.market_total, 0), 2) AS market_share_percentage FROM company_sales CROSS JOIN total_market;
+Exp SQL: WITH company_sales AS (SELECT SUM(industry_performance.netweight_tmt) AS company_total FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.comname = 'HPCL' AND industry_performance.productname = 'LPG' AND industry_performance.sbu_name = 'LPG' AND industry_performance.fiscal_year = '2025-2026'), total_market AS (SELECT SUM(industry_performance.netweight_tmt) AS market_total FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.productname = 'LPG' AND industry_performance.sbu_name = 'LPG' AND industry_performance.fiscal_year = '2025-2026') SELECT ROUND((company_sales.company_total * 100.0) / NULLIF(total_market.market_total, 0), 2) AS market_share_percentage FROM company_sales CROSS JOIN total_market;
+
+--- Failure 17 ---
+Q: Find company wise market share percentage in South during 2022-2023.
+Category: market_share
+Checks: Intent=True, Entities=True, Planner=True, Exec=True, Biz=False
+Error: None
+Gen SQL: WITH company_sales AS (SELECT SUM(industry_performance.netweight_tmt) AS company_total FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.fiscal_year = '2022-2023'), total_market AS (SELECT SUM(industry_performance.netweight_tmt) AS market_total FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.fiscal_year = '2022-2023') SELECT ROUND((company_sales.company_total * 100.0) / NULLIF(total_market.market_total, 0), 2) AS market_share_percentage FROM company_sales CROSS JOIN total_market;
+Exp SQL: WITH company_sales AS (SELECT SUM(industry_performance.netweight_tmt) AS company_total FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.fiscal_year = '2022-2023'), total_market AS (SELECT SUM(industry_performance.netweight_tmt) AS market_total FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.fiscal_year = '2022-2023') SELECT ROUND((company_sales.company_total * 100.0) / NULLIF(total_market.market_total, 0), 2) AS market_share_percentage FROM company_sales CROSS JOIN total_market;
+
+--- Failure 18 ---
+Q: Compare OTH PSU and GAIL actual volume in South during 2021-2022.
+Category: actual_volume
+Checks: Intent=True, Entities=True, Planner=True, Exec=False, Biz=True
+Error: None
+Gen SQL: SELECT comname, ROUND(SUM(netweight_tmt)::numeric, 2) AS total_sales FROM industry_performance WHERE comname = 'GAIL' AND fiscal_year = '2021-2022' GROUP BY comname;
+Exp SQL: SELECT ROUND(SUM(industry_performance.netweight_tmt)::numeric, 2) AS sum_actual_sales_tmt FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.comname = 'GAIL' AND industry_performance.fiscal_year = '2021-2022';
+
+--- Failure 19 ---
+Q: Show sales comparison of SBU RETAIL and SBU HPCL Mkt DS I&C in VISAKH for 2024-2025.
+Category: comparison
+Checks: Intent=True, Entities=True, Planner=True, Exec=False, Biz=True
+Error: None
+Gen SQL: SELECT sbu_name, ROUND(SUM(netweight_tmt)::numeric, 2) AS total_sales FROM industry_performance WHERE comname = 'HPCL' AND fiscal_year = '2024-2025' AND sbu_name IN ('RETAIL', 'I&C') GROUP BY sbu_name;
+Exp SQL: SELECT industry_performance.sbu_name, ROUND(SUM(industry_performance.netweight_tmt)::numeric, 2) AS sum_actual_sales_tmt FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.comname = 'HPCL' AND industry_performance.fiscal_year = '2024-2025' AND industry_performance.sbu_name IN ('RETAIL', 'I&C') GROUP BY industry_performance.sbu_name;
+
+--- Failure 20 ---
+Q: Compare NRL vs PVT sales of SKO in WZ for 2024-2025.
+Category: comparison
+Checks: Intent=True, Entities=True, Planner=True, Exec=False, Biz=True
+Error: None
+Gen SQL: SELECT comname, ROUND(SUM(netweight_tmt)::numeric, 2) AS total_sales FROM industry_performance WHERE comname = 'NRL' AND productname = 'SKO' AND fiscal_year = '2024-2025' GROUP BY comname;
+Exp SQL: SELECT ROUND(SUM(industry_performance.netweight_tmt)::numeric, 2) AS sum_actual_sales_tmt FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.comname = 'NRL' AND industry_performance.productname = 'SKO' AND industry_performance.fiscal_year = '2024-2025';
+
+--- Failure 21 ---
+Q: Compare RIL vs MPSU sales of LPG in North for 2022-2023.
+Category: comparison
+Checks: Intent=True, Entities=True, Planner=True, Exec=False, Biz=True
+Error: None
+Gen SQL: SELECT comname, ROUND(SUM(netweight_tmt)::numeric, 2) AS total_sales FROM industry_performance WHERE comname = 'RIL' AND productname = 'LPG' AND sbu_name = 'LPG' AND fiscal_year = '2022-2023' GROUP BY comname;
+Exp SQL: SELECT ROUND(SUM(industry_performance.netweight_tmt)::numeric, 2) AS sum_actual_sales_tmt FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.comname = 'RIL' AND industry_performance.productname = 'LPG' AND industry_performance.sbu_name = 'LPG' AND industry_performance.fiscal_year = '2022-2023';
+
+--- Failure 22 ---
+Q: Compare NEL and PVT actual volume in North during 2025-2026.
+Category: actual_volume
+Checks: Intent=True, Entities=True, Planner=True, Exec=False, Biz=True
+Error: None
+Gen SQL: SELECT comname, ROUND(SUM(netweight_tmt)::numeric, 2) AS total_sales FROM industry_performance WHERE comname = 'NEL' AND fiscal_year = '2025-2026' GROUP BY comname;
+Exp SQL: SELECT ROUND(SUM(industry_performance.netweight_tmt)::numeric, 2) AS sum_actual_sales_tmt FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.comname = 'NEL' AND industry_performance.fiscal_year = '2025-2026';
+
+--- Failure 23 ---
+Q: How do SBU LPG sales compare with SBU HPCL Mkt LPG for MPSU in 2021-2022?
+Category: comparison
+Checks: Intent=True, Entities=True, Planner=True, Exec=False, Biz=True
+Error: None
+Gen SQL: SELECT comname, ROUND(SUM(netweight_tmt)::numeric, 2) AS total_sales FROM industry_performance WHERE comname = 'HPCL' AND sbu_name = 'LPG' AND fiscal_year = '2021-2022' GROUP BY comname;
+Exp SQL: SELECT ROUND(SUM(industry_performance.netweight_tmt)::numeric, 2) AS sum_actual_sales_tmt FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.comname = 'HPCL' AND industry_performance.sbu_name = 'LPG' AND industry_performance.fiscal_year = '2021-2022';
+
+--- Failure 24 ---
+Q: Show sales comparison of SBU HPCL Mkt Retail and SBU LUBES in COIMBATORE RET RO for 2022-2023.
+Category: comparison
+Checks: Intent=True, Entities=True, Planner=True, Exec=False, Biz=True
+Error: None
+Gen SQL: SELECT sbu_name, ROUND(SUM(netweight_tmt)::numeric, 2) AS total_sales FROM industry_performance WHERE comname = 'HPCL' AND fiscal_year = '2022-2023' AND sbu_name IN ('RETAIL', 'LUBES') GROUP BY sbu_name;
+Exp SQL: SELECT industry_performance.sbu_name, ROUND(SUM(industry_performance.netweight_tmt)::numeric, 2) AS sum_actual_sales_tmt FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.comname = 'HPCL' AND industry_performance.fiscal_year = '2022-2023' AND industry_performance.sbu_name IN ('RETAIL', 'LUBES') GROUP BY industry_performance.sbu_name;
+
+--- Failure 25 ---
+Q: Compare PVT and CPCL actual volume in NWZ during 2021-2022.
+Category: actual_volume
+Checks: Intent=True, Entities=True, Planner=True, Exec=False, Biz=True
+Error: None
+Gen SQL: SELECT comname, ROUND(SUM(netweight_tmt)::numeric, 2) AS total_sales FROM industry_performance WHERE comname = 'CPCL' AND fiscal_year = '2021-2022' GROUP BY comname;
+Exp SQL: SELECT ROUND(SUM(industry_performance.netweight_tmt)::numeric, 2) AS sum_actual_sales_tmt FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.comname = 'CPCL' AND industry_performance.fiscal_year = '2021-2022';
+
+--- Failure 26 ---
+Q: Top 10 Zones in the market contribution for FY 2024-2025 for all SBUs
+Category: market_share
+Checks: Intent=True, Entities=True, Planner=True, Exec=True, Biz=False
+Error: None
+Gen SQL: WITH company_sales AS (SELECT industry_performance.zone_name, SUM(industry_performance.netweight_tmt) AS company_total FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.fiscal_year = '2024-2025' GROUP BY industry_performance.zone_name), total_market AS (SELECT SUM(industry_performance.netweight_tmt) AS market_total FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.fiscal_year = '2024-2025') SELECT company_sales.zone_name, ROUND((company_sales.company_total * 100.0) / NULLIF(total_market.market_total, 0), 2) AS market_share_percentage FROM company_sales CROSS JOIN total_market ORDER BY market_share_percentage DESC LIMIT 10;
+Exp SQL: WITH company_sales AS (SELECT industry_performance.zone_name, SUM(industry_performance.netweight_tmt) AS company_total FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.fiscal_year = '2024-2025' GROUP BY industry_performance.zone_name), total_market AS (SELECT SUM(industry_performance.netweight_tmt) AS market_total FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.fiscal_year = '2024-2025') SELECT company_sales.zone_name, ROUND((company_sales.company_total * 100.0) / NULLIF(total_market.market_total, 0), 2) AS market_share_percentage FROM company_sales CROSS JOIN total_market ORDER BY market_share_percentage DESC LIMIT 10;
+
+--- Failure 27 ---
+Q: Compare Lubes sales in South Zone for FY 2024-2025 against FY 2023-2024 and calculate growth percentage.
+Category: comparison
+Checks: Intent=True, Entities=True, Planner=True, Exec=False, Biz=True
+Error: None
+Gen SQL: WITH y1 AS (SELECT SUM(netweight_tmt) AS s1 FROM industry_performance WHERE sbu_name = 'Retail' AND zone_name = 'SZ' AND fiscal_year = '2023-2024'), y2 AS (SELECT SUM(netweight_tmt) AS s2 FROM industry_performance WHERE sbu_name = 'Retail' AND zone_name = 'SZ' AND fiscal_year = '2024-2025') SELECT ROUND(((y2.s2 - y1.s1) * 100.0) / y1.s1, 2) AS sales_growth_percentage FROM y1, y2;
+Exp SQL: WITH sales_totals AS (SELECT COALESCE(SUM(CASE WHEN fiscal_year = '2023-2024' THEN netweight_tmt ELSE 0 END), 0) AS previous_sales, COALESCE(SUM(CASE WHEN fiscal_year = '2024-2025' THEN netweight_tmt ELSE 0 END), 0) AS current_sales FROM industry_performance WHERE (category != 'O' OR category IS NULL) AND sbu_name = 'LUBES' AND zone_name = 'SZ' AND fiscal_year IN ('2023-2024', '2024-2025')) SELECT ROUND(previous_sales::numeric, 2) AS previous_sales_tmt, ROUND(current_sales::numeric, 2) AS current_sales_tmt, ROUND((current_sales - previous_sales)::numeric, 2) AS sales_difference_tmt, ROUND(CASE WHEN previous_sales = 0 THEN NULL ELSE ((current_sales - previous_sales) * 100.0 / previous_sales)::numeric END, 2) AS sales_growth_percentage FROM sales_totals;
+
+--- Failure 28 ---
+Q: Give total volume sold by HPCL.
+Category: total_sales
+Checks: Intent=True, Entities=True, Planner=True, Exec=True, Biz=False
+Error: None
+Gen SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+Exp SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+
+--- Failure 29 ---
+Q: How much business was generated by HPCL?
+Category: total_sales
+Checks: Intent=True, Entities=True, Planner=True, Exec=True, Biz=False
+Error: None
+Gen SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+Exp SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+
+--- Failure 30 ---
+Q: Give total volume sold by BPCL.
+Category: total_sales
+Checks: Intent=True, Entities=True, Planner=True, Exec=True, Biz=False
+Error: None
+Gen SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+Exp SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+
+--- Failure 31 ---
+Q: How much business was generated by BPCL?
+Category: total_sales
+Checks: Intent=True, Entities=True, Planner=True, Exec=True, Biz=False
+Error: None
+Gen SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+Exp SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+
+--- Failure 32 ---
+Q: Give total volume sold by IOCL.
+Category: total_sales
+Checks: Intent=True, Entities=True, Planner=True, Exec=True, Biz=False
+Error: None
+Gen SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+Exp SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+
+--- Failure 33 ---
+Q: How much business was generated by IOCL?
+Category: total_sales
+Checks: Intent=True, Entities=True, Planner=True, Exec=True, Biz=False
+Error: None
+Gen SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+Exp SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+
+--- Failure 34 ---
+Q: Give total volume sold by SHELL.
+Category: total_sales
+Checks: Intent=True, Entities=True, Planner=True, Exec=True, Biz=False
+Error: None
+Gen SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+Exp SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+
+--- Failure 35 ---
+Q: How much business was generated by SHELL?
+Category: total_sales
+Checks: Intent=True, Entities=True, Planner=True, Exec=True, Biz=False
+Error: None
+Gen SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+Exp SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+
+--- Failure 36 ---
+Q: Give total volume sold by RIL.
+Category: total_sales
+Checks: Intent=True, Entities=True, Planner=True, Exec=True, Biz=False
+Error: None
+Gen SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+Exp SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+
+--- Failure 37 ---
+Q: How much business was generated by RIL?
+Category: total_sales
+Checks: Intent=True, Entities=True, Planner=True, Exec=True, Biz=False
+Error: None
+Gen SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+Exp SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+
+--- Failure 38 ---
+Q: Give total volume sold by ONGC.
+Category: total_sales
+Checks: Intent=True, Entities=True, Planner=True, Exec=True, Biz=False
+Error: None
+Gen SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+Exp SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+
+--- Failure 39 ---
+Q: How much business was generated by ONGC?
+Category: total_sales
+Checks: Intent=True, Entities=True, Planner=True, Exec=True, Biz=False
+Error: None
+Gen SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+Exp SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+
+--- Failure 40 ---
+Q: Give total volume sold by OIL.
+Category: total_sales
+Checks: Intent=True, Entities=True, Planner=True, Exec=True, Biz=False
+Error: None
+Gen SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+Exp SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+
+--- Failure 41 ---
+Q: How much business was generated by OIL?
+Category: total_sales
+Checks: Intent=True, Entities=True, Planner=True, Exec=True, Biz=False
+Error: None
+Gen SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+Exp SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+
+--- Failure 42 ---
+Q: Give total volume sold by GAIL.
+Category: total_sales
+Checks: Intent=True, Entities=True, Planner=True, Exec=True, Biz=False
+Error: None
+Gen SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+Exp SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+
+--- Failure 43 ---
+Q: How much business was generated by GAIL?
+Category: total_sales
+Checks: Intent=True, Entities=True, Planner=True, Exec=True, Biz=False
+Error: None
+Gen SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+Exp SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+
+--- Failure 44 ---
+Q: Give total volume sold by SMA.
+Category: total_sales
+Checks: Intent=True, Entities=True, Planner=True, Exec=True, Biz=False
+Error: None
+Gen SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+Exp SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+
+--- Failure 45 ---
+Q: How much business was generated by SMA?
+Category: total_sales
+Checks: Intent=True, Entities=True, Planner=True, Exec=True, Biz=False
+Error: None
+Gen SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+Exp SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+
+--- Failure 46 ---
+Q: Give total volume sold by CPCL.
+Category: total_sales
+Checks: Intent=True, Entities=True, Planner=True, Exec=True, Biz=False
+Error: None
+Gen SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+Exp SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+
+--- Failure 47 ---
+Q: How much business was generated by CPCL?
+Category: total_sales
+Checks: Intent=True, Entities=True, Planner=True, Exec=True, Biz=False
+Error: None
+Gen SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+Exp SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+
+--- Failure 48 ---
+Q: Give total volume sold by MRPL.
+Category: total_sales
+Checks: Intent=True, Entities=True, Planner=True, Exec=True, Biz=False
+Error: None
+Gen SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+Exp SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+
+--- Failure 49 ---
+Q: How much business was generated by MRPL?
+Category: total_sales
+Checks: Intent=True, Entities=True, Planner=True, Exec=True, Biz=False
+Error: None
+Gen SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+Exp SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+
+--- Failure 50 ---
+Q: Give total volume sold by NEL.
+Category: total_sales
+Checks: Intent=True, Entities=True, Planner=True, Exec=True, Biz=False
+Error: None
+Gen SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+Exp SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+
+--- Failure 51 ---
+Q: How much business was generated by NEL?
+Category: total_sales
+Checks: Intent=True, Entities=True, Planner=True, Exec=True, Biz=False
+Error: None
+Gen SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+Exp SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+
+--- Failure 52 ---
+Q: Give total volume sold by HMEL.
+Category: total_sales
+Checks: Intent=True, Entities=True, Planner=True, Exec=True, Biz=False
+Error: None
+Gen SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+Exp SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+
+--- Failure 53 ---
+Q: How much business was generated by HMEL?
+Category: total_sales
+Checks: Intent=True, Entities=True, Planner=True, Exec=True, Biz=False
+Error: None
+Gen SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+Exp SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+
+--- Failure 54 ---
+Q: What is the sales growth percentage for CPCL in LPG SBU from FY 2023-2024 to FY 2025-2026?
+Category: growth
+Checks: Intent=True, Entities=True, Planner=True, Exec=False, Biz=False
+Error: Compiler refused plan: Sales comparison requires comparison-aware compilation
+Gen SQL: -- Compilation failed: Sales comparison requires comparison-aware compilation
+Exp SQL: WITH y1 AS (SELECT SUM(netweight_tmt) AS s1 FROM industry_performance WHERE comname = 'CPCL' AND sbu_name = 'Retail' AND fiscal_year = '2023-2024'), y2 AS (SELECT SUM(netweight_tmt) AS s2 FROM industry_performance WHERE comname = 'CPCL' AND sbu_name = 'Retail' AND fiscal_year = '2025-2026') SELECT ROUND(((y2.s2 - y1.s1) * 100.0) / y1.s1, 2) AS sales_growth_percentage FROM y1, y2;
+
+--- Failure 55 ---
+Q: Get the total target quantity in KL from M60_LEVEL for strategic business unit RETAIL in South Western zone.
+Category: total_sales
+Checks: Intent=True, Entities=True, Planner=True, Exec=False, Biz=True
+Error: None
+Gen SQL: SELECT ROUND(SUM(target_qty_kl)::numeric, 2) AS sum_target_kl FROM m60_level WHERE sbu_name = 'Retail' AND zone_name = 'South Western Zone';
+Exp SQL: SELECT ROUND(SUM(m60_level.target_qty_kl)::numeric, 2) AS sum_target_kl FROM m60_level WHERE m60_level.sbu_name = 'Retail' AND m60_level.zone_name = 'South';
+
+--- Failure 56 ---
+Q: Get the total target quantity in KL from M60_LEVEL for strategic business unit HPCL Mkt SKO in WZ zone.
+Category: total_sales
+Checks: Intent=True, Entities=True, Planner=False, Exec=True, Biz=True
+Error: None
+Gen SQL: SELECT sum(target_qty_kl) AS total_target_kl FROM m60_level WHERE sbu_name = 'HPCL Mkt SKO' AND zone_name = 'WZ';
+Exp SQL: SELECT sum(target_qty_kl) AS total_target_kl FROM m60_level WHERE sbu_name = 'HPCL Mkt SKO' AND zone_name = 'WZ';
+
+--- Failure 57 ---
+Q: Compare PVT and IOCL sales in North Central PROPANE Zo zone for FY 2021-2022.
+Category: comparison
+Checks: Intent=True, Entities=True, Planner=True, Exec=False, Biz=True
+Error: None
+Gen SQL: SELECT comname, ROUND(SUM(netweight_tmt)::numeric, 2) AS total_sales FROM industry_performance WHERE comname = 'IOCL' AND productname = 'PROPANE' AND zone_name = 'NCZ' AND fiscal_year = '2021-2022' GROUP BY comname;
+Exp SQL: SELECT ROUND(SUM(industry_performance.netweight_tmt)::numeric, 2) AS sum_actual_sales_tmt FROM industry_performance WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.comname = 'IOCL' AND industry_performance.productname = 'PROPANE' AND industry_performance.zone_name = 'NZ' AND industry_performance.fiscal_year = '2021-2022';
+
+--- Failure 58 ---
+Q: Compare BPCL and IOCL sales in SZ zone for FY 2022-2023.
+Category: comparison
+Checks: Intent=True, Entities=True, Planner=False, Exec=True, Biz=True
+Error: None
+Gen SQL: SELECT comname, ROUND(SUM(netweight_tmt)::numeric, 2) AS total_sales FROM industry_performance WHERE zone_name = 'SZ' AND fiscal_year = '2022-2023' AND comname IN ('IOCL', 'BPCL') GROUP BY comname;
+Exp SQL: SELECT comname, round(sum(netweight_tmt)::numeric, 2) AS total_sales FROM industry_performance WHERE comname IN ('BPCL', 'IOCL') AND zone_name = 'SZ' AND fiscal_year = '2022-2023' GROUP BY comname;
+
+--- Failure 59 ---
+Q: List all products with actual volume growth exceeding 5% in the current fiscal year.
+Category: actual_volume
+Checks: Intent=True, Entities=True, Planner=False, Exec=True, Biz=True
+Error: None
+Gen SQL: SELECT productname, ROUND((SUM(netweight_tmt) - SUM(target_qty_tmt)) * 100.0 / SUM(target_qty_tmt), 2) AS growth_percentage FROM m60_level WHERE m60_level.fiscal_year = '2025-2026' GROUP BY productname HAVING ROUND((SUM(netweight_tmt) - SUM(target_qty_tmt)) * 100.0 / SUM(target_qty_tmt), 2) > 5;
+Exp SQL: SELECT productname, ROUND((SUM(netweight_tmt) - SUM(target_qty_tmt)) * 100.0 / SUM(target_qty_tmt), 2) AS growth_percentage FROM m60_level WHERE fiscal_year = '2025-2026' GROUP BY productname HAVING ROUND((SUM(netweight_tmt) - SUM(target_qty_tmt)) * 100.0 / SUM(target_qty_tmt), 2) > 5;
+
+--- Failure 60 ---
+Q: Display products whose actual volume growth is greater than 5% in the current fiscal year.
+Category: actual_volume
+Checks: Intent=True, Entities=True, Planner=False, Exec=True, Biz=True
+Error: None
+Gen SQL: SELECT productname, ROUND((SUM(netweight_tmt) - SUM(target_qty_tmt)) * 100.0 / SUM(target_qty_tmt), 2) AS growth_percentage FROM m60_level WHERE m60_level.fiscal_year = '2025-2026' GROUP BY productname HAVING ROUND((SUM(netweight_tmt) - SUM(target_qty_tmt)) * 100.0 / SUM(target_qty_tmt), 2) > 5;
+Exp SQL: SELECT productname, ROUND((SUM(netweight_tmt) - SUM(target_qty_tmt)) * 100.0 / SUM(target_qty_tmt), 2) AS growth_percentage FROM m60_level WHERE fiscal_year = '2025-2026' GROUP BY productname HAVING ROUND((SUM(netweight_tmt) - SUM(target_qty_tmt)) * 100.0 / SUM(target_qty_tmt), 2) > 5;
+
+--- Failure 61 ---
+Q: Provide a sales comparison between HPCL and IOCL in the West zone for the fiscal year 2024-2025.
+Category: comparison
+Checks: Intent=True, Entities=True, Planner=True, Exec=False, Biz=True
+Error: None
+Gen SQL: SELECT comname, ROUND(SUM(netweight_tmt)::numeric, 2) AS total_sales FROM industry_performance WHERE zone_name = 'WZ' AND fiscal_year = '2024-2025' AND comname IN ('HPCL', 'IOCL') GROUP BY comname;
+Exp SQL: SELECT comname, round(sum(netweight_tmt)::numeric, 2) AS total_sales FROM industry_performance WHERE comname IN ('HPCL', 'IOCL') AND zone_name = 'West' AND fiscal_year = '2024-2025' GROUP BY comname;
+
+--- Failure 62 ---
+Q: How do HPCL and IOCL sales compare in the West zone during FY 2024-2025?
+Category: comparison
+Checks: Intent=True, Entities=True, Planner=True, Exec=False, Biz=True
+Error: None
+Gen SQL: SELECT comname, ROUND(SUM(netweight_tmt)::numeric, 2) AS total_sales FROM industry_performance WHERE zone_name = 'WZ' AND fiscal_year = '2024-2025' AND comname IN ('HPCL', 'IOCL') GROUP BY comname;
+Exp SQL: SELECT comname, round(sum(netweight_tmt)::numeric, 2) AS total_sales FROM industry_performance WHERE comname IN ('HPCL', 'IOCL') AND zone_name = 'West' AND fiscal_year = '2024-2025' GROUP BY comname;
+
+--- Failure 63 ---
+Q: Show HPCL vs IOCL sales performance in West zone for FY 2024-2025.
+Category: comparison
+Checks: Intent=True, Entities=True, Planner=True, Exec=False, Biz=True
+Error: None
+Gen SQL: SELECT comname, ROUND(SUM(netweight_tmt)::numeric, 2) AS total_sales FROM industry_performance WHERE zone_name = 'WZ' AND fiscal_year = '2024-2025' AND comname IN ('HPCL', 'IOCL') GROUP BY comname;
+Exp SQL: SELECT comname, round(sum(netweight_tmt)::numeric, 2) AS total_sales FROM industry_performance WHERE comname IN ('HPCL', 'IOCL') AND zone_name = 'West' AND fiscal_year = '2024-2025' GROUP BY comname;
+
+--- Failure 64 ---
+Q: What is share for IOCL in FY 2024-2025?
+Category: market_share
+Checks: Intent=True, Entities=True, Planner=True, Exec=True, Biz=False
+Error: None
+Gen SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+Exp SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+
+--- Failure 65 ---
+Q: What is contribution % for IOCL in FY 2024-2025?
+Category: market_share
+Checks: Intent=True, Entities=True, Planner=True, Exec=True, Biz=False
+Error: None
+Gen SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+Exp SQL: OFF_TOPIC: Please ask a database-related question regarding office, sales, or industry performance metrics.
+
+--- Failure 66 ---
+Q: Compare HPCL and IOCL volume in West zone for FY 2024-2025.
+Category: comparison
+Checks: Intent=True, Entities=True, Planner=True, Exec=False, Biz=True
+Error: None
+Gen SQL: SELECT comname, ROUND(SUM(netweight_tmt)::numeric, 2) AS total_sales FROM industry_performance WHERE zone_name = 'WZ' AND fiscal_year = '2024-2025' AND comname IN ('HPCL', 'IOCL') GROUP BY comname;
+Exp SQL: SELECT comname, round(sum(netweight_tmt)::numeric, 2) AS total_sales FROM industry_performance WHERE comname IN ('HPCL', 'IOCL') AND zone_name = 'West' AND fiscal_year = '2024-2025' GROUP BY comname;
+
+--- Failure 67 ---
+Q: Compare HPCL and IOCL business in West zone for FY 2024-2025.
+Category: comparison
+Checks: Intent=True, Entities=True, Planner=True, Exec=False, Biz=True
+Error: None
+Gen SQL: SELECT comname, ROUND(SUM(netweight_tmt)::numeric, 2) AS total_sales FROM industry_performance WHERE zone_name = 'WZ' AND fiscal_year = '2024-2025' AND comname IN ('HPCL', 'IOCL') GROUP BY comname;
+Exp SQL: SELECT comname, round(sum(netweight_tmt)::numeric, 2) AS total_sales FROM industry_performance WHERE comname IN ('HPCL', 'IOCL') AND zone_name = 'West' AND fiscal_year = '2024-2025' GROUP BY comname;
+

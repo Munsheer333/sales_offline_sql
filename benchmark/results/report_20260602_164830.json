@@ -1,0 +1,61 @@
+{
+  "timestamp": "20260602_164830",
+  "total_queries": 14,
+  "comparable_queries": 14,
+  "successful_pipelines": 10,
+  "pipeline_success_rate": 71.43,
+  "sql_execution_matches": 4,
+  "execution_match_rate": 28.57,
+  "average_duration_ms": 2697.43,
+  "categories": {
+    "total_sales": {
+      "total_queries": 2,
+      "comparable_queries": 2,
+      "pipeline_success_rate": 100.0,
+      "execution_match_rate": 50.0,
+      "average_duration_ms": 91.28
+    },
+    "market_share": {
+      "total_queries": 2,
+      "comparable_queries": 2,
+      "pipeline_success_rate": 100.0,
+      "execution_match_rate": 0.0,
+      "average_duration_ms": 83.94
+    },
+    "growth": {
+      "total_queries": 2,
+      "comparable_queries": 2,
+      "pipeline_success_rate": 50.0,
+      "execution_match_rate": 0.0,
+      "average_duration_ms": 6046.63
+    },
+    "ranking": {
+      "total_queries": 2,
+      "comparable_queries": 2,
+      "pipeline_success_rate": 50.0,
+      "execution_match_rate": 50.0,
+      "average_duration_ms": 6069.86
+    },
+    "comparison": {
+      "total_queries": 2,
+      "comparable_queries": 2,
+      "pipeline_success_rate": 50.0,
+      "execution_match_rate": 50.0,
+      "average_duration_ms": 6068.84
+    },
+    "trend": {
+      "total_queries": 2,
+      "comparable_queries": 2,
+      "pipeline_success_rate": 100.0,
+      "execution_match_rate": 50.0,
+      "average_duration_ms": 153.87
+    },
+    "geography": {
+      "total_queries": 2,
+      "comparable_queries": 2,
+      "pipeline_success_rate": 50.0,
+      "execution_match_rate": 0.0,
+      "average_duration_ms": 367.57
+    }
+  }
+}

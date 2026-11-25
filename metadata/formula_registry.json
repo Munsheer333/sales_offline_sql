@@ -1,0 +1,65 @@
+{
+  "_meta": {
+    "description": "Registry for complex SQL metric computations and business formulas.",
+    "version": "1.0",
+    "generated_at": "2026-06-03"
+  },
+
+  "formulas": {
+    "actual_volume": {
+      "name": "Actual Volume",
+      "description": "Calculates sum of actual sales volume in TMT or MT.",
+      "templates": {
+        "TMT": {
+          "expression": "ROUND(SUM({column})::numeric, 2)",
+          "alias": "actual_sales_tmt"
+        },
+        "MT": {
+          "expression": "ROUND(SUM({column} * 1000)::numeric, 2)",
+          "alias": "actual_sales_mt"
+        }
+      }
+    },
+
+    "market_share": {
+      "name": "Market Share Percentage",
+      "description": "Calculates a specific company's percentage contribution of total market sales.",
+      "templates": {
+        "company_specific": {
+          "expression": "ROUND((SUM(CASE WHEN {comname_col} = '{company}' THEN {sales_col} ELSE 0 END) * 100.0) / NULLIF(SUM({sales_col}), 0), 2)",
+          "alias": "market_share_{company_lower}_pct"
+        },
+        "all_companies": {
+          "expression": "ROUND((SUM({sales_col}) * 100.0) / NULLIF(SUM(SUM({sales_col})) OVER(), 0), 2)",
+          "alias": "market_share_pct"
+        }
+      }
+    },
+
+    "growth_pct": {
+      "name": "Growth Percentage (YoY/MoM)",
+      "description": "Computes percentage growth over previous period (month or year) using window functions.",
+      "templates": {
+        "window_lag": {
+          "expression": "ROUND((({sales_col} - LAG({sales_col}) OVER (PARTITION BY {partition_col} ORDER BY {order_col})) * 100.0) / NULLIF(LAG({sales_col}) OVER (PARTITION BY {partition_col} ORDER BY {order_col}), 0), 2)",
+          "alias": "growth_pct"
+        }
+      }
+    },
+
+    "sales_difference": {
+      "name": "Sales Volume Difference",
+      "description": "Computes absolute difference in sales volume between two companies or two years.",
+      "templates": {
+        "company_delta": {
+          "expression": "ROUND((SUM(CASE WHEN {comname_col} = '{company_a}' THEN {sales_col} ELSE 0 END) - SUM(CASE WHEN {comname_col} = '{company_b}' THEN {sales_col} ELSE 0 END))::numeric, 2)",
+          "alias": "sales_diff_{company_a}_vs_{company_b}"
+        },
+        "period_delta": {
+          "expression": "ROUND((SUM(CASE WHEN {period_col} = '{period_a}' THEN {sales_col} ELSE 0 END) - SUM(CASE WHEN {period_col} = '{period_b}' THEN {sales_col} ELSE 0 END))::numeric, 2)",
+          "alias": "sales_diff_{period_a}_vs_{period_b}"
+        }
+      }
+    }
+  }
+}

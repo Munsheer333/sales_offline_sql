@@ -1,0 +1,57 @@
+{
+  "total_cases": 3714,
+  "matched_cases": 3714,
+  "failed_cases": 0,
+  "coverage_percentage": 100.0,
+  "executed_sample": 100,
+  "execution_failed": 0,
+  "semantic_failed": 0,
+  "families": {
+    "company_market_share_ranking": {
+      "total": 3,
+      "matched": 3,
+      "coverage_percentage": 100.0
+    },
+    "industry_company_product_sales": {
+      "total": 825,
+      "matched": 825,
+      "coverage_percentage": 100.0
+    },
+    "industry_company_sales": {
+      "total": 33,
+      "matched": 33,
+      "coverage_percentage": 100.0
+    },
+    "industry_sbu_zone_growth": {
+      "total": 56,
+      "matched": 56,
+      "coverage_percentage": 100.0
+    },
+    "m60_target_actual_variance": {
+      "total": 1380,
+      "matched": 1380,
+      "coverage_percentage": 100.0
+    },
+    "m60_target_quantity": {
+      "total": 1380,
+      "matched": 1380,
+      "coverage_percentage": 100.0
+    },
+    "mom_product_growth_threshold": {
+      "total": 1,
+      "matched": 1,
+      "coverage_percentage": 100.0
+    },
+    "named_company_market_share": {
+      "total": 33,
+      "matched": 33,
+      "coverage_percentage": 100.0
+    },
+    "zone_market_contribution": {
+      "total": 3,
+      "matched": 3,
+      "coverage_percentage": 100.0
+    }
+  },
+  "failures": []
+}

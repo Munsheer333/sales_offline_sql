@@ -1,0 +1,166 @@
+========================================================================
+🧠 NLPSQL — COMPLETE SYSTEM WORKFLOW GUIDE
+========================================================================
+
+This guide walks you through the entire end-to-end workflow of the 
+Autonomous Local NL2SQL Pipeline. Use this document to understand the 
+inner workings or to present the project to your mentor.
+
+The system is divided into two distinct lifecycles:
+1. THE INGESTION WORKFLOW (Run once to set up databases and RAG memory)
+2. THE RUNTIME QUERY WORKFLOW (Run dynamically on every user question)
+
+------------------------------------------------------------------------
+PART 1: THE INGESTION WORKFLOW (One-Time Setup)
+------------------------------------------------------------------------
+
+Before the system can answer any questions, it must first analyze your 
+data structures and load its semantic vector memory.
+
+Step 1: Bulk Data Load (setup_db.py)
+------------------------------------
+- Action: The user executes "python setup_db.py".
+- Process: The script reads the raw database definition files (schema.sql)
+  and raw CSV sheets (M60_LEVEL.csv, MOM_LEVEL.csv, Industry Performance.csv).
+  
+- Under the hood: It connects to PostgreSQL, creates all relational 
+  tables with correct data types, keys, and indexes, and performs a 
+  high-speed bulk copy (copy_expert) to load thousands of CSV rows 
+  into the database in seconds.
+
+Step 2: Metadata Extraction (generate_metadata.py)
+--------------------------------------------------
+- Action: The user executes "python generate_metadata.py".
+- Process: It calls Phase 1 Ingestion (core/phase1_ingestion.py) to scan 
+  the populated tables.
+- Under the hood: It calculates column data types, null counts, unique 
+  ratios, and extracts sample data values. It writes this into a single, 
+  structured "Source of Truth" file: data/schema_metadata.json. 
+  The LLM will consult this catalog to write SQL without guessing 
+  table or column names.
+
+Step 3: pgvector Initialization & Embedding (setup_vector_store.py)
+-------------------------------------------------------------------
+- Action: The user executes "python setup_vector_store.py" and 
+  "python load_examples.py".
+- Process: Connects to PostgreSQL, activates the "pgvector" extension, 
+  and initializes vector index spaces.
+- Under the hood: It calls Phase 2 Embeddings (core/phase2_embeddings.py) 
+  to run all column metadata descriptions and hand-crafted SQL templates 
+  (seed_pairs.json) through a local sentence-transformer embedding model. 
+  It then saves these high-dimensional vector coordinates directly inside 
+  PostgreSQL as a semantic RAG index library.
+
+
+------------------------------------------------------------------------
+PART 2: THE RUNTIME QUERY WORKFLOW (Live execution pipeline)
+------------------------------------------------------------------------
+
+This loop runs inside the master orchestrator (core/phase6_orchestrator.py) 
+every single time a plain-English question is typed into the Streamlit 
+UI or sent to the FastAPI server:
+
+Step 1: Complexity Routing
+--------------------------
+- Action: A business user enters a question, e.g.:
+  "Rank companies by industry performance sales in AP state."
+- Process: The master orchestrator receives the question and triggers 
+  Phase 5 Router (core/phase5_router.py).
+- Under the hood: The router evaluates the request structure. It classifies 
+  the question difficulty (Simple, Medium, Hard) and dynamically modifies 
+  the prompts and settings to optimize prompt processing time.
+
+Step 2: RAG Context Retrieval
+-----------------------------
+- Process: The orchestrator calls Phase 2 Embeddings (core/phase2_embeddings.py).
+- Under the hood: The user's question is converted into vector embedding 
+  coordinates and matched against the pgvector store. The system dynamically 
+  pulls:
+  1. The schema structures of the tables most relevant to the question 
+     (e.g., Industry_Performance columns).
+  2. The few-shot templates of historically successful SQL queries that 
+     match the user's analytical intent.
+
+Step 3: The "Gold Standard" Fast-Path Check
+-------------------------------------------
+- Process: Checked inside the orchestrator (core/phase6_orchestrator.py).
+- Under the hood: If the RAG lookup finds a pre-verified historical query 
+  template that matches the user's question with a >98% similarity score, 
+  the system bypasses the local LLM entirely. It pulls that perfect SQL query, 
+  executes it, and returns the data immediately in under 0.1 seconds. 
+  If no exact match is found, it proceeds to Step 4.
+
+Step 4: SQL Query Generation
+----------------------------
+- Process: The orchestrator calls Phase 3 LLM Core (core/phase3_llm_core.py).
+- Under the hood: The system constructs a rich prompt containing the 
+  user's question, the retrieved RAG context tables, and few-shot examples. 
+  It passes this prompt to the local Ollama LLM (e.g. qwen2.5-coder) to 
+  synthesize the primary SQL query.
+
+Step 5: Safety and Plan Validation
+----------------------------------
+- Process: The orchestrator passes the SQL to Phase 4 Validator 
+  (core/phase4_validator.py).
+- Under the hood: The validator runs three rigorous checks:
+  1. Syntax check: Blocks dangerous keywords like DROP, DELETE, or ALTER.
+  2. Table/column check: Verifies all table/column names in the SQL 
+     exist in our schema_metadata.json.
+  3. Dry-Run Plan: Runs an "EXPLAIN (FORMAT JSON)" plan directly on 
+     PostgreSQL to see if the database engine accepts the syntax and joins.
+
+Step 6: The Self-Healing Loop (If Validation Fails)
+---------------------------------------------------
+- Process: Handled dynamically by Phase 4 and Phase 3.
+- Under the hood: If the PostgreSQL dry-run fails (e.g., due to a syntax 
+  error or reference to a column that doesn't exist), the validator 
+  catches the raw PostgreSQL error exception message.
+  1. It passes the broken SQL and the exact database error trace back 
+     to Phase 3 LLM Core.
+  2. The LLM processes the error, identifies the fix, and rewrites 
+     a corrected SQL query.
+  3. This validation loop repeats up to 3 times until the query compiles.
+
+Step 7: Execution & Auditing
+----------------------------
+- Process: Handled by the orchestrator (core/phase6_orchestrator.py).
+- Under the hood: The fully compiled, validated SQL query is run against 
+  the PostgreSQL database. The orchestrator:
+  1. Renders the rows as a clean pandas dataframe or JSON stream.
+  2. Logs transaction metadata (question, SQL, complexity, execution time, 
+     row count, validation success, and healing steps) directly into the 
+     PostgreSQL query history database table (nlpsql_query_history) for 
+     auditing and future evaluation.
+
+------------------------------------------------------------------------
+PART 3: RAG ARCHITECTURE & MENTOR TALKING POINTS
+------------------------------------------------------------------------
+
+In our system, we don't use standard document RAG. Instead, we developed a 
+Double-Retriever Structural and Exemplar RAG using pgvector in PostgreSQL.
+
+1. Structural RAG:
+   Performs semantic search on the columns of our database and dynamically 
+   prunes the database schema, injecting only the relevant tables into the prompt.
+2. Exemplar RAG:
+   Performs semantic search on a library of historical question-SQL pairs, 
+   dynamically injecting few-shot learning examples that match the user's 
+   analytical intent.
+3. Semantic Cache Fast-Path:
+   Uses dense retrieval to bypass LLM generation entirely for 98%+ similarity 
+   matches, giving us instant performance.
+
+How to Present This to Your Mentor:
+"In our system, we don't use standard document RAG. Instead, we developed a 
+Double-Retriever Structural and Exemplar RAG using pgvector in PostgreSQL.
+
+First, Structural RAG performs semantic search on the columns of our database 
+and dynamically prunes the database schema, injecting only the relevant tables 
+into the prompt.
+Second, Exemplar RAG performs semantic search on a library of historical 
+question-SQL pairs, dynamically injecting few-shot learning examples that match 
+the user's analytical intent.
+Third, we implement a Semantic Cache Fast-Path which uses dense retrieval to 
+bypass LLM generation entirely for 98%+ similarity matches, giving us 
+instant performance."
+========================================================================

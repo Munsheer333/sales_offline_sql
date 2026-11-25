@@ -1,0 +1,43 @@
+{
+  "target_table": "industry_performance",
+  "intent": "sales_difference",
+  "select_metrics": [
+    {
+      "expression": "ROUND(SUM(netweight_tmt)::numeric, 2)",
+      "alias": "actual_sales_tmt"
+    }
+  ],
+  "group_by": [],
+  "filters": [
+    {
+      "concept": "company",
+      "column": "comname",
+      "operator": "IN",
+      "values": [
+        "HPCL",
+        "BPCL"
+      ],
+      "type": "dimension"
+    },
+    {
+      "concept": "mandatory_rule",
+      "column": "(category != 'O' OR category IS NULL)",
+      "operator": "RAW",
+      "values": [],
+      "type": "mandatory_filter"
+    },
+    {
+      "concept": "fiscal_year",
+      "column": "fiscal_year",
+      "operator": "=",
+      "values": [
+        "2025-2026"
+      ],
+      "type": "filter",
+      "note": "Automatically injected default fiscal year"
+    }
+  ],
+  "order_by": [],
+  "limit": null,
+  "extra_options": {}
+}

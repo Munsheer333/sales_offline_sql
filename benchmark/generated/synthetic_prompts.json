@@ -1,0 +1,1002 @@
+[
+  {
+    "category": "sales",
+    "question": "Find total actual volume of ATF in WZ for 2025-2026.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "sales",
+    "question": "Get actual sales of LPG for RIL in COIMBATORE during 2024-2025.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "sales",
+    "question": "Get actual sales of NAPHTHA for OTH PSU in JODHPUR LPG RO during 2025-2026.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "sales",
+    "question": "Get actual sales of PROPANE for MPSU in BHUBANESWAR LUBES RO during 2021-2022.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "sales",
+    "question": "Show total sales in TMT for SHELL SBU HPCL Mkt Retail in 2024-2025.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "sales",
+    "question": "What is the cumulative actual sales for SBU HPCL Mkt LPG in South Central LPG Zo during 2021-2022?",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "sales",
+    "question": "Find total actual volume of HSD in North West LPG for 2021-2022.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "sales",
+    "question": "What is the total sales for GAIL in SBU HPCL Mkt Retail for 2025-2026?",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "sales",
+    "question": "Show total sales in TMT for GAIL SBU HPCL Mkt DS I&C in 2025-2026.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "sales",
+    "question": "Find total actual volume of NAPHTHA in SCZ for 2024-2025.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "sales",
+    "question": "Find total actual volume of FO in North Central Retail for 2022-2023.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "sales",
+    "question": "Find total actual volume of NAPHTHA in NCZ for 2021-2022.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "sales",
+    "question": "Find total actual volume of PROPANE in North for 2022-2023.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "sales",
+    "question": "What is the total sales for PVT in SBU Retail for 2024-2025?",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "sales",
+    "question": "What is the cumulative actual sales for SBU HPCL Mkt LPG in North West Retail Zo during 2021-2022?",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "sales",
+    "question": "Find total actual volume of ATF in South for 2024-2025.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "sales",
+    "question": "Get actual sales of ATF for NEL in BHUBANESWAR I&C RO during 2021-2022.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "sales",
+    "question": "Show total sales in TMT for HPCL SBU HPCL Mkt Retail in 2021-2022.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "sales",
+    "question": "What is the cumulative actual sales for SBU LPG in SZ during 2024-2025?",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "sales",
+    "question": "Show total sales in TMT for RIL SBU LUBES in 2025-2026.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "sales",
+    "question": "Show total sales in TMT for IOCL SBU HPCL Mkt Retail in 2022-2023.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "sales",
+    "question": "Show total sales in TMT for MRPL SBU Lubes in 2021-2022.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "sales",
+    "question": "What is the total sales for HPCL in SBU Lubes for 2021-2022?",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "sales",
+    "question": "Find total actual volume of HSD in North West Retail Zo for 2021-2022.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "sales",
+    "question": "Get actual sales of LDO for CPCL in AURANGABAD LPG RO during 2025-2026.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "sales",
+    "question": "What is the total sales for PVT in SBU HPCL Mkt LPG for 2022-2023?",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "sales",
+    "question": "Find total actual volume of FO in North West Retail Zo for 2025-2026.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "sales",
+    "question": "Get actual sales of ATF for HMEL in NAVI MUMBAI LPG RO during 2025-2026.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "sales",
+    "question": "Show total sales in TMT for MRPL SBU I&C in 2021-2022.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "sales",
+    "question": "What is the cumulative actual sales for SBU HPCL Mkt DS I&C in SZ during 2022-2023?",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "sales",
+    "question": "Show total sales in TMT for GAIL SBU HPCL Mkt DS I&C in 2022-2023.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "sales",
+    "question": "What is the total sales for NEL in SBU HPCL Mkt Retail for 2021-2022?",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "sales",
+    "question": "Get actual sales of ATF for GAIL in NAGPUR I&C RO during 2025-2026.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "sales",
+    "question": "Find total actual volume of HSD in South Western for 2022-2023.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "sales",
+    "question": "What is the total sales for RIL in SBU HPCL Mkt LPG for 2024-2025?",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "sales",
+    "question": "Get actual sales of FO for GAIL in NAGPUR I&C RO during 2022-2023.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "sales",
+    "question": "Get actual sales of HSD for GAIL in DURGAPUR RET RO during 2025-2026.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "sales",
+    "question": "What is the cumulative actual sales for SBU HPCL Mkt DS I&C in West during 2024-2025?",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "sales",
+    "question": "Show total sales in TMT for HMEL SBU LUBES in 2021-2022.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "sales",
+    "question": "Get actual sales of LPG for MPSU in SECUNDRABAD RET RO during 2024-2025.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "growth",
+    "question": "Show growth % of MRPL in SBU LPG from 2021-2022 to 2022-2023.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "growth",
+    "question": "Calculate growth percentage of actual sales for PROPANE in North Central Retail comparing 2021-2022 and 2022-2023.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "growth",
+    "question": "Calculate growth percentage of actual sales for NAPHTHA in South comparing 2021-2022 and 2024-2025.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "growth",
+    "question": "Calculate growth percentage of actual sales for HSD in North Central Retail comparing 2022-2023 and 2024-2025.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "growth",
+    "question": "Calculate growth percentage of actual sales for MS in South Central Retail comparing 2024-2025 and 2025-2026.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "growth",
+    "question": "Compare sales difference for ATF under HPCL Mkt DS I&C from 2021-2022 to 2025-2026.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "growth",
+    "question": "Show growth % of MPSU in SBU LPG from 2022-2023 to 2024-2025.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "growth",
+    "question": "Calculate growth percentage of actual sales for NAPHTHA in EZ comparing 2021-2022 and 2025-2026.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "growth",
+    "question": "Show growth % of OTH PSU in SBU LPG from 2021-2022 to 2022-2023.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "growth",
+    "question": "Show volume growth trend of SBU HPCL Mkt Retail in PATNA from 2022-2023 to 2025-2026.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "growth",
+    "question": "Show growth % of NRL in SBU RETAIL from 2022-2023 to 2024-2025.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "growth",
+    "question": "Compare sales difference for MS under RETAIL from 2021-2022 to 2024-2025.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "growth",
+    "question": "Calculate growth percentage of actual sales for LPG in North Central LPG Zo comparing 2021-2022 and 2025-2026.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "growth",
+    "question": "Show growth % of MRPL in SBU LPG from 2021-2022 to 2025-2026.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "growth",
+    "question": "What is the sales increase percentage for IOCL from 2022-2023 to 2024-2025?",
+    "complexity": "HARD"
+  },
+  {
+    "category": "growth",
+    "question": "Calculate growth percentage of actual sales for MS in North Central LPG Zo comparing 2024-2025 and 2025-2026.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "growth",
+    "question": "Show volume growth trend of SBU LPG in HOSHIARPUR from 2021-2022 to 2025-2026.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "growth",
+    "question": "Calculate growth percentage of actual sales for NAPHTHA in North Frontier comparing 2022-2023 and 2025-2026.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "growth",
+    "question": "Calculate growth percentage of actual sales for FO in East comparing 2022-2023 and 2024-2025.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "growth",
+    "question": "Calculate growth percentage of actual sales for ATF in North Frontier comparing 2022-2023 and 2024-2025.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "growth",
+    "question": "Show growth % of OTH PSU in SBU Lubes from 2024-2025 to 2025-2026.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "growth",
+    "question": "Show volume growth trend of SBU HPCL Mkt DS I&C in VIJAYAWADA RET RO from 2022-2023 to 2025-2026.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "growth",
+    "question": "Show growth % of OTH PSU in SBU LPG from 2021-2022 to 2024-2025.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "growth",
+    "question": "Compare sales difference for PROPANE under LUBES from 2022-2023 to 2025-2026.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "growth",
+    "question": "Show volume growth trend of SBU HPCL Mkt LPG in RAIPUR RET RO from 2021-2022 to 2022-2023.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "growth",
+    "question": "Show volume growth trend of SBU LUBES in BENGALURU RET RO from 2022-2023 to 2025-2026.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "growth",
+    "question": "Compare sales difference for LPG under LPG from 2024-2025 to 2025-2026.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "growth",
+    "question": "Show volume growth trend of SBU RETAIL in BAREILLY RETAIL REGI from 2021-2022 to 2025-2026.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "growth",
+    "question": "Show growth % of OTH PSU in SBU I&C from 2021-2022 to 2022-2023.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "growth",
+    "question": "What is the sales increase percentage for SHELL from 2024-2025 to 2025-2026?",
+    "complexity": "HARD"
+  },
+  {
+    "category": "growth",
+    "question": "Show growth % of HMEL in SBU HPCL Mkt Retail from 2024-2025 to 2025-2026.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "growth",
+    "question": "Calculate growth percentage of actual sales for MS in North West Frontier comparing 2021-2022 and 2024-2025.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "growth",
+    "question": "What is the sales increase percentage for NEL from 2021-2022 to 2024-2025?",
+    "complexity": "HARD"
+  },
+  {
+    "category": "growth",
+    "question": "What is the sales increase percentage for IOCL from 2022-2023 to 2025-2026?",
+    "complexity": "HARD"
+  },
+  {
+    "category": "growth",
+    "question": "Show volume growth trend of SBU LPG in AHMEDABAD I&C RO from 2022-2023 to 2024-2025.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "growth",
+    "question": "Show growth % of BPCL in SBU HPCL Mkt LPG from 2022-2023 to 2025-2026.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "growth",
+    "question": "Show growth % of SHELL in SBU Lubes from 2022-2023 to 2025-2026.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "growth",
+    "question": "Compare sales difference for SKO under Retail from 2022-2023 to 2024-2025.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "growth",
+    "question": "What is the sales increase percentage for RIL from 2021-2022 to 2022-2023?",
+    "complexity": "HARD"
+  },
+  {
+    "category": "growth",
+    "question": "Calculate growth percentage of actual sales for LDO in SCZ comparing 2022-2023 and 2024-2025.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "market_share",
+    "question": "Provide market share breakdown for all companies under SBU RETAIL for 2024-2025.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "market_share",
+    "question": "Find company wise market share percentage in East during 2025-2026.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "market_share",
+    "question": "Which company has the highest market share of MS in 2021-2022?",
+    "complexity": "HARD"
+  },
+  {
+    "category": "market_share",
+    "question": "Provide market share breakdown for all companies under SBU RETAIL for 2022-2023.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "market_share",
+    "question": "Which company has the highest market share of MS in 2022-2023?",
+    "complexity": "HARD"
+  },
+  {
+    "category": "market_share",
+    "question": "Show market contribution of GAIL in NAGPUR RET RO for SBU I&C during 2021-2022.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "market_share",
+    "question": "Find company wise market share percentage in SCZ during 2024-2025.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "market_share",
+    "question": "Find company wise market share percentage in North West LPG during 2025-2026.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "market_share",
+    "question": "Which company has the highest market share of HSD in 2021-2022?",
+    "complexity": "HARD"
+  },
+  {
+    "category": "market_share",
+    "question": "What is the market share of CPCL in SBU LUBES for 2025-2026?",
+    "complexity": "HARD"
+  },
+  {
+    "category": "market_share",
+    "question": "What is the market share of OTH PSU in SBU HPCL Mkt Retail for 2024-2025?",
+    "complexity": "HARD"
+  },
+  {
+    "category": "market_share",
+    "question": "Find company wise market share percentage in North Central Retail during 2025-2026.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "market_share",
+    "question": "What is the market share of NEL in SBU LUBES for 2025-2026?",
+    "complexity": "HARD"
+  },
+  {
+    "category": "market_share",
+    "question": "Find company wise market share percentage in EZ during 2022-2023.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "market_share",
+    "question": "Show market contribution of IOCL in GORAKHPUR LPG RO for SBU Retail during 2022-2023.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "market_share",
+    "question": "What is the market share of HMEL in SBU Lubes for 2025-2026?",
+    "complexity": "HARD"
+  },
+  {
+    "category": "market_share",
+    "question": "Find company wise market share percentage in South Central Retail during 2021-2022.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "market_share",
+    "question": "Provide market share breakdown for all companies under SBU Retail for 2025-2026.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "market_share",
+    "question": "Which company has the highest market share of FO in 2024-2025?",
+    "complexity": "HARD"
+  },
+  {
+    "category": "market_share",
+    "question": "Find company wise market share percentage in East during 2021-2022.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "market_share",
+    "question": "Provide market share breakdown for all companies under SBU HPCL Mkt Retail for 2025-2026.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "market_share",
+    "question": "Provide market share breakdown for all companies under SBU HPCL Mkt LPG for 2025-2026.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "market_share",
+    "question": "Provide market share breakdown for all companies under SBU Lubes for 2024-2025.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "market_share",
+    "question": "What is the market share of NRL in SBU LPG for 2022-2023?",
+    "complexity": "HARD"
+  },
+  {
+    "category": "market_share",
+    "question": "Show market contribution of OTH PSU in SOLAPUR LPG RO for SBU Lubes during 2025-2026.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "market_share",
+    "question": "Which company has the highest market share of LDO in 2024-2025?",
+    "complexity": "HARD"
+  },
+  {
+    "category": "market_share",
+    "question": "What is the market share of BPCL in SBU Lubes for 2021-2022?",
+    "complexity": "HARD"
+  },
+  {
+    "category": "market_share",
+    "question": "What is the market share of RIL in SBU LPG for 2025-2026?",
+    "complexity": "HARD"
+  },
+  {
+    "category": "market_share",
+    "question": "Find company wise market share percentage in South during 2022-2023.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "market_share",
+    "question": "Show market contribution of MPSU in RANCHI for SBU HPCL Mkt LPG during 2022-2023.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "market_share",
+    "question": "What is the market share of HMEL in SBU Lubes for 2025-2026?",
+    "complexity": "HARD"
+  },
+  {
+    "category": "market_share",
+    "question": "Provide market share breakdown for all companies under SBU LPG for 2025-2026.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "market_share",
+    "question": "Which company has the highest market share of FO in 2021-2022?",
+    "complexity": "HARD"
+  },
+  {
+    "category": "market_share",
+    "question": "Which company has the highest market share of LPG in 2022-2023?",
+    "complexity": "HARD"
+  },
+  {
+    "category": "market_share",
+    "question": "Which company has the highest market share of LDO in 2025-2026?",
+    "complexity": "HARD"
+  },
+  {
+    "category": "market_share",
+    "question": "Provide market share breakdown for all companies under SBU HPCL Mkt LPG for 2025-2026.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "market_share",
+    "question": "Provide market share breakdown for all companies under SBU LUBES for 2024-2025.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "market_share",
+    "question": "Show market contribution of HPCL in JAMMU & KASHMIR RET for SBU LUBES during 2021-2022.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "market_share",
+    "question": "Show market contribution of MRPL in BHOPAL RET RO for SBU Retail during 2021-2022.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "market_share",
+    "question": "Provide market share breakdown for all companies under SBU LUBES for 2021-2022.",
+    "complexity": "HARD"
+  },
+  {
+    "category": "comparison",
+    "question": "Compare MRPL and RIL actual volume in Central during 2022-2023.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "comparison",
+    "question": "How do SBU RETAIL sales compare with SBU LUBES for PVT in 2025-2026?",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "comparison",
+    "question": "Show sales comparison of SBU LPG and SBU I&C in MADURAI for 2022-2023.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "comparison",
+    "question": "Compare SHELL vs BPCL sales of PROPANE in South for 2024-2025.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "comparison",
+    "question": "Compare OTH PSU and GAIL actual volume in South during 2021-2022.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "comparison",
+    "question": "Show sales comparison of SBU I&C and SBU HPCL Mkt DS I&C in NAGPUR LPG RO for 2024-2025.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "comparison",
+    "question": "Show sales comparison of SBU HPCL Mkt LPG and SBU RETAIL in WEST for 2022-2023.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "comparison",
+    "question": "Show sales comparison of SBU RETAIL and SBU HPCL Mkt DS I&C in VISAKH for 2024-2025.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "comparison",
+    "question": "Compare NEL and GAIL actual volume in NWZ during 2022-2023.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "comparison",
+    "question": "Show sales comparison of SBU LPG and SBU I&C in Ranchi for 2021-2022.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "comparison",
+    "question": "Compare NRL vs PVT sales of SKO in WZ for 2024-2025.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "comparison",
+    "question": "Compare HPCL vs MPSU sales of SKO in North Central LPG Zo for 2024-2025.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "comparison",
+    "question": "How do SBU Retail sales compare with SBU HPCL Mkt LPG for IOCL in 2024-2025?",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "comparison",
+    "question": "How do SBU RETAIL sales compare with SBU HPCL Mkt Retail for IOCL in 2022-2023?",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "comparison",
+    "question": "Compare MRPL and RIL actual volume in South Central LPG Zo during 2021-2022.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "comparison",
+    "question": "Compare RIL vs MPSU sales of LPG in North for 2022-2023.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "comparison",
+    "question": "Compare regional sales of LPG in AHMEDABAD RET RO vs LONI during 2025-2026.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "comparison",
+    "question": "Compare SHELL and CPCL actual volume in East during 2021-2022.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "comparison",
+    "question": "Compare GAIL vs CPCL sales of ATF in EZ for 2021-2022.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "comparison",
+    "question": "Compare HMEL and MRPL actual volume in SCZ during 2024-2025.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "comparison",
+    "question": "Compare NEL and PVT actual volume in North during 2025-2026.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "comparison",
+    "question": "How do SBU HPCL Mkt Retail sales compare with SBU HPCL Mkt DS I&C for GAIL in 2024-2025?",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "comparison",
+    "question": "Compare BPCL and MRPL actual volume in North Frontier during 2024-2025.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "comparison",
+    "question": "Compare regional sales of SKO in EAST vs HAZIRA during 2025-2026.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "comparison",
+    "question": "How do SBU HPCL Mkt Retail sales compare with SBU HPCL Mkt DS I&C for RIL in 2025-2026?",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "comparison",
+    "question": "How do SBU LPG sales compare with SBU HPCL Mkt LPG for MPSU in 2021-2022?",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "comparison",
+    "question": "How do SBU HPCL Mkt Retail sales compare with SBU LPG for PVT in 2021-2022?",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "comparison",
+    "question": "Show sales comparison of SBU RETAIL and SBU LUBES in BATHINDA RET RO for 2024-2025.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "comparison",
+    "question": "Show sales comparison of SBU HPCL Mkt Retail and SBU LUBES in COIMBATORE RET RO for 2022-2023.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "comparison",
+    "question": "Show sales comparison of SBU RETAIL and SBU HPCL Mkt DS I&C in NELLORE RET RO for 2022-2023.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "comparison",
+    "question": "How do SBU RETAIL sales compare with SBU HPCL Mkt DS I&C for CPCL in 2021-2022?",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "comparison",
+    "question": "Show sales comparison of SBU LPG and SBU Lubes in AHMEDABAD RET RO for 2021-2022.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "comparison",
+    "question": "Compare regional sales of HSD in LUCKNOW RET RO vs MUZZAFFARPUR LPG RO during 2025-2026.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "comparison",
+    "question": "Compare PVT and CPCL actual volume in NWZ during 2021-2022.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "comparison",
+    "question": "Show sales comparison of SBU LUBES and SBU I&C in LUCKNOW for 2022-2023.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "comparison",
+    "question": "How do SBU Lubes sales compare with SBU Retail for NRL in 2022-2023?",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "comparison",
+    "question": "Compare BPCL vs IOCL sales of LDO in East Central for 2022-2023.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "comparison",
+    "question": "Compare regional sales of HSD in MEERUT RET RO vs GUWAHATI RET RO during 2025-2026.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "comparison",
+    "question": "Compare regional sales of SKO in JAIPUR vs RAIPUR LUBES RO during 2024-2025.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "comparison",
+    "question": "Show sales comparison of SBU RETAIL and SBU HPCL Mkt LPG in MUMBAI I&C RO for 2021-2022.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "ranking",
+    "question": "Show bottom 3 companies by market contribution % under SBU HPCL Mkt DS I&C in 2022-2023.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "ranking",
+    "question": "Show bottom 3 companies by market contribution % under SBU LUBES in 2024-2025.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "ranking",
+    "question": "Show top 5 regions by actual sales of LPG for IOCL in 2024-2025.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "ranking",
+    "question": "Show top 5 regions by actual sales of NAPHTHA for IOCL in 2025-2026.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "ranking",
+    "question": "Show top 5 regions by actual sales of FO for MPSU in 2024-2025.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "ranking",
+    "question": "Show bottom 3 companies by market contribution % under SBU HPCL Mkt DS I&C in 2021-2022.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "ranking",
+    "question": "Get the highest 3 products by volume in SAMBALPUR during 2024-2025.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "ranking",
+    "question": "Get the highest 3 products by volume in VISAKH I&C RO during 2024-2025.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "ranking",
+    "question": "Rank SBUs based on total sales inside WZ for 2024-2025.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "ranking",
+    "question": "Get the highest 3 products by volume in RANCHI during 2025-2026.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "ranking",
+    "question": "Rank all companies by sales of SKO in SCZ for 2025-2026.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "ranking",
+    "question": "Get the highest 3 products by volume in BHUBANESWAR I&C RO during 2022-2023.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "ranking",
+    "question": "Show bottom 3 companies by market contribution % under SBU I&C in 2024-2025.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "ranking",
+    "question": "Rank SBUs based on total sales inside North West Frontier for 2022-2023.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "ranking",
+    "question": "Get the highest 3 products by volume in HYDERABAD during 2024-2025.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "ranking",
+    "question": "Show top 5 regions by actual sales of HSD for MPSU in 2024-2025.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "ranking",
+    "question": "Rank all companies by sales of NAPHTHA in South Central LPG Zo for 2024-2025.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "ranking",
+    "question": "Get the highest 3 products by volume in DHANBAD RETAIL REGIO during 2022-2023.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "ranking",
+    "question": "Show bottom 3 companies by market contribution % under SBU I&C in 2024-2025.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "ranking",
+    "question": "Rank all companies by sales of SKO in North for 2025-2026.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "ranking",
+    "question": "Get the highest 3 products by volume in VIJAYAWADA RET RO during 2021-2022.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "ranking",
+    "question": "Show bottom 3 companies by market contribution % under SBU LUBES in 2025-2026.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "ranking",
+    "question": "Rank SBUs based on total sales inside West for 2021-2022.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "ranking",
+    "question": "Rank all companies by sales of FO in North for 2025-2026.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "ranking",
+    "question": "Show bottom 3 companies by market contribution % under SBU Retail in 2022-2023.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "ranking",
+    "question": "Show top 5 regions by actual sales of PROPANE for NRL in 2022-2023.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "ranking",
+    "question": "Show top 5 regions by actual sales of MS for BPCL in 2024-2025.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "ranking",
+    "question": "Get the highest 3 products by volume in AHMEDABAD RET RO during 2025-2026.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "ranking",
+    "question": "Show top 5 regions by actual sales of ATF for OTH PSU in 2021-2022.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "ranking",
+    "question": "Show bottom 3 companies by market contribution % under SBU Lubes in 2021-2022.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "ranking",
+    "question": "Rank SBUs based on total sales inside SZ for 2024-2025.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "ranking",
+    "question": "Rank all companies by sales of LDO in NWZ for 2022-2023.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "ranking",
+    "question": "Rank all companies by sales of HSD in North Central Retail for 2022-2023.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "ranking",
+    "question": "Get the highest 3 products by volume in SAMBALPUR RET RO during 2021-2022.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "ranking",
+    "question": "Rank SBUs based on total sales inside SZ for 2021-2022.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "ranking",
+    "question": "Show bottom 3 companies by market contribution % under SBU LUBES in 2025-2026.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "ranking",
+    "question": "Rank all companies by sales of NAPHTHA in North Central Retail for 2022-2023.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "ranking",
+    "question": "Show bottom 3 companies by market contribution % under SBU RETAIL in 2025-2026.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "ranking",
+    "question": "Rank SBUs based on total sales inside Central for 2022-2023.",
+    "complexity": "MEDIUM"
+  },
+  {
+    "category": "ranking",
+    "question": "Rank SBUs based on total sales inside East for 2024-2025.",
+    "complexity": "MEDIUM"
+  }
+]

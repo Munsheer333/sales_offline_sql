@@ -1,0 +1,261 @@
+{
+  "summary": {
+    "timestamp": "20260602_164830",
+    "total_queries": 14,
+    "comparable_queries": 14,
+    "successful_pipelines": 10,
+    "pipeline_success_rate": 71.43,
+    "sql_execution_matches": 4,
+    "execution_match_rate": 28.57,
+    "average_duration_ms": 2697.43,
+    "categories": {
+      "total_sales": {
+        "total_queries": 2,
+        "comparable_queries": 2,
+        "pipeline_success_rate": 100.0,
+        "execution_match_rate": 50.0,
+        "average_duration_ms": 91.28
+      },
+      "market_share": {
+        "total_queries": 2,
+        "comparable_queries": 2,
+        "pipeline_success_rate": 100.0,
+        "execution_match_rate": 0.0,
+        "average_duration_ms": 83.94
+      },
+      "growth": {
+        "total_queries": 2,
+        "comparable_queries": 2,
+        "pipeline_success_rate": 50.0,
+        "execution_match_rate": 0.0,
+        "average_duration_ms": 6046.63
+      },
+      "ranking": {
+        "total_queries": 2,
+        "comparable_queries": 2,
+        "pipeline_success_rate": 50.0,
+        "execution_match_rate": 50.0,
+        "average_duration_ms": 6069.86
+      },
+      "comparison": {
+        "total_queries": 2,
+        "comparable_queries": 2,
+        "pipeline_success_rate": 50.0,
+        "execution_match_rate": 50.0,
+        "average_duration_ms": 6068.84
+      },
+      "trend": {
+        "total_queries": 2,
+        "comparable_queries": 2,
+        "pipeline_success_rate": 100.0,
+        "execution_match_rate": 50.0,
+        "average_duration_ms": 153.87
+      },
+      "geography": {
+        "total_queries": 2,
+        "comparable_queries": 2,
+        "pipeline_success_rate": 50.0,
+        "execution_match_rate": 0.0,
+        "average_duration_ms": 367.57
+      }
+    }
+  },
+  "details": [
+    {
+      "category": "total_sales",
+      "question": "What is the actual sales in TMT for Retail HSD from Dec 1 2025 to Dec 15 2025?",
+      "expected_sql": "SELECT round(sum(netweight_tmt)::numeric, 2) AS actual_tmt_sales FROM mom_level WHERE sbu_name != '0' AND sbu_name NOT IN ('Common', 'Mumbai Ref', 'Renewable Energy', 'Visakh Ref') AND sbu_name = 'Retail' AND productname = 'HSD' AND day_id BETWEEN '2025-12-01' AND '2025-12-15';",
+      "generated_sql": "SELECT SUM(mom_level.netweight_tmt) AS sum_actual_sales_tmt\nFROM mom_level\nWHERE mom_level.sbu_name != '0' AND mom_level.sbu_name NOT IN ('Common', 'Mumbai Ref', 'Renewable Energy', 'Visakh Ref') AND mom_level.sbu_name = 'Retail' AND mom_level.productname = 'HSD' AND mom_level.day_id BETWEEN '2025-12-01' AND '2025-12-15';",
+      "pipeline_success": true,
+      "execution_match": true,
+      "is_comparable": true,
+      "expected_complexity": "MEDIUM",
+      "actual_complexity": "MEDIUM",
+      "actual_intent": null,
+      "duration_ms": 111.0,
+      "error": null
+    },
+    {
+      "category": "total_sales",
+      "question": "Show actual sales for product MS in MT for Retail in Oct 2025.",
+      "expected_sql": "SELECT round(sum(netweight_tmt * 1000)::numeric, 2) AS actual_mt_sales FROM mom_level WHERE sbu_name != '0' AND sbu_name NOT IN ('Common', 'Mumbai Ref', 'Renewable Energy', 'Visakh Ref') AND sbu_name = 'Retail' AND productname = 'MS' AND yearmonth = 202510;",
+      "generated_sql": "SELECT SUM(mom_level.netweight_tmt) * 1000 AS sum_actual_sales_mt\nFROM mom_level\nWHERE mom_level.sbu_name != '0' AND mom_level.sbu_name NOT IN ('Common', 'Mumbai Ref', 'Renewable Energy', 'Visakh Ref') AND mom_level.sbu_name = 'Retail' AND mom_level.productname = 'MS' AND mom_level.yearmonth = 202510;",
+      "pipeline_success": true,
+      "execution_match": false,
+      "is_comparable": true,
+      "expected_complexity": "HARD",
+      "actual_complexity": "MEDIUM",
+      "actual_intent": null,
+      "duration_ms": 71.55,
+      "error": null
+    },
+    {
+      "category": "market_share",
+      "question": "What is market share for IOCL in FY 2024-2025?",
+      "expected_sql": "SELECT ROUND((SUM(CASE WHEN comname = 'IOCL' THEN netweight_tmt ELSE 0 END) * 100.0) / SUM(netweight_tmt), 2) AS market_share_percentage FROM industry_performance WHERE (category != 'O' OR category IS NULL) AND fiscal_year = '2024-2025';",
+      "generated_sql": "WITH company_sales AS (\n    SELECT industry_performance.comname, SUM(industry_performance.netweight_tmt) AS company_total\n    FROM industry_performance\n    WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.fiscal_year = '2024-2025' AND industry_performance.comname = 'IOCL'\n    GROUP BY industry_performance.comname\n),\ntotal_market AS (\n    SELECT SUM(industry_performance.netweight_tmt) AS market_total\n    FROM industry_performance\n    WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.fiscal_year = '2024-2025'\n)\nSELECT company_sales.comname,\n       ROUND((company_sales.company_total * 100.0) / NULLIF(total_market.market_total, 0), 2) AS market_share_percentage\nFROM company_sales\nCROSS JOIN total_market\nORDER BY market_share_percentage ASC\nLIMIT 1;",
+      "pipeline_success": true,
+      "execution_match": false,
+      "is_comparable": true,
+      "expected_complexity": "HARD",
+      "actual_complexity": "HARD",
+      "actual_intent": null,
+      "duration_ms": 85.23,
+      "error": null
+    },
+    {
+      "category": "market_share",
+      "question": "Which company has the lowest market share in fiscal year 2024-2025?",
+      "expected_sql": "WITH company_sales AS (SELECT comname, SUM(netweight_tmt) AS company_total FROM industry_performance WHERE (category != 'O' OR category IS NULL) AND fiscal_year = '2024-2025' GROUP BY comname), total_market AS (SELECT SUM(netweight_tmt) AS market_total FROM industry_performance WHERE (category != 'O' OR category IS NULL) AND fiscal_year = '2024-2025') SELECT cs.comname, ROUND((cs.company_total * 100.0) / tm.market_total, 2) AS market_share_percentage FROM company_sales cs CROSS JOIN total_market tm ORDER BY market_share_percentage ASC LIMIT 1;",
+      "generated_sql": "WITH company_sales AS (\n    SELECT industry_performance.comname, SUM(industry_performance.netweight_tmt) AS company_total\n    FROM industry_performance\n    WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.fiscal_year = '2024-2025' AND industry_performance.comname = 'IOCL'\n    GROUP BY industry_performance.comname\n),\ntotal_market AS (\n    SELECT SUM(industry_performance.netweight_tmt) AS market_total\n    FROM industry_performance\n    WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.fiscal_year = '2024-2025'\n)\nSELECT company_sales.comname,\n       ROUND((company_sales.company_total * 100.0) / NULLIF(total_market.market_total, 0), 2) AS market_share_percentage\nFROM company_sales\nCROSS JOIN total_market\nORDER BY market_share_percentage ASC\nLIMIT 1;",
+      "pipeline_success": true,
+      "execution_match": false,
+      "is_comparable": true,
+      "expected_complexity": "ADVANCED",
+      "actual_complexity": "HARD",
+      "actual_intent": null,
+      "duration_ms": 82.65,
+      "error": null
+    },
+    {
+      "category": "growth",
+      "question": "What is the sales growth percentage for HPCL in Retail SBU from FY 2023-2024 to FY 2024-2025?",
+      "expected_sql": "WITH y1 AS (SELECT SUM(netweight_tmt) AS s1 FROM industry_performance WHERE comname = 'HPCL' AND sbu_name = 'Retail' AND fiscal_year = '2023-2024'), y2 AS (SELECT SUM(netweight_tmt) AS s2 FROM industry_performance WHERE comname = 'HPCL' AND sbu_name = 'Retail' AND fiscal_year = '2024-2025') SELECT ROUND(((y2.s2 - y1.s1) * 100.0) / y1.s1, 2) AS sales_growth_percentage FROM y1, y2;",
+      "generated_sql": "WITH sales_totals AS (\n    SELECT COALESCE(SUM(CASE WHEN industry_performance.fiscal_year = '2023-2024' THEN industry_performance.netweight_tmt ELSE 0 END), 0) AS previous_sales,\n           COALESCE(SUM(CASE WHEN industry_performance.fiscal_year = '2024-2025' THEN industry_performance.netweight_tmt ELSE 0 END), 0) AS current_sales\n    FROM industry_performance\n    WHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.comname = 'HPCL' AND industry_performance.sbu_name = 'RETAIL' AND industry_performance.fiscal_year IN ('2023-2024', '2024-2025')\n)\nSELECT ROUND(sales_totals.previous_sales::numeric, 2) AS previous_sales_tmt,\n       ROUND(sales_totals.current_sales::numeric, 2) AS current_sales_tmt,\n       ROUND((sales_totals.current_sales - sales_totals.previous_sales)::numeric, 2) AS sales_difference_tmt,\n       ROUND(CASE WHEN sales_totals.previous_sales = 0 THEN NULL ELSE ((sales_totals.current_sales - sales_totals.previous_sales) * 100.0 / sales_totals.previous_sales)::numeric END, 2) AS sales_growth_percentage\nFROM sales_totals;",
+      "pipeline_success": true,
+      "execution_match": false,
+      "is_comparable": true,
+      "expected_complexity": "ADVANCED",
+      "actual_complexity": "HARD",
+      "actual_intent": null,
+      "duration_ms": 87.68,
+      "error": null
+    },
+    {
+      "category": "growth",
+      "question": "Show products having growth of more than 5% in actual volume in current fiscal year.",
+      "expected_sql": "SELECT productname, ROUND((SUM(netweight_tmt) - SUM(target_qty_tmt)) * 100.0 / SUM(target_qty_tmt), 2) AS growth_percentage FROM m60_level WHERE fiscal_year = '2025-2026' GROUP BY productname HAVING ROUND((SUM(netweight_tmt) - SUM(target_qty_tmt)) * 100.0 / SUM(target_qty_tmt), 2) > 5;",
+      "generated_sql": "",
+      "pipeline_success": false,
+      "execution_match": false,
+      "is_comparable": true,
+      "expected_complexity": "ADVANCED",
+      "actual_complexity": null,
+      "actual_intent": null,
+      "duration_ms": 12005.59,
+      "error": null
+    },
+    {
+      "category": "ranking",
+      "question": "Rank companies by industry performance sales in AP state.",
+      "expected_sql": "SELECT comname, round(sum(netweight_tmt)::numeric, 2) AS total_sales_tmt FROM industry_performance WHERE (category != 'O' OR category IS NULL) AND statename = 'ANDHRA PRADESH' GROUP BY comname ORDER BY total_sales_tmt DESC;",
+      "generated_sql": "",
+      "pipeline_success": false,
+      "execution_match": false,
+      "is_comparable": true,
+      "expected_complexity": "ADVANCED",
+      "actual_complexity": null,
+      "actual_intent": null,
+      "duration_ms": 12003.79,
+      "error": null
+    },
+    {
+      "category": "ranking",
+      "question": "Get the top 3 products by actual weight in current fiscal year.",
+      "expected_sql": "SELECT productname, round(sum(netweight_tmt)::numeric, 2) AS total_weight FROM mom_level WHERE fiscal_year = '2025-2026' GROUP BY productname ORDER BY total_weight DESC LIMIT 3;",
+      "generated_sql": "SELECT mom_level.productname, ROUND(SUM(mom_level.netweight_tmt)::numeric, 2) AS sum_actual_sales_tmt FROM mom_level WHERE mom_level.sbu_name != '0' AND mom_level.sbu_name NOT IN ('Common', 'Mumbai Ref', 'Renewable Energy', 'Visakh Ref') AND mom_level.fiscal_year = '2025-2026' GROUP BY mom_level.productname ORDER BY sum_actual_sales_tmt DESC LIMIT 3;",
+      "pipeline_success": true,
+      "execution_match": true,
+      "is_comparable": true,
+      "expected_complexity": "MEDIUM",
+      "actual_complexity": "DETERMINISTIC",
+      "actual_intent": null,
+      "duration_ms": 135.92,
+      "error": null
+    },
+    {
+      "category": "comparison",
+      "question": "Get the total target quantity in KL from M60_LEVEL for strategic business unit I&C in North zone.",
+      "expected_sql": "SELECT sum(target_qty_kl) AS total_target_kl FROM m60_level WHERE sbu_name = 'I&C' AND zone_name = 'North';",
+      "generated_sql": "SELECT SUM(m60_level.target_qty_kl) AS sum_target_quantity_kl\nFROM m60_level\nWHERE 1 = 1 AND UPPER(m60_level.sbu_name) = UPPER('I&C') AND UPPER(m60_level.zone_name) = UPPER('North');",
+      "pipeline_success": true,
+      "execution_match": true,
+      "is_comparable": true,
+      "expected_complexity": "MEDIUM",
+      "actual_complexity": "MEDIUM",
+      "actual_intent": null,
+      "duration_ms": 133.41,
+      "error": null
+    },
+    {
+      "category": "comparison",
+      "question": "Compare HPCL and IOCL sales in West zone for FY 2024-2025.",
+      "expected_sql": "SELECT comname, round(sum(netweight_tmt)::numeric, 2) AS total_sales FROM industry_performance WHERE comname IN ('HPCL', 'IOCL') AND zone_name = 'West' AND fiscal_year = '2024-2025' GROUP BY comname;",
+      "generated_sql": "",
+      "pipeline_success": false,
+      "execution_match": false,
+      "is_comparable": true,
+      "expected_complexity": "MEDIUM",
+      "actual_complexity": null,
+      "actual_intent": null,
+      "duration_ms": 12004.27,
+      "error": null
+    },
+    {
+      "category": "trend",
+      "question": "Show month-wise actual sales trend in TMT for Retail MS in FY 2024-2025.",
+      "expected_sql": "SELECT month_name, round(sum(netweight_tmt)::numeric, 2) AS monthly_sales FROM mom_level WHERE sbu_name = 'Retail' AND productname = 'MS' AND fiscal_year = '2024-2025' GROUP BY month_name, yearmonth ORDER BY yearmonth ASC;",
+      "generated_sql": "SELECT month_name, SUM(mom_level.netweight_tmt) AS actual_sales_tmt\nFROM mom_level\nWHERE mom_level.sbu_name != '0' AND mom_level.sbu_name NOT IN ('Common', 'Mumbai Ref', 'Renewable Energy', 'Visakh Ref') AND mom_level.sbu_name = 'Retail' AND mom_level.productname = 'MS' AND mom_level.fiscal_year = '2024-2025'\nGROUP BY month_name, yearmonth\nORDER BY yearmonth;",
+      "pipeline_success": true,
+      "execution_match": true,
+      "is_comparable": true,
+      "expected_complexity": "HARD",
+      "actual_complexity": "MEDIUM",
+      "actual_intent": null,
+      "duration_ms": 156.94,
+      "error": null
+    },
+    {
+      "category": "trend",
+      "question": "Get day-wise actual sales for LPG in strategic business unit LPG from Dec 1 2025 to Dec 10 2025.",
+      "expected_sql": "SELECT day_id, round(sum(netweight_tmt)::numeric, 2) AS daily_sales FROM mom_level WHERE sbu_name = 'LPG' AND productname = 'LPG' AND day_id BETWEEN '2025-12-01' AND '2025-12-10' GROUP BY day_id ORDER BY day_id ASC;",
+      "generated_sql": "SELECT SUM(mom_level.netweight_tmt) AS sum_actual_sales_tmt\nFROM mom_level\nWHERE mom_level.sbu_name != '0' AND mom_level.sbu_name NOT IN ('Common', 'Mumbai Ref', 'Renewable Energy', 'Visakh Ref') AND mom_level.sbu_name = 'LPG' AND mom_level.productname = 'LPG' AND mom_level.day_id BETWEEN '2025-12-01' AND '2025-12-10';",
+      "pipeline_success": true,
+      "execution_match": false,
+      "is_comparable": true,
+      "expected_complexity": "MEDIUM",
+      "actual_complexity": "MEDIUM",
+      "actual_intent": null,
+      "duration_ms": 150.8,
+      "error": null
+    },
+    {
+      "category": "geography",
+      "question": "Show industry performance for HPCL in district AGRA for fiscal year 2021-2022.",
+      "expected_sql": "SELECT * FROM industry_performance WHERE (category != 'O' OR category IS NULL) AND comname = 'HPCL' AND distname = 'AGRA' AND fiscal_year = '2021-2022';",
+      "generated_sql": "SELECT SUM(industry_performance.netweight_tmt) AS sum_actual_sales_tmt\nFROM industry_performance\nWHERE (industry_performance.category != 'O' OR industry_performance.category IS NULL) AND industry_performance.comname = 'HPCL' AND industry_performance.fiscal_year = '2021-2022' AND industry_performance.distname = 'AGRA';",
+      "pipeline_success": true,
+      "execution_match": false,
+      "is_comparable": true,
+      "expected_complexity": "MEDIUM",
+      "actual_complexity": "MEDIUM",
+      "actual_intent": null,
+      "duration_ms": 123.25,
+      "error": null
+    },
+    {
+      "category": "geography",
+      "question": "Get the total actual sales in TMT by zone for Retail in FY 2024-2025.",
+      "expected_sql": "SELECT zone_name, round(sum(netweight_tmt)::numeric, 2) AS total_sales FROM mom_level WHERE sbu_name = 'Retail' AND fiscal_year = '2024-2025' GROUP BY zone_name ORDER BY total_sales DESC;",
+      "generated_sql": "SELECT mom_level.zone_name, ROUND(SUM(mom_level.netweight_tmt)::numeric, 2) AS sum_actual_sales_tmt FROM mom_level WHERE mom_level.sbu_name != '0' AND mom_level.sbu_name NOT IN ('Common', 'Mumbai Ref', 'Renewable Energy', 'Visakh Ref') AND mom_level.sbu_name = 'Retail' AND mom_level.fiscal_year = '2024-2025' GROUP BY mom_level.zone_name;",
+      "pipeline_success": false,
+      "execution_match": false,
+      "is_comparable": true,
+      "expected_complexity": "MEDIUM",
+      "actual_complexity": "MEDIUM",
+      "actual_intent": null,
+      "duration_ms": 611.9,
+      "error": null
+    }
+  ]
+}

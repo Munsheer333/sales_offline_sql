@@ -1,0 +1,807 @@
+id,family,prompt,company,sbu,fiscal_year
+total_sales_0001,total_sales,What is total sales for HPCL in Retail during FY 2023-2024?,HPCL,Retail,2023-2024
+total_sales_0002,total_sales,Show total sales for HPCL in Retail for FY 2023-2024.,HPCL,Retail,2023-2024
+total_sales_0003,total_sales,Give the sales volume for HPCL in the Retail SBU during 2023-2024.,HPCL,Retail,2023-2024
+total_sales_0004,total_sales,What is total sales for HPCL in Retail during FY 2024-2025?,HPCL,Retail,2024-2025
+total_sales_0005,total_sales,Show total sales for HPCL in Retail for FY 2024-2025.,HPCL,Retail,2024-2025
+total_sales_0006,total_sales,Give the sales volume for HPCL in the Retail SBU during 2024-2025.,HPCL,Retail,2024-2025
+total_sales_0007,total_sales,What is total sales for HPCL in Retail during FY 2025-2026?,HPCL,Retail,2025-2026
+total_sales_0008,total_sales,Show total sales for HPCL in Retail for FY 2025-2026.,HPCL,Retail,2025-2026
+total_sales_0009,total_sales,Give the sales volume for HPCL in the Retail SBU during 2025-2026.,HPCL,Retail,2025-2026
+total_sales_0010,total_sales,What is total sales for HPCL in Lubes during FY 2023-2024?,HPCL,Lubes,2023-2024
+total_sales_0011,total_sales,Show total sales for HPCL in Lubes for FY 2023-2024.,HPCL,Lubes,2023-2024
+total_sales_0012,total_sales,Give the sales volume for HPCL in the Lubes SBU during 2023-2024.,HPCL,Lubes,2023-2024
+total_sales_0013,total_sales,What is total sales for HPCL in Lubes during FY 2024-2025?,HPCL,Lubes,2024-2025
+total_sales_0014,total_sales,Show total sales for HPCL in Lubes for FY 2024-2025.,HPCL,Lubes,2024-2025
+total_sales_0015,total_sales,Give the sales volume for HPCL in the Lubes SBU during 2024-2025.,HPCL,Lubes,2024-2025
+total_sales_0016,total_sales,What is total sales for HPCL in Lubes during FY 2025-2026?,HPCL,Lubes,2025-2026
+total_sales_0017,total_sales,Show total sales for HPCL in Lubes for FY 2025-2026.,HPCL,Lubes,2025-2026
+total_sales_0018,total_sales,Give the sales volume for HPCL in the Lubes SBU during 2025-2026.,HPCL,Lubes,2025-2026
+total_sales_0019,total_sales,What is total sales for HPCL in LPG during FY 2023-2024?,HPCL,LPG,2023-2024
+total_sales_0020,total_sales,Show total sales for HPCL in LPG for FY 2023-2024.,HPCL,LPG,2023-2024
+total_sales_0021,total_sales,Give the sales volume for HPCL in the LPG SBU during 2023-2024.,HPCL,LPG,2023-2024
+total_sales_0022,total_sales,What is total sales for HPCL in LPG during FY 2024-2025?,HPCL,LPG,2024-2025
+total_sales_0023,total_sales,Show total sales for HPCL in LPG for FY 2024-2025.,HPCL,LPG,2024-2025
+total_sales_0024,total_sales,Give the sales volume for HPCL in the LPG SBU during 2024-2025.,HPCL,LPG,2024-2025
+total_sales_0025,total_sales,What is total sales for HPCL in LPG during FY 2025-2026?,HPCL,LPG,2025-2026
+total_sales_0026,total_sales,Show total sales for HPCL in LPG for FY 2025-2026.,HPCL,LPG,2025-2026
+total_sales_0027,total_sales,Give the sales volume for HPCL in the LPG SBU during 2025-2026.,HPCL,LPG,2025-2026
+total_sales_0028,total_sales,What is total sales for HPCL in NG during FY 2023-2024?,HPCL,NG,2023-2024
+total_sales_0029,total_sales,Show total sales for HPCL in NG for FY 2023-2024.,HPCL,NG,2023-2024
+total_sales_0030,total_sales,Give the sales volume for HPCL in the NG SBU during 2023-2024.,HPCL,NG,2023-2024
+total_sales_0031,total_sales,What is total sales for HPCL in NG during FY 2024-2025?,HPCL,NG,2024-2025
+total_sales_0032,total_sales,Show total sales for HPCL in NG for FY 2024-2025.,HPCL,NG,2024-2025
+total_sales_0033,total_sales,Give the sales volume for HPCL in the NG SBU during 2024-2025.,HPCL,NG,2024-2025
+total_sales_0034,total_sales,What is total sales for HPCL in NG during FY 2025-2026?,HPCL,NG,2025-2026
+total_sales_0035,total_sales,Show total sales for HPCL in NG for FY 2025-2026.,HPCL,NG,2025-2026
+total_sales_0036,total_sales,Give the sales volume for HPCL in the NG SBU during 2025-2026.,HPCL,NG,2025-2026
+total_sales_0037,total_sales,What is total sales for HPCL in Aviation during FY 2023-2024?,HPCL,Aviation,2023-2024
+total_sales_0038,total_sales,Show total sales for HPCL in Aviation for FY 2023-2024.,HPCL,Aviation,2023-2024
+total_sales_0039,total_sales,Give the sales volume for HPCL in the Aviation SBU during 2023-2024.,HPCL,Aviation,2023-2024
+total_sales_0040,total_sales,What is total sales for HPCL in Aviation during FY 2024-2025?,HPCL,Aviation,2024-2025
+total_sales_0041,total_sales,Show total sales for HPCL in Aviation for FY 2024-2025.,HPCL,Aviation,2024-2025
+total_sales_0042,total_sales,Give the sales volume for HPCL in the Aviation SBU during 2024-2025.,HPCL,Aviation,2024-2025
+total_sales_0043,total_sales,What is total sales for HPCL in Aviation during FY 2025-2026?,HPCL,Aviation,2025-2026
+total_sales_0044,total_sales,Show total sales for HPCL in Aviation for FY 2025-2026.,HPCL,Aviation,2025-2026
+total_sales_0045,total_sales,Give the sales volume for HPCL in the Aviation SBU during 2025-2026.,HPCL,Aviation,2025-2026
+total_sales_0046,total_sales,What is total sales for HPCL in I&C during FY 2023-2024?,HPCL,I&C,2023-2024
+total_sales_0047,total_sales,Show total sales for HPCL in I&C for FY 2023-2024.,HPCL,I&C,2023-2024
+total_sales_0048,total_sales,Give the sales volume for HPCL in the I&C SBU during 2023-2024.,HPCL,I&C,2023-2024
+total_sales_0049,total_sales,What is total sales for HPCL in I&C during FY 2024-2025?,HPCL,I&C,2024-2025
+total_sales_0050,total_sales,Show total sales for HPCL in I&C for FY 2024-2025.,HPCL,I&C,2024-2025
+total_sales_0051,total_sales,Give the sales volume for HPCL in the I&C SBU during 2024-2025.,HPCL,I&C,2024-2025
+total_sales_0052,total_sales,What is total sales for HPCL in I&C during FY 2025-2026?,HPCL,I&C,2025-2026
+total_sales_0053,total_sales,Show total sales for HPCL in I&C for FY 2025-2026.,HPCL,I&C,2025-2026
+total_sales_0054,total_sales,Give the sales volume for HPCL in the I&C SBU during 2025-2026.,HPCL,I&C,2025-2026
+total_sales_0055,total_sales,What is total sales for BPCL in Retail during FY 2023-2024?,BPCL,Retail,2023-2024
+total_sales_0056,total_sales,Show total sales for BPCL in Retail for FY 2023-2024.,BPCL,Retail,2023-2024
+total_sales_0057,total_sales,Give the sales volume for BPCL in the Retail SBU during 2023-2024.,BPCL,Retail,2023-2024
+total_sales_0058,total_sales,What is total sales for BPCL in Retail during FY 2024-2025?,BPCL,Retail,2024-2025
+total_sales_0059,total_sales,Show total sales for BPCL in Retail for FY 2024-2025.,BPCL,Retail,2024-2025
+total_sales_0060,total_sales,Give the sales volume for BPCL in the Retail SBU during 2024-2025.,BPCL,Retail,2024-2025
+total_sales_0061,total_sales,What is total sales for BPCL in Retail during FY 2025-2026?,BPCL,Retail,2025-2026
+total_sales_0062,total_sales,Show total sales for BPCL in Retail for FY 2025-2026.,BPCL,Retail,2025-2026
+total_sales_0063,total_sales,Give the sales volume for BPCL in the Retail SBU during 2025-2026.,BPCL,Retail,2025-2026
+total_sales_0064,total_sales,What is total sales for BPCL in Lubes during FY 2023-2024?,BPCL,Lubes,2023-2024
+total_sales_0065,total_sales,Show total sales for BPCL in Lubes for FY 2023-2024.,BPCL,Lubes,2023-2024
+total_sales_0066,total_sales,Give the sales volume for BPCL in the Lubes SBU during 2023-2024.,BPCL,Lubes,2023-2024
+total_sales_0067,total_sales,What is total sales for BPCL in Lubes during FY 2024-2025?,BPCL,Lubes,2024-2025
+total_sales_0068,total_sales,Show total sales for BPCL in Lubes for FY 2024-2025.,BPCL,Lubes,2024-2025
+total_sales_0069,total_sales,Give the sales volume for BPCL in the Lubes SBU during 2024-2025.,BPCL,Lubes,2024-2025
+total_sales_0070,total_sales,What is total sales for BPCL in Lubes during FY 2025-2026?,BPCL,Lubes,2025-2026
+total_sales_0071,total_sales,Show total sales for BPCL in Lubes for FY 2025-2026.,BPCL,Lubes,2025-2026
+total_sales_0072,total_sales,Give the sales volume for BPCL in the Lubes SBU during 2025-2026.,BPCL,Lubes,2025-2026
+total_sales_0073,total_sales,What is total sales for BPCL in LPG during FY 2023-2024?,BPCL,LPG,2023-2024
+total_sales_0074,total_sales,Show total sales for BPCL in LPG for FY 2023-2024.,BPCL,LPG,2023-2024
+total_sales_0075,total_sales,Give the sales volume for BPCL in the LPG SBU during 2023-2024.,BPCL,LPG,2023-2024
+total_sales_0076,total_sales,What is total sales for BPCL in LPG during FY 2024-2025?,BPCL,LPG,2024-2025
+total_sales_0077,total_sales,Show total sales for BPCL in LPG for FY 2024-2025.,BPCL,LPG,2024-2025
+total_sales_0078,total_sales,Give the sales volume for BPCL in the LPG SBU during 2024-2025.,BPCL,LPG,2024-2025
+total_sales_0079,total_sales,What is total sales for BPCL in LPG during FY 2025-2026?,BPCL,LPG,2025-2026
+total_sales_0080,total_sales,Show total sales for BPCL in LPG for FY 2025-2026.,BPCL,LPG,2025-2026
+total_sales_0081,total_sales,Give the sales volume for BPCL in the LPG SBU during 2025-2026.,BPCL,LPG,2025-2026
+total_sales_0082,total_sales,What is total sales for BPCL in NG during FY 2023-2024?,BPCL,NG,2023-2024
+total_sales_0083,total_sales,Show total sales for BPCL in NG for FY 2023-2024.,BPCL,NG,2023-2024
+total_sales_0084,total_sales,Give the sales volume for BPCL in the NG SBU during 2023-2024.,BPCL,NG,2023-2024
+total_sales_0085,total_sales,What is total sales for BPCL in NG during FY 2024-2025?,BPCL,NG,2024-2025
+total_sales_0086,total_sales,Show total sales for BPCL in NG for FY 2024-2025.,BPCL,NG,2024-2025
+total_sales_0087,total_sales,Give the sales volume for BPCL in the NG SBU during 2024-2025.,BPCL,NG,2024-2025
+total_sales_0088,total_sales,What is total sales for BPCL in NG during FY 2025-2026?,BPCL,NG,2025-2026
+total_sales_0089,total_sales,Show total sales for BPCL in NG for FY 2025-2026.,BPCL,NG,2025-2026
+total_sales_0090,total_sales,Give the sales volume for BPCL in the NG SBU during 2025-2026.,BPCL,NG,2025-2026
+total_sales_0091,total_sales,What is total sales for BPCL in Aviation during FY 2023-2024?,BPCL,Aviation,2023-2024
+total_sales_0092,total_sales,Show total sales for BPCL in Aviation for FY 2023-2024.,BPCL,Aviation,2023-2024
+total_sales_0093,total_sales,Give the sales volume for BPCL in the Aviation SBU during 2023-2024.,BPCL,Aviation,2023-2024
+total_sales_0094,total_sales,What is total sales for BPCL in Aviation during FY 2024-2025?,BPCL,Aviation,2024-2025
+total_sales_0095,total_sales,Show total sales for BPCL in Aviation for FY 2024-2025.,BPCL,Aviation,2024-2025
+total_sales_0096,total_sales,Give the sales volume for BPCL in the Aviation SBU during 2024-2025.,BPCL,Aviation,2024-2025
+total_sales_0097,total_sales,What is total sales for BPCL in Aviation during FY 2025-2026?,BPCL,Aviation,2025-2026
+total_sales_0098,total_sales,Show total sales for BPCL in Aviation for FY 2025-2026.,BPCL,Aviation,2025-2026
+total_sales_0099,total_sales,Give the sales volume for BPCL in the Aviation SBU during 2025-2026.,BPCL,Aviation,2025-2026
+total_sales_0100,total_sales,What is total sales for BPCL in I&C during FY 2023-2024?,BPCL,I&C,2023-2024
+total_sales_0101,total_sales,Show total sales for BPCL in I&C for FY 2023-2024.,BPCL,I&C,2023-2024
+total_sales_0102,total_sales,Give the sales volume for BPCL in the I&C SBU during 2023-2024.,BPCL,I&C,2023-2024
+total_sales_0103,total_sales,What is total sales for BPCL in I&C during FY 2024-2025?,BPCL,I&C,2024-2025
+total_sales_0104,total_sales,Show total sales for BPCL in I&C for FY 2024-2025.,BPCL,I&C,2024-2025
+total_sales_0105,total_sales,Give the sales volume for BPCL in the I&C SBU during 2024-2025.,BPCL,I&C,2024-2025
+total_sales_0106,total_sales,What is total sales for BPCL in I&C during FY 2025-2026?,BPCL,I&C,2025-2026
+total_sales_0107,total_sales,Show total sales for BPCL in I&C for FY 2025-2026.,BPCL,I&C,2025-2026
+total_sales_0108,total_sales,Give the sales volume for BPCL in the I&C SBU during 2025-2026.,BPCL,I&C,2025-2026
+total_sales_0109,total_sales,What is total sales for IOCL in Retail during FY 2023-2024?,IOCL,Retail,2023-2024
+total_sales_0110,total_sales,Show total sales for IOCL in Retail for FY 2023-2024.,IOCL,Retail,2023-2024
+total_sales_0111,total_sales,Give the sales volume for IOCL in the Retail SBU during 2023-2024.,IOCL,Retail,2023-2024
+total_sales_0112,total_sales,What is total sales for IOCL in Retail during FY 2024-2025?,IOCL,Retail,2024-2025
+total_sales_0113,total_sales,Show total sales for IOCL in Retail for FY 2024-2025.,IOCL,Retail,2024-2025
+total_sales_0114,total_sales,Give the sales volume for IOCL in the Retail SBU during 2024-2025.,IOCL,Retail,2024-2025
+total_sales_0115,total_sales,What is total sales for IOCL in Retail during FY 2025-2026?,IOCL,Retail,2025-2026
+total_sales_0116,total_sales,Show total sales for IOCL in Retail for FY 2025-2026.,IOCL,Retail,2025-2026
+total_sales_0117,total_sales,Give the sales volume for IOCL in the Retail SBU during 2025-2026.,IOCL,Retail,2025-2026
+total_sales_0118,total_sales,What is total sales for IOCL in Lubes during FY 2023-2024?,IOCL,Lubes,2023-2024
+total_sales_0119,total_sales,Show total sales for IOCL in Lubes for FY 2023-2024.,IOCL,Lubes,2023-2024
+total_sales_0120,total_sales,Give the sales volume for IOCL in the Lubes SBU during 2023-2024.,IOCL,Lubes,2023-2024
+total_sales_0121,total_sales,What is total sales for IOCL in Lubes during FY 2024-2025?,IOCL,Lubes,2024-2025
+total_sales_0122,total_sales,Show total sales for IOCL in Lubes for FY 2024-2025.,IOCL,Lubes,2024-2025
+total_sales_0123,total_sales,Give the sales volume for IOCL in the Lubes SBU during 2024-2025.,IOCL,Lubes,2024-2025
+total_sales_0124,total_sales,What is total sales for IOCL in Lubes during FY 2025-2026?,IOCL,Lubes,2025-2026
+total_sales_0125,total_sales,Show total sales for IOCL in Lubes for FY 2025-2026.,IOCL,Lubes,2025-2026
+total_sales_0126,total_sales,Give the sales volume for IOCL in the Lubes SBU during 2025-2026.,IOCL,Lubes,2025-2026
+total_sales_0127,total_sales,What is total sales for IOCL in LPG during FY 2023-2024?,IOCL,LPG,2023-2024
+total_sales_0128,total_sales,Show total sales for IOCL in LPG for FY 2023-2024.,IOCL,LPG,2023-2024
+total_sales_0129,total_sales,Give the sales volume for IOCL in the LPG SBU during 2023-2024.,IOCL,LPG,2023-2024
+total_sales_0130,total_sales,What is total sales for IOCL in LPG during FY 2024-2025?,IOCL,LPG,2024-2025
+total_sales_0131,total_sales,Show total sales for IOCL in LPG for FY 2024-2025.,IOCL,LPG,2024-2025
+total_sales_0132,total_sales,Give the sales volume for IOCL in the LPG SBU during 2024-2025.,IOCL,LPG,2024-2025
+total_sales_0133,total_sales,What is total sales for IOCL in LPG during FY 2025-2026?,IOCL,LPG,2025-2026
+total_sales_0134,total_sales,Show total sales for IOCL in LPG for FY 2025-2026.,IOCL,LPG,2025-2026
+total_sales_0135,total_sales,Give the sales volume for IOCL in the LPG SBU during 2025-2026.,IOCL,LPG,2025-2026
+total_sales_0136,total_sales,What is total sales for IOCL in NG during FY 2023-2024?,IOCL,NG,2023-2024
+total_sales_0137,total_sales,Show total sales for IOCL in NG for FY 2023-2024.,IOCL,NG,2023-2024
+total_sales_0138,total_sales,Give the sales volume for IOCL in the NG SBU during 2023-2024.,IOCL,NG,2023-2024
+total_sales_0139,total_sales,What is total sales for IOCL in NG during FY 2024-2025?,IOCL,NG,2024-2025
+total_sales_0140,total_sales,Show total sales for IOCL in NG for FY 2024-2025.,IOCL,NG,2024-2025
+total_sales_0141,total_sales,Give the sales volume for IOCL in the NG SBU during 2024-2025.,IOCL,NG,2024-2025
+total_sales_0142,total_sales,What is total sales for IOCL in NG during FY 2025-2026?,IOCL,NG,2025-2026
+total_sales_0143,total_sales,Show total sales for IOCL in NG for FY 2025-2026.,IOCL,NG,2025-2026
+total_sales_0144,total_sales,Give the sales volume for IOCL in the NG SBU during 2025-2026.,IOCL,NG,2025-2026
+total_sales_0145,total_sales,What is total sales for IOCL in Aviation during FY 2023-2024?,IOCL,Aviation,2023-2024
+total_sales_0146,total_sales,Show total sales for IOCL in Aviation for FY 2023-2024.,IOCL,Aviation,2023-2024
+total_sales_0147,total_sales,Give the sales volume for IOCL in the Aviation SBU during 2023-2024.,IOCL,Aviation,2023-2024
+total_sales_0148,total_sales,What is total sales for IOCL in Aviation during FY 2024-2025?,IOCL,Aviation,2024-2025
+total_sales_0149,total_sales,Show total sales for IOCL in Aviation for FY 2024-2025.,IOCL,Aviation,2024-2025
+total_sales_0150,total_sales,Give the sales volume for IOCL in the Aviation SBU during 2024-2025.,IOCL,Aviation,2024-2025
+total_sales_0151,total_sales,What is total sales for IOCL in Aviation during FY 2025-2026?,IOCL,Aviation,2025-2026
+total_sales_0152,total_sales,Show total sales for IOCL in Aviation for FY 2025-2026.,IOCL,Aviation,2025-2026
+total_sales_0153,total_sales,Give the sales volume for IOCL in the Aviation SBU during 2025-2026.,IOCL,Aviation,2025-2026
+total_sales_0154,total_sales,What is total sales for IOCL in I&C during FY 2023-2024?,IOCL,I&C,2023-2024
+total_sales_0155,total_sales,Show total sales for IOCL in I&C for FY 2023-2024.,IOCL,I&C,2023-2024
+total_sales_0156,total_sales,Give the sales volume for IOCL in the I&C SBU during 2023-2024.,IOCL,I&C,2023-2024
+total_sales_0157,total_sales,What is total sales for IOCL in I&C during FY 2024-2025?,IOCL,I&C,2024-2025
+total_sales_0158,total_sales,Show total sales for IOCL in I&C for FY 2024-2025.,IOCL,I&C,2024-2025
+total_sales_0159,total_sales,Give the sales volume for IOCL in the I&C SBU during 2024-2025.,IOCL,I&C,2024-2025
+total_sales_0160,total_sales,What is total sales for IOCL in I&C during FY 2025-2026?,IOCL,I&C,2025-2026
+total_sales_0161,total_sales,Show total sales for IOCL in I&C for FY 2025-2026.,IOCL,I&C,2025-2026
+total_sales_0162,total_sales,Give the sales volume for IOCL in the I&C SBU during 2025-2026.,IOCL,I&C,2025-2026
+total_sales_0163,total_sales,What is total sales for SHELL in Retail during FY 2023-2024?,SHELL,Retail,2023-2024
+total_sales_0164,total_sales,Show total sales for SHELL in Retail for FY 2023-2024.,SHELL,Retail,2023-2024
+total_sales_0165,total_sales,Give the sales volume for SHELL in the Retail SBU during 2023-2024.,SHELL,Retail,2023-2024
+total_sales_0166,total_sales,What is total sales for SHELL in Retail during FY 2024-2025?,SHELL,Retail,2024-2025
+total_sales_0167,total_sales,Show total sales for SHELL in Retail for FY 2024-2025.,SHELL,Retail,2024-2025
+total_sales_0168,total_sales,Give the sales volume for SHELL in the Retail SBU during 2024-2025.,SHELL,Retail,2024-2025
+total_sales_0169,total_sales,What is total sales for SHELL in Retail during FY 2025-2026?,SHELL,Retail,2025-2026
+total_sales_0170,total_sales,Show total sales for SHELL in Retail for FY 2025-2026.,SHELL,Retail,2025-2026
+total_sales_0171,total_sales,Give the sales volume for SHELL in the Retail SBU during 2025-2026.,SHELL,Retail,2025-2026
+total_sales_0172,total_sales,What is total sales for SHELL in Lubes during FY 2023-2024?,SHELL,Lubes,2023-2024
+total_sales_0173,total_sales,Show total sales for SHELL in Lubes for FY 2023-2024.,SHELL,Lubes,2023-2024
+total_sales_0174,total_sales,Give the sales volume for SHELL in the Lubes SBU during 2023-2024.,SHELL,Lubes,2023-2024
+total_sales_0175,total_sales,What is total sales for SHELL in Lubes during FY 2024-2025?,SHELL,Lubes,2024-2025
+total_sales_0176,total_sales,Show total sales for SHELL in Lubes for FY 2024-2025.,SHELL,Lubes,2024-2025
+total_sales_0177,total_sales,Give the sales volume for SHELL in the Lubes SBU during 2024-2025.,SHELL,Lubes,2024-2025
+total_sales_0178,total_sales,What is total sales for SHELL in Lubes during FY 2025-2026?,SHELL,Lubes,2025-2026
+total_sales_0179,total_sales,Show total sales for SHELL in Lubes for FY 2025-2026.,SHELL,Lubes,2025-2026
+total_sales_0180,total_sales,Give the sales volume for SHELL in the Lubes SBU during 2025-2026.,SHELL,Lubes,2025-2026
+total_sales_0181,total_sales,What is total sales for SHELL in LPG during FY 2023-2024?,SHELL,LPG,2023-2024
+total_sales_0182,total_sales,Show total sales for SHELL in LPG for FY 2023-2024.,SHELL,LPG,2023-2024
+total_sales_0183,total_sales,Give the sales volume for SHELL in the LPG SBU during 2023-2024.,SHELL,LPG,2023-2024
+total_sales_0184,total_sales,What is total sales for SHELL in LPG during FY 2024-2025?,SHELL,LPG,2024-2025
+total_sales_0185,total_sales,Show total sales for SHELL in LPG for FY 2024-2025.,SHELL,LPG,2024-2025
+total_sales_0186,total_sales,Give the sales volume for SHELL in the LPG SBU during 2024-2025.,SHELL,LPG,2024-2025
+total_sales_0187,total_sales,What is total sales for SHELL in LPG during FY 2025-2026?,SHELL,LPG,2025-2026
+total_sales_0188,total_sales,Show total sales for SHELL in LPG for FY 2025-2026.,SHELL,LPG,2025-2026
+total_sales_0189,total_sales,Give the sales volume for SHELL in the LPG SBU during 2025-2026.,SHELL,LPG,2025-2026
+total_sales_0190,total_sales,What is total sales for SHELL in NG during FY 2023-2024?,SHELL,NG,2023-2024
+total_sales_0191,total_sales,Show total sales for SHELL in NG for FY 2023-2024.,SHELL,NG,2023-2024
+total_sales_0192,total_sales,Give the sales volume for SHELL in the NG SBU during 2023-2024.,SHELL,NG,2023-2024
+total_sales_0193,total_sales,What is total sales for SHELL in NG during FY 2024-2025?,SHELL,NG,2024-2025
+total_sales_0194,total_sales,Show total sales for SHELL in NG for FY 2024-2025.,SHELL,NG,2024-2025
+total_sales_0195,total_sales,Give the sales volume for SHELL in the NG SBU during 2024-2025.,SHELL,NG,2024-2025
+total_sales_0196,total_sales,What is total sales for SHELL in NG during FY 2025-2026?,SHELL,NG,2025-2026
+total_sales_0197,total_sales,Show total sales for SHELL in NG for FY 2025-2026.,SHELL,NG,2025-2026
+total_sales_0198,total_sales,Give the sales volume for SHELL in the NG SBU during 2025-2026.,SHELL,NG,2025-2026
+total_sales_0199,total_sales,What is total sales for SHELL in Aviation during FY 2023-2024?,SHELL,Aviation,2023-2024
+total_sales_0200,total_sales,Show total sales for SHELL in Aviation for FY 2023-2024.,SHELL,Aviation,2023-2024
+total_sales_0201,total_sales,Give the sales volume for SHELL in the Aviation SBU during 2023-2024.,SHELL,Aviation,2023-2024
+total_sales_0202,total_sales,What is total sales for SHELL in Aviation during FY 2024-2025?,SHELL,Aviation,2024-2025
+total_sales_0203,total_sales,Show total sales for SHELL in Aviation for FY 2024-2025.,SHELL,Aviation,2024-2025
+total_sales_0204,total_sales,Give the sales volume for SHELL in the Aviation SBU during 2024-2025.,SHELL,Aviation,2024-2025
+total_sales_0205,total_sales,What is total sales for SHELL in Aviation during FY 2025-2026?,SHELL,Aviation,2025-2026
+total_sales_0206,total_sales,Show total sales for SHELL in Aviation for FY 2025-2026.,SHELL,Aviation,2025-2026
+total_sales_0207,total_sales,Give the sales volume for SHELL in the Aviation SBU during 2025-2026.,SHELL,Aviation,2025-2026
+total_sales_0208,total_sales,What is total sales for SHELL in I&C during FY 2023-2024?,SHELL,I&C,2023-2024
+total_sales_0209,total_sales,Show total sales for SHELL in I&C for FY 2023-2024.,SHELL,I&C,2023-2024
+total_sales_0210,total_sales,Give the sales volume for SHELL in the I&C SBU during 2023-2024.,SHELL,I&C,2023-2024
+total_sales_0211,total_sales,What is total sales for SHELL in I&C during FY 2024-2025?,SHELL,I&C,2024-2025
+total_sales_0212,total_sales,Show total sales for SHELL in I&C for FY 2024-2025.,SHELL,I&C,2024-2025
+total_sales_0213,total_sales,Give the sales volume for SHELL in the I&C SBU during 2024-2025.,SHELL,I&C,2024-2025
+total_sales_0214,total_sales,What is total sales for SHELL in I&C during FY 2025-2026?,SHELL,I&C,2025-2026
+total_sales_0215,total_sales,Show total sales for SHELL in I&C for FY 2025-2026.,SHELL,I&C,2025-2026
+total_sales_0216,total_sales,Give the sales volume for SHELL in the I&C SBU during 2025-2026.,SHELL,I&C,2025-2026
+total_sales_0217,total_sales,What is total sales for RIL in Retail during FY 2023-2024?,RIL,Retail,2023-2024
+total_sales_0218,total_sales,Show total sales for RIL in Retail for FY 2023-2024.,RIL,Retail,2023-2024
+total_sales_0219,total_sales,Give the sales volume for RIL in the Retail SBU during 2023-2024.,RIL,Retail,2023-2024
+total_sales_0220,total_sales,What is total sales for RIL in Retail during FY 2024-2025?,RIL,Retail,2024-2025
+total_sales_0221,total_sales,Show total sales for RIL in Retail for FY 2024-2025.,RIL,Retail,2024-2025
+total_sales_0222,total_sales,Give the sales volume for RIL in the Retail SBU during 2024-2025.,RIL,Retail,2024-2025
+total_sales_0223,total_sales,What is total sales for RIL in Retail during FY 2025-2026?,RIL,Retail,2025-2026
+total_sales_0224,total_sales,Show total sales for RIL in Retail for FY 2025-2026.,RIL,Retail,2025-2026
+total_sales_0225,total_sales,Give the sales volume for RIL in the Retail SBU during 2025-2026.,RIL,Retail,2025-2026
+total_sales_0226,total_sales,What is total sales for RIL in Lubes during FY 2023-2024?,RIL,Lubes,2023-2024
+total_sales_0227,total_sales,Show total sales for RIL in Lubes for FY 2023-2024.,RIL,Lubes,2023-2024
+total_sales_0228,total_sales,Give the sales volume for RIL in the Lubes SBU during 2023-2024.,RIL,Lubes,2023-2024
+total_sales_0229,total_sales,What is total sales for RIL in Lubes during FY 2024-2025?,RIL,Lubes,2024-2025
+total_sales_0230,total_sales,Show total sales for RIL in Lubes for FY 2024-2025.,RIL,Lubes,2024-2025
+total_sales_0231,total_sales,Give the sales volume for RIL in the Lubes SBU during 2024-2025.,RIL,Lubes,2024-2025
+total_sales_0232,total_sales,What is total sales for RIL in Lubes during FY 2025-2026?,RIL,Lubes,2025-2026
+total_sales_0233,total_sales,Show total sales for RIL in Lubes for FY 2025-2026.,RIL,Lubes,2025-2026
+total_sales_0234,total_sales,Give the sales volume for RIL in the Lubes SBU during 2025-2026.,RIL,Lubes,2025-2026
+total_sales_0235,total_sales,What is total sales for RIL in LPG during FY 2023-2024?,RIL,LPG,2023-2024
+total_sales_0236,total_sales,Show total sales for RIL in LPG for FY 2023-2024.,RIL,LPG,2023-2024
+total_sales_0237,total_sales,Give the sales volume for RIL in the LPG SBU during 2023-2024.,RIL,LPG,2023-2024
+total_sales_0238,total_sales,What is total sales for RIL in LPG during FY 2024-2025?,RIL,LPG,2024-2025
+total_sales_0239,total_sales,Show total sales for RIL in LPG for FY 2024-2025.,RIL,LPG,2024-2025
+total_sales_0240,total_sales,Give the sales volume for RIL in the LPG SBU during 2024-2025.,RIL,LPG,2024-2025
+total_sales_0241,total_sales,What is total sales for RIL in LPG during FY 2025-2026?,RIL,LPG,2025-2026
+total_sales_0242,total_sales,Show total sales for RIL in LPG for FY 2025-2026.,RIL,LPG,2025-2026
+total_sales_0243,total_sales,Give the sales volume for RIL in the LPG SBU during 2025-2026.,RIL,LPG,2025-2026
+total_sales_0244,total_sales,What is total sales for RIL in NG during FY 2023-2024?,RIL,NG,2023-2024
+total_sales_0245,total_sales,Show total sales for RIL in NG for FY 2023-2024.,RIL,NG,2023-2024
+total_sales_0246,total_sales,Give the sales volume for RIL in the NG SBU during 2023-2024.,RIL,NG,2023-2024
+total_sales_0247,total_sales,What is total sales for RIL in NG during FY 2024-2025?,RIL,NG,2024-2025
+total_sales_0248,total_sales,Show total sales for RIL in NG for FY 2024-2025.,RIL,NG,2024-2025
+total_sales_0249,total_sales,Give the sales volume for RIL in the NG SBU during 2024-2025.,RIL,NG,2024-2025
+total_sales_0250,total_sales,What is total sales for RIL in NG during FY 2025-2026?,RIL,NG,2025-2026
+total_sales_0251,total_sales,Show total sales for RIL in NG for FY 2025-2026.,RIL,NG,2025-2026
+total_sales_0252,total_sales,Give the sales volume for RIL in the NG SBU during 2025-2026.,RIL,NG,2025-2026
+total_sales_0253,total_sales,What is total sales for RIL in Aviation during FY 2023-2024?,RIL,Aviation,2023-2024
+total_sales_0254,total_sales,Show total sales for RIL in Aviation for FY 2023-2024.,RIL,Aviation,2023-2024
+total_sales_0255,total_sales,Give the sales volume for RIL in the Aviation SBU during 2023-2024.,RIL,Aviation,2023-2024
+total_sales_0256,total_sales,What is total sales for RIL in Aviation during FY 2024-2025?,RIL,Aviation,2024-2025
+total_sales_0257,total_sales,Show total sales for RIL in Aviation for FY 2024-2025.,RIL,Aviation,2024-2025
+total_sales_0258,total_sales,Give the sales volume for RIL in the Aviation SBU during 2024-2025.,RIL,Aviation,2024-2025
+total_sales_0259,total_sales,What is total sales for RIL in Aviation during FY 2025-2026?,RIL,Aviation,2025-2026
+total_sales_0260,total_sales,Show total sales for RIL in Aviation for FY 2025-2026.,RIL,Aviation,2025-2026
+total_sales_0261,total_sales,Give the sales volume for RIL in the Aviation SBU during 2025-2026.,RIL,Aviation,2025-2026
+total_sales_0262,total_sales,What is total sales for RIL in I&C during FY 2023-2024?,RIL,I&C,2023-2024
+total_sales_0263,total_sales,Show total sales for RIL in I&C for FY 2023-2024.,RIL,I&C,2023-2024
+total_sales_0264,total_sales,Give the sales volume for RIL in the I&C SBU during 2023-2024.,RIL,I&C,2023-2024
+total_sales_0265,total_sales,What is total sales for RIL in I&C during FY 2024-2025?,RIL,I&C,2024-2025
+total_sales_0266,total_sales,Show total sales for RIL in I&C for FY 2024-2025.,RIL,I&C,2024-2025
+total_sales_0267,total_sales,Give the sales volume for RIL in the I&C SBU during 2024-2025.,RIL,I&C,2024-2025
+total_sales_0268,total_sales,What is total sales for RIL in I&C during FY 2025-2026?,RIL,I&C,2025-2026
+total_sales_0269,total_sales,Show total sales for RIL in I&C for FY 2025-2026.,RIL,I&C,2025-2026
+total_sales_0270,total_sales,Give the sales volume for RIL in the I&C SBU during 2025-2026.,RIL,I&C,2025-2026
+total_sales_0271,total_sales,What is total sales for ONGC in Retail during FY 2023-2024?,ONGC,Retail,2023-2024
+total_sales_0272,total_sales,Show total sales for ONGC in Retail for FY 2023-2024.,ONGC,Retail,2023-2024
+total_sales_0273,total_sales,Give the sales volume for ONGC in the Retail SBU during 2023-2024.,ONGC,Retail,2023-2024
+total_sales_0274,total_sales,What is total sales for ONGC in Retail during FY 2024-2025?,ONGC,Retail,2024-2025
+total_sales_0275,total_sales,Show total sales for ONGC in Retail for FY 2024-2025.,ONGC,Retail,2024-2025
+total_sales_0276,total_sales,Give the sales volume for ONGC in the Retail SBU during 2024-2025.,ONGC,Retail,2024-2025
+total_sales_0277,total_sales,What is total sales for ONGC in Retail during FY 2025-2026?,ONGC,Retail,2025-2026
+total_sales_0278,total_sales,Show total sales for ONGC in Retail for FY 2025-2026.,ONGC,Retail,2025-2026
+total_sales_0279,total_sales,Give the sales volume for ONGC in the Retail SBU during 2025-2026.,ONGC,Retail,2025-2026
+total_sales_0280,total_sales,What is total sales for ONGC in Lubes during FY 2023-2024?,ONGC,Lubes,2023-2024
+total_sales_0281,total_sales,Show total sales for ONGC in Lubes for FY 2023-2024.,ONGC,Lubes,2023-2024
+total_sales_0282,total_sales,Give the sales volume for ONGC in the Lubes SBU during 2023-2024.,ONGC,Lubes,2023-2024
+total_sales_0283,total_sales,What is total sales for ONGC in Lubes during FY 2024-2025?,ONGC,Lubes,2024-2025
+total_sales_0284,total_sales,Show total sales for ONGC in Lubes for FY 2024-2025.,ONGC,Lubes,2024-2025
+total_sales_0285,total_sales,Give the sales volume for ONGC in the Lubes SBU during 2024-2025.,ONGC,Lubes,2024-2025
+total_sales_0286,total_sales,What is total sales for ONGC in Lubes during FY 2025-2026?,ONGC,Lubes,2025-2026
+total_sales_0287,total_sales,Show total sales for ONGC in Lubes for FY 2025-2026.,ONGC,Lubes,2025-2026
+total_sales_0288,total_sales,Give the sales volume for ONGC in the Lubes SBU during 2025-2026.,ONGC,Lubes,2025-2026
+total_sales_0289,total_sales,What is total sales for ONGC in LPG during FY 2023-2024?,ONGC,LPG,2023-2024
+total_sales_0290,total_sales,Show total sales for ONGC in LPG for FY 2023-2024.,ONGC,LPG,2023-2024
+total_sales_0291,total_sales,Give the sales volume for ONGC in the LPG SBU during 2023-2024.,ONGC,LPG,2023-2024
+total_sales_0292,total_sales,What is total sales for ONGC in LPG during FY 2024-2025?,ONGC,LPG,2024-2025
+total_sales_0293,total_sales,Show total sales for ONGC in LPG for FY 2024-2025.,ONGC,LPG,2024-2025
+total_sales_0294,total_sales,Give the sales volume for ONGC in the LPG SBU during 2024-2025.,ONGC,LPG,2024-2025
+total_sales_0295,total_sales,What is total sales for ONGC in LPG during FY 2025-2026?,ONGC,LPG,2025-2026
+total_sales_0296,total_sales,Show total sales for ONGC in LPG for FY 2025-2026.,ONGC,LPG,2025-2026
+total_sales_0297,total_sales,Give the sales volume for ONGC in the LPG SBU during 2025-2026.,ONGC,LPG,2025-2026
+total_sales_0298,total_sales,What is total sales for ONGC in NG during FY 2023-2024?,ONGC,NG,2023-2024
+total_sales_0299,total_sales,Show total sales for ONGC in NG for FY 2023-2024.,ONGC,NG,2023-2024
+total_sales_0300,total_sales,Give the sales volume for ONGC in the NG SBU during 2023-2024.,ONGC,NG,2023-2024
+total_sales_0301,total_sales,What is total sales for ONGC in NG during FY 2024-2025?,ONGC,NG,2024-2025
+total_sales_0302,total_sales,Show total sales for ONGC in NG for FY 2024-2025.,ONGC,NG,2024-2025
+total_sales_0303,total_sales,Give the sales volume for ONGC in the NG SBU during 2024-2025.,ONGC,NG,2024-2025
+total_sales_0304,total_sales,What is total sales for ONGC in NG during FY 2025-2026?,ONGC,NG,2025-2026
+total_sales_0305,total_sales,Show total sales for ONGC in NG for FY 2025-2026.,ONGC,NG,2025-2026
+total_sales_0306,total_sales,Give the sales volume for ONGC in the NG SBU during 2025-2026.,ONGC,NG,2025-2026
+total_sales_0307,total_sales,What is total sales for ONGC in Aviation during FY 2023-2024?,ONGC,Aviation,2023-2024
+total_sales_0308,total_sales,Show total sales for ONGC in Aviation for FY 2023-2024.,ONGC,Aviation,2023-2024
+total_sales_0309,total_sales,Give the sales volume for ONGC in the Aviation SBU during 2023-2024.,ONGC,Aviation,2023-2024
+total_sales_0310,total_sales,What is total sales for ONGC in Aviation during FY 2024-2025?,ONGC,Aviation,2024-2025
+total_sales_0311,total_sales,Show total sales for ONGC in Aviation for FY 2024-2025.,ONGC,Aviation,2024-2025
+total_sales_0312,total_sales,Give the sales volume for ONGC in the Aviation SBU during 2024-2025.,ONGC,Aviation,2024-2025
+total_sales_0313,total_sales,What is total sales for ONGC in Aviation during FY 2025-2026?,ONGC,Aviation,2025-2026
+total_sales_0314,total_sales,Show total sales for ONGC in Aviation for FY 2025-2026.,ONGC,Aviation,2025-2026
+total_sales_0315,total_sales,Give the sales volume for ONGC in the Aviation SBU during 2025-2026.,ONGC,Aviation,2025-2026
+total_sales_0316,total_sales,What is total sales for ONGC in I&C during FY 2023-2024?,ONGC,I&C,2023-2024
+total_sales_0317,total_sales,Show total sales for ONGC in I&C for FY 2023-2024.,ONGC,I&C,2023-2024
+total_sales_0318,total_sales,Give the sales volume for ONGC in the I&C SBU during 2023-2024.,ONGC,I&C,2023-2024
+total_sales_0319,total_sales,What is total sales for ONGC in I&C during FY 2024-2025?,ONGC,I&C,2024-2025
+total_sales_0320,total_sales,Show total sales for ONGC in I&C for FY 2024-2025.,ONGC,I&C,2024-2025
+total_sales_0321,total_sales,Give the sales volume for ONGC in the I&C SBU during 2024-2025.,ONGC,I&C,2024-2025
+total_sales_0322,total_sales,What is total sales for ONGC in I&C during FY 2025-2026?,ONGC,I&C,2025-2026
+total_sales_0323,total_sales,Show total sales for ONGC in I&C for FY 2025-2026.,ONGC,I&C,2025-2026
+total_sales_0324,total_sales,Give the sales volume for ONGC in the I&C SBU during 2025-2026.,ONGC,I&C,2025-2026
+total_sales_0325,total_sales,What is total sales for OIL in Retail during FY 2023-2024?,OIL,Retail,2023-2024
+total_sales_0326,total_sales,Show total sales for OIL in Retail for FY 2023-2024.,OIL,Retail,2023-2024
+total_sales_0327,total_sales,Give the sales volume for OIL in the Retail SBU during 2023-2024.,OIL,Retail,2023-2024
+total_sales_0328,total_sales,What is total sales for OIL in Retail during FY 2024-2025?,OIL,Retail,2024-2025
+total_sales_0329,total_sales,Show total sales for OIL in Retail for FY 2024-2025.,OIL,Retail,2024-2025
+total_sales_0330,total_sales,Give the sales volume for OIL in the Retail SBU during 2024-2025.,OIL,Retail,2024-2025
+total_sales_0331,total_sales,What is total sales for OIL in Retail during FY 2025-2026?,OIL,Retail,2025-2026
+total_sales_0332,total_sales,Show total sales for OIL in Retail for FY 2025-2026.,OIL,Retail,2025-2026
+total_sales_0333,total_sales,Give the sales volume for OIL in the Retail SBU during 2025-2026.,OIL,Retail,2025-2026
+total_sales_0334,total_sales,What is total sales for OIL in Lubes during FY 2023-2024?,OIL,Lubes,2023-2024
+total_sales_0335,total_sales,Show total sales for OIL in Lubes for FY 2023-2024.,OIL,Lubes,2023-2024
+total_sales_0336,total_sales,Give the sales volume for OIL in the Lubes SBU during 2023-2024.,OIL,Lubes,2023-2024
+total_sales_0337,total_sales,What is total sales for OIL in Lubes during FY 2024-2025?,OIL,Lubes,2024-2025
+total_sales_0338,total_sales,Show total sales for OIL in Lubes for FY 2024-2025.,OIL,Lubes,2024-2025
+total_sales_0339,total_sales,Give the sales volume for OIL in the Lubes SBU during 2024-2025.,OIL,Lubes,2024-2025
+total_sales_0340,total_sales,What is total sales for OIL in Lubes during FY 2025-2026?,OIL,Lubes,2025-2026
+total_sales_0341,total_sales,Show total sales for OIL in Lubes for FY 2025-2026.,OIL,Lubes,2025-2026
+total_sales_0342,total_sales,Give the sales volume for OIL in the Lubes SBU during 2025-2026.,OIL,Lubes,2025-2026
+total_sales_0343,total_sales,What is total sales for OIL in LPG during FY 2023-2024?,OIL,LPG,2023-2024
+total_sales_0344,total_sales,Show total sales for OIL in LPG for FY 2023-2024.,OIL,LPG,2023-2024
+total_sales_0345,total_sales,Give the sales volume for OIL in the LPG SBU during 2023-2024.,OIL,LPG,2023-2024
+total_sales_0346,total_sales,What is total sales for OIL in LPG during FY 2024-2025?,OIL,LPG,2024-2025
+total_sales_0347,total_sales,Show total sales for OIL in LPG for FY 2024-2025.,OIL,LPG,2024-2025
+total_sales_0348,total_sales,Give the sales volume for OIL in the LPG SBU during 2024-2025.,OIL,LPG,2024-2025
+total_sales_0349,total_sales,What is total sales for OIL in LPG during FY 2025-2026?,OIL,LPG,2025-2026
+total_sales_0350,total_sales,Show total sales for OIL in LPG for FY 2025-2026.,OIL,LPG,2025-2026
+total_sales_0351,total_sales,Give the sales volume for OIL in the LPG SBU during 2025-2026.,OIL,LPG,2025-2026
+total_sales_0352,total_sales,What is total sales for OIL in NG during FY 2023-2024?,OIL,NG,2023-2024
+total_sales_0353,total_sales,Show total sales for OIL in NG for FY 2023-2024.,OIL,NG,2023-2024
+total_sales_0354,total_sales,Give the sales volume for OIL in the NG SBU during 2023-2024.,OIL,NG,2023-2024
+total_sales_0355,total_sales,What is total sales for OIL in NG during FY 2024-2025?,OIL,NG,2024-2025
+total_sales_0356,total_sales,Show total sales for OIL in NG for FY 2024-2025.,OIL,NG,2024-2025
+total_sales_0357,total_sales,Give the sales volume for OIL in the NG SBU during 2024-2025.,OIL,NG,2024-2025
+total_sales_0358,total_sales,What is total sales for OIL in NG during FY 2025-2026?,OIL,NG,2025-2026
+total_sales_0359,total_sales,Show total sales for OIL in NG for FY 2025-2026.,OIL,NG,2025-2026
+total_sales_0360,total_sales,Give the sales volume for OIL in the NG SBU during 2025-2026.,OIL,NG,2025-2026
+total_sales_0361,total_sales,What is total sales for OIL in Aviation during FY 2023-2024?,OIL,Aviation,2023-2024
+total_sales_0362,total_sales,Show total sales for OIL in Aviation for FY 2023-2024.,OIL,Aviation,2023-2024
+total_sales_0363,total_sales,Give the sales volume for OIL in the Aviation SBU during 2023-2024.,OIL,Aviation,2023-2024
+total_sales_0364,total_sales,What is total sales for OIL in Aviation during FY 2024-2025?,OIL,Aviation,2024-2025
+total_sales_0365,total_sales,Show total sales for OIL in Aviation for FY 2024-2025.,OIL,Aviation,2024-2025
+total_sales_0366,total_sales,Give the sales volume for OIL in the Aviation SBU during 2024-2025.,OIL,Aviation,2024-2025
+total_sales_0367,total_sales,What is total sales for OIL in Aviation during FY 2025-2026?,OIL,Aviation,2025-2026
+total_sales_0368,total_sales,Show total sales for OIL in Aviation for FY 2025-2026.,OIL,Aviation,2025-2026
+total_sales_0369,total_sales,Give the sales volume for OIL in the Aviation SBU during 2025-2026.,OIL,Aviation,2025-2026
+total_sales_0370,total_sales,What is total sales for OIL in I&C during FY 2023-2024?,OIL,I&C,2023-2024
+total_sales_0371,total_sales,Show total sales for OIL in I&C for FY 2023-2024.,OIL,I&C,2023-2024
+total_sales_0372,total_sales,Give the sales volume for OIL in the I&C SBU during 2023-2024.,OIL,I&C,2023-2024
+total_sales_0373,total_sales,What is total sales for OIL in I&C during FY 2024-2025?,OIL,I&C,2024-2025
+total_sales_0374,total_sales,Show total sales for OIL in I&C for FY 2024-2025.,OIL,I&C,2024-2025
+total_sales_0375,total_sales,Give the sales volume for OIL in the I&C SBU during 2024-2025.,OIL,I&C,2024-2025
+total_sales_0376,total_sales,What is total sales for OIL in I&C during FY 2025-2026?,OIL,I&C,2025-2026
+total_sales_0377,total_sales,Show total sales for OIL in I&C for FY 2025-2026.,OIL,I&C,2025-2026
+total_sales_0378,total_sales,Give the sales volume for OIL in the I&C SBU during 2025-2026.,OIL,I&C,2025-2026
+total_sales_0379,total_sales,What is total sales for GAIL in Retail during FY 2023-2024?,GAIL,Retail,2023-2024
+total_sales_0380,total_sales,Show total sales for GAIL in Retail for FY 2023-2024.,GAIL,Retail,2023-2024
+total_sales_0381,total_sales,Give the sales volume for GAIL in the Retail SBU during 2023-2024.,GAIL,Retail,2023-2024
+total_sales_0382,total_sales,What is total sales for GAIL in Retail during FY 2024-2025?,GAIL,Retail,2024-2025
+total_sales_0383,total_sales,Show total sales for GAIL in Retail for FY 2024-2025.,GAIL,Retail,2024-2025
+total_sales_0384,total_sales,Give the sales volume for GAIL in the Retail SBU during 2024-2025.,GAIL,Retail,2024-2025
+total_sales_0385,total_sales,What is total sales for GAIL in Retail during FY 2025-2026?,GAIL,Retail,2025-2026
+total_sales_0386,total_sales,Show total sales for GAIL in Retail for FY 2025-2026.,GAIL,Retail,2025-2026
+total_sales_0387,total_sales,Give the sales volume for GAIL in the Retail SBU during 2025-2026.,GAIL,Retail,2025-2026
+total_sales_0388,total_sales,What is total sales for GAIL in Lubes during FY 2023-2024?,GAIL,Lubes,2023-2024
+total_sales_0389,total_sales,Show total sales for GAIL in Lubes for FY 2023-2024.,GAIL,Lubes,2023-2024
+total_sales_0390,total_sales,Give the sales volume for GAIL in the Lubes SBU during 2023-2024.,GAIL,Lubes,2023-2024
+total_sales_0391,total_sales,What is total sales for GAIL in Lubes during FY 2024-2025?,GAIL,Lubes,2024-2025
+total_sales_0392,total_sales,Show total sales for GAIL in Lubes for FY 2024-2025.,GAIL,Lubes,2024-2025
+total_sales_0393,total_sales,Give the sales volume for GAIL in the Lubes SBU during 2024-2025.,GAIL,Lubes,2024-2025
+total_sales_0394,total_sales,What is total sales for GAIL in Lubes during FY 2025-2026?,GAIL,Lubes,2025-2026
+total_sales_0395,total_sales,Show total sales for GAIL in Lubes for FY 2025-2026.,GAIL,Lubes,2025-2026
+total_sales_0396,total_sales,Give the sales volume for GAIL in the Lubes SBU during 2025-2026.,GAIL,Lubes,2025-2026
+total_sales_0397,total_sales,What is total sales for GAIL in LPG during FY 2023-2024?,GAIL,LPG,2023-2024
+total_sales_0398,total_sales,Show total sales for GAIL in LPG for FY 2023-2024.,GAIL,LPG,2023-2024
+total_sales_0399,total_sales,Give the sales volume for GAIL in the LPG SBU during 2023-2024.,GAIL,LPG,2023-2024
+total_sales_0400,total_sales,What is total sales for GAIL in LPG during FY 2024-2025?,GAIL,LPG,2024-2025
+total_sales_0401,total_sales,Show total sales for GAIL in LPG for FY 2024-2025.,GAIL,LPG,2024-2025
+total_sales_0402,total_sales,Give the sales volume for GAIL in the LPG SBU during 2024-2025.,GAIL,LPG,2024-2025
+total_sales_0403,total_sales,What is total sales for GAIL in LPG during FY 2025-2026?,GAIL,LPG,2025-2026
+total_sales_0404,total_sales,Show total sales for GAIL in LPG for FY 2025-2026.,GAIL,LPG,2025-2026
+total_sales_0405,total_sales,Give the sales volume for GAIL in the LPG SBU during 2025-2026.,GAIL,LPG,2025-2026
+total_sales_0406,total_sales,What is total sales for GAIL in NG during FY 2023-2024?,GAIL,NG,2023-2024
+total_sales_0407,total_sales,Show total sales for GAIL in NG for FY 2023-2024.,GAIL,NG,2023-2024
+total_sales_0408,total_sales,Give the sales volume for GAIL in the NG SBU during 2023-2024.,GAIL,NG,2023-2024
+total_sales_0409,total_sales,What is total sales for GAIL in NG during FY 2024-2025?,GAIL,NG,2024-2025
+total_sales_0410,total_sales,Show total sales for GAIL in NG for FY 2024-2025.,GAIL,NG,2024-2025
+total_sales_0411,total_sales,Give the sales volume for GAIL in the NG SBU during 2024-2025.,GAIL,NG,2024-2025
+total_sales_0412,total_sales,What is total sales for GAIL in NG during FY 2025-2026?,GAIL,NG,2025-2026
+total_sales_0413,total_sales,Show total sales for GAIL in NG for FY 2025-2026.,GAIL,NG,2025-2026
+total_sales_0414,total_sales,Give the sales volume for GAIL in the NG SBU during 2025-2026.,GAIL,NG,2025-2026
+total_sales_0415,total_sales,What is total sales for GAIL in Aviation during FY 2023-2024?,GAIL,Aviation,2023-2024
+total_sales_0416,total_sales,Show total sales for GAIL in Aviation for FY 2023-2024.,GAIL,Aviation,2023-2024
+total_sales_0417,total_sales,Give the sales volume for GAIL in the Aviation SBU during 2023-2024.,GAIL,Aviation,2023-2024
+total_sales_0418,total_sales,What is total sales for GAIL in Aviation during FY 2024-2025?,GAIL,Aviation,2024-2025
+total_sales_0419,total_sales,Show total sales for GAIL in Aviation for FY 2024-2025.,GAIL,Aviation,2024-2025
+total_sales_0420,total_sales,Give the sales volume for GAIL in the Aviation SBU during 2024-2025.,GAIL,Aviation,2024-2025
+total_sales_0421,total_sales,What is total sales for GAIL in Aviation during FY 2025-2026?,GAIL,Aviation,2025-2026
+total_sales_0422,total_sales,Show total sales for GAIL in Aviation for FY 2025-2026.,GAIL,Aviation,2025-2026
+total_sales_0423,total_sales,Give the sales volume for GAIL in the Aviation SBU during 2025-2026.,GAIL,Aviation,2025-2026
+total_sales_0424,total_sales,What is total sales for GAIL in I&C during FY 2023-2024?,GAIL,I&C,2023-2024
+total_sales_0425,total_sales,Show total sales for GAIL in I&C for FY 2023-2024.,GAIL,I&C,2023-2024
+total_sales_0426,total_sales,Give the sales volume for GAIL in the I&C SBU during 2023-2024.,GAIL,I&C,2023-2024
+total_sales_0427,total_sales,What is total sales for GAIL in I&C during FY 2024-2025?,GAIL,I&C,2024-2025
+total_sales_0428,total_sales,Show total sales for GAIL in I&C for FY 2024-2025.,GAIL,I&C,2024-2025
+total_sales_0429,total_sales,Give the sales volume for GAIL in the I&C SBU during 2024-2025.,GAIL,I&C,2024-2025
+total_sales_0430,total_sales,What is total sales for GAIL in I&C during FY 2025-2026?,GAIL,I&C,2025-2026
+total_sales_0431,total_sales,Show total sales for GAIL in I&C for FY 2025-2026.,GAIL,I&C,2025-2026
+total_sales_0432,total_sales,Give the sales volume for GAIL in the I&C SBU during 2025-2026.,GAIL,I&C,2025-2026
+total_sales_0433,total_sales,What is total sales for SMA in Retail during FY 2023-2024?,SMA,Retail,2023-2024
+total_sales_0434,total_sales,Show total sales for SMA in Retail for FY 2023-2024.,SMA,Retail,2023-2024
+total_sales_0435,total_sales,Give the sales volume for SMA in the Retail SBU during 2023-2024.,SMA,Retail,2023-2024
+total_sales_0436,total_sales,What is total sales for SMA in Retail during FY 2024-2025?,SMA,Retail,2024-2025
+total_sales_0437,total_sales,Show total sales for SMA in Retail for FY 2024-2025.,SMA,Retail,2024-2025
+total_sales_0438,total_sales,Give the sales volume for SMA in the Retail SBU during 2024-2025.,SMA,Retail,2024-2025
+total_sales_0439,total_sales,What is total sales for SMA in Retail during FY 2025-2026?,SMA,Retail,2025-2026
+total_sales_0440,total_sales,Show total sales for SMA in Retail for FY 2025-2026.,SMA,Retail,2025-2026
+total_sales_0441,total_sales,Give the sales volume for SMA in the Retail SBU during 2025-2026.,SMA,Retail,2025-2026
+total_sales_0442,total_sales,What is total sales for SMA in Lubes during FY 2023-2024?,SMA,Lubes,2023-2024
+total_sales_0443,total_sales,Show total sales for SMA in Lubes for FY 2023-2024.,SMA,Lubes,2023-2024
+total_sales_0444,total_sales,Give the sales volume for SMA in the Lubes SBU during 2023-2024.,SMA,Lubes,2023-2024
+total_sales_0445,total_sales,What is total sales for SMA in Lubes during FY 2024-2025?,SMA,Lubes,2024-2025
+total_sales_0446,total_sales,Show total sales for SMA in Lubes for FY 2024-2025.,SMA,Lubes,2024-2025
+total_sales_0447,total_sales,Give the sales volume for SMA in the Lubes SBU during 2024-2025.,SMA,Lubes,2024-2025
+total_sales_0448,total_sales,What is total sales for SMA in Lubes during FY 2025-2026?,SMA,Lubes,2025-2026
+total_sales_0449,total_sales,Show total sales for SMA in Lubes for FY 2025-2026.,SMA,Lubes,2025-2026
+total_sales_0450,total_sales,Give the sales volume for SMA in the Lubes SBU during 2025-2026.,SMA,Lubes,2025-2026
+total_sales_0451,total_sales,What is total sales for SMA in LPG during FY 2023-2024?,SMA,LPG,2023-2024
+total_sales_0452,total_sales,Show total sales for SMA in LPG for FY 2023-2024.,SMA,LPG,2023-2024
+total_sales_0453,total_sales,Give the sales volume for SMA in the LPG SBU during 2023-2024.,SMA,LPG,2023-2024
+total_sales_0454,total_sales,What is total sales for SMA in LPG during FY 2024-2025?,SMA,LPG,2024-2025
+total_sales_0455,total_sales,Show total sales for SMA in LPG for FY 2024-2025.,SMA,LPG,2024-2025
+total_sales_0456,total_sales,Give the sales volume for SMA in the LPG SBU during 2024-2025.,SMA,LPG,2024-2025
+total_sales_0457,total_sales,What is total sales for SMA in LPG during FY 2025-2026?,SMA,LPG,2025-2026
+total_sales_0458,total_sales,Show total sales for SMA in LPG for FY 2025-2026.,SMA,LPG,2025-2026
+total_sales_0459,total_sales,Give the sales volume for SMA in the LPG SBU during 2025-2026.,SMA,LPG,2025-2026
+total_sales_0460,total_sales,What is total sales for SMA in NG during FY 2023-2024?,SMA,NG,2023-2024
+total_sales_0461,total_sales,Show total sales for SMA in NG for FY 2023-2024.,SMA,NG,2023-2024
+total_sales_0462,total_sales,Give the sales volume for SMA in the NG SBU during 2023-2024.,SMA,NG,2023-2024
+total_sales_0463,total_sales,What is total sales for SMA in NG during FY 2024-2025?,SMA,NG,2024-2025
+total_sales_0464,total_sales,Show total sales for SMA in NG for FY 2024-2025.,SMA,NG,2024-2025
+total_sales_0465,total_sales,Give the sales volume for SMA in the NG SBU during 2024-2025.,SMA,NG,2024-2025
+total_sales_0466,total_sales,What is total sales for SMA in NG during FY 2025-2026?,SMA,NG,2025-2026
+total_sales_0467,total_sales,Show total sales for SMA in NG for FY 2025-2026.,SMA,NG,2025-2026
+total_sales_0468,total_sales,Give the sales volume for SMA in the NG SBU during 2025-2026.,SMA,NG,2025-2026
+total_sales_0469,total_sales,What is total sales for SMA in Aviation during FY 2023-2024?,SMA,Aviation,2023-2024
+total_sales_0470,total_sales,Show total sales for SMA in Aviation for FY 2023-2024.,SMA,Aviation,2023-2024
+total_sales_0471,total_sales,Give the sales volume for SMA in the Aviation SBU during 2023-2024.,SMA,Aviation,2023-2024
+total_sales_0472,total_sales,What is total sales for SMA in Aviation during FY 2024-2025?,SMA,Aviation,2024-2025
+total_sales_0473,total_sales,Show total sales for SMA in Aviation for FY 2024-2025.,SMA,Aviation,2024-2025
+total_sales_0474,total_sales,Give the sales volume for SMA in the Aviation SBU during 2024-2025.,SMA,Aviation,2024-2025
+total_sales_0475,total_sales,What is total sales for SMA in Aviation during FY 2025-2026?,SMA,Aviation,2025-2026
+total_sales_0476,total_sales,Show total sales for SMA in Aviation for FY 2025-2026.,SMA,Aviation,2025-2026
+total_sales_0477,total_sales,Give the sales volume for SMA in the Aviation SBU during 2025-2026.,SMA,Aviation,2025-2026
+total_sales_0478,total_sales,What is total sales for SMA in I&C during FY 2023-2024?,SMA,I&C,2023-2024
+total_sales_0479,total_sales,Show total sales for SMA in I&C for FY 2023-2024.,SMA,I&C,2023-2024
+total_sales_0480,total_sales,Give the sales volume for SMA in the I&C SBU during 2023-2024.,SMA,I&C,2023-2024
+total_sales_0481,total_sales,What is total sales for SMA in I&C during FY 2024-2025?,SMA,I&C,2024-2025
+total_sales_0482,total_sales,Show total sales for SMA in I&C for FY 2024-2025.,SMA,I&C,2024-2025
+total_sales_0483,total_sales,Give the sales volume for SMA in the I&C SBU during 2024-2025.,SMA,I&C,2024-2025
+total_sales_0484,total_sales,What is total sales for SMA in I&C during FY 2025-2026?,SMA,I&C,2025-2026
+total_sales_0485,total_sales,Show total sales for SMA in I&C for FY 2025-2026.,SMA,I&C,2025-2026
+total_sales_0486,total_sales,Give the sales volume for SMA in the I&C SBU during 2025-2026.,SMA,I&C,2025-2026
+total_sales_0487,total_sales,What is total sales for CPCL in Retail during FY 2023-2024?,CPCL,Retail,2023-2024
+total_sales_0488,total_sales,Show total sales for CPCL in Retail for FY 2023-2024.,CPCL,Retail,2023-2024
+total_sales_0489,total_sales,Give the sales volume for CPCL in the Retail SBU during 2023-2024.,CPCL,Retail,2023-2024
+total_sales_0490,total_sales,What is total sales for CPCL in Retail during FY 2024-2025?,CPCL,Retail,2024-2025
+total_sales_0491,total_sales,Show total sales for CPCL in Retail for FY 2024-2025.,CPCL,Retail,2024-2025
+total_sales_0492,total_sales,Give the sales volume for CPCL in the Retail SBU during 2024-2025.,CPCL,Retail,2024-2025
+total_sales_0493,total_sales,What is total sales for CPCL in Retail during FY 2025-2026?,CPCL,Retail,2025-2026
+total_sales_0494,total_sales,Show total sales for CPCL in Retail for FY 2025-2026.,CPCL,Retail,2025-2026
+total_sales_0495,total_sales,Give the sales volume for CPCL in the Retail SBU during 2025-2026.,CPCL,Retail,2025-2026
+total_sales_0496,total_sales,What is total sales for CPCL in Lubes during FY 2023-2024?,CPCL,Lubes,2023-2024
+total_sales_0497,total_sales,Show total sales for CPCL in Lubes for FY 2023-2024.,CPCL,Lubes,2023-2024
+total_sales_0498,total_sales,Give the sales volume for CPCL in the Lubes SBU during 2023-2024.,CPCL,Lubes,2023-2024
+total_sales_0499,total_sales,What is total sales for CPCL in Lubes during FY 2024-2025?,CPCL,Lubes,2024-2025
+total_sales_0500,total_sales,Show total sales for CPCL in Lubes for FY 2024-2025.,CPCL,Lubes,2024-2025
+total_sales_0501,total_sales,Give the sales volume for CPCL in the Lubes SBU during 2024-2025.,CPCL,Lubes,2024-2025
+total_sales_0502,total_sales,What is total sales for CPCL in Lubes during FY 2025-2026?,CPCL,Lubes,2025-2026
+total_sales_0503,total_sales,Show total sales for CPCL in Lubes for FY 2025-2026.,CPCL,Lubes,2025-2026
+total_sales_0504,total_sales,Give the sales volume for CPCL in the Lubes SBU during 2025-2026.,CPCL,Lubes,2025-2026
+total_sales_0505,total_sales,What is total sales for CPCL in LPG during FY 2023-2024?,CPCL,LPG,2023-2024
+total_sales_0506,total_sales,Show total sales for CPCL in LPG for FY 2023-2024.,CPCL,LPG,2023-2024
+total_sales_0507,total_sales,Give the sales volume for CPCL in the LPG SBU during 2023-2024.,CPCL,LPG,2023-2024
+total_sales_0508,total_sales,What is total sales for CPCL in LPG during FY 2024-2025?,CPCL,LPG,2024-2025
+total_sales_0509,total_sales,Show total sales for CPCL in LPG for FY 2024-2025.,CPCL,LPG,2024-2025
+total_sales_0510,total_sales,Give the sales volume for CPCL in the LPG SBU during 2024-2025.,CPCL,LPG,2024-2025
+total_sales_0511,total_sales,What is total sales for CPCL in LPG during FY 2025-2026?,CPCL,LPG,2025-2026
+total_sales_0512,total_sales,Show total sales for CPCL in LPG for FY 2025-2026.,CPCL,LPG,2025-2026
+total_sales_0513,total_sales,Give the sales volume for CPCL in the LPG SBU during 2025-2026.,CPCL,LPG,2025-2026
+total_sales_0514,total_sales,What is total sales for CPCL in NG during FY 2023-2024?,CPCL,NG,2023-2024
+total_sales_0515,total_sales,Show total sales for CPCL in NG for FY 2023-2024.,CPCL,NG,2023-2024
+total_sales_0516,total_sales,Give the sales volume for CPCL in the NG SBU during 2023-2024.,CPCL,NG,2023-2024
+total_sales_0517,total_sales,What is total sales for CPCL in NG during FY 2024-2025?,CPCL,NG,2024-2025
+total_sales_0518,total_sales,Show total sales for CPCL in NG for FY 2024-2025.,CPCL,NG,2024-2025
+total_sales_0519,total_sales,Give the sales volume for CPCL in the NG SBU during 2024-2025.,CPCL,NG,2024-2025
+total_sales_0520,total_sales,What is total sales for CPCL in NG during FY 2025-2026?,CPCL,NG,2025-2026
+total_sales_0521,total_sales,Show total sales for CPCL in NG for FY 2025-2026.,CPCL,NG,2025-2026
+total_sales_0522,total_sales,Give the sales volume for CPCL in the NG SBU during 2025-2026.,CPCL,NG,2025-2026
+total_sales_0523,total_sales,What is total sales for CPCL in Aviation during FY 2023-2024?,CPCL,Aviation,2023-2024
+total_sales_0524,total_sales,Show total sales for CPCL in Aviation for FY 2023-2024.,CPCL,Aviation,2023-2024
+total_sales_0525,total_sales,Give the sales volume for CPCL in the Aviation SBU during 2023-2024.,CPCL,Aviation,2023-2024
+total_sales_0526,total_sales,What is total sales for CPCL in Aviation during FY 2024-2025?,CPCL,Aviation,2024-2025
+total_sales_0527,total_sales,Show total sales for CPCL in Aviation for FY 2024-2025.,CPCL,Aviation,2024-2025
+total_sales_0528,total_sales,Give the sales volume for CPCL in the Aviation SBU during 2024-2025.,CPCL,Aviation,2024-2025
+total_sales_0529,total_sales,What is total sales for CPCL in Aviation during FY 2025-2026?,CPCL,Aviation,2025-2026
+total_sales_0530,total_sales,Show total sales for CPCL in Aviation for FY 2025-2026.,CPCL,Aviation,2025-2026
+total_sales_0531,total_sales,Give the sales volume for CPCL in the Aviation SBU during 2025-2026.,CPCL,Aviation,2025-2026
+total_sales_0532,total_sales,What is total sales for CPCL in I&C during FY 2023-2024?,CPCL,I&C,2023-2024
+total_sales_0533,total_sales,Show total sales for CPCL in I&C for FY 2023-2024.,CPCL,I&C,2023-2024
+total_sales_0534,total_sales,Give the sales volume for CPCL in the I&C SBU during 2023-2024.,CPCL,I&C,2023-2024
+total_sales_0535,total_sales,What is total sales for CPCL in I&C during FY 2024-2025?,CPCL,I&C,2024-2025
+total_sales_0536,total_sales,Show total sales for CPCL in I&C for FY 2024-2025.,CPCL,I&C,2024-2025
+total_sales_0537,total_sales,Give the sales volume for CPCL in the I&C SBU during 2024-2025.,CPCL,I&C,2024-2025
+total_sales_0538,total_sales,What is total sales for CPCL in I&C during FY 2025-2026?,CPCL,I&C,2025-2026
+total_sales_0539,total_sales,Show total sales for CPCL in I&C for FY 2025-2026.,CPCL,I&C,2025-2026
+total_sales_0540,total_sales,Give the sales volume for CPCL in the I&C SBU during 2025-2026.,CPCL,I&C,2025-2026
+total_sales_0541,total_sales,What is total sales for MRPL in Retail during FY 2023-2024?,MRPL,Retail,2023-2024
+total_sales_0542,total_sales,Show total sales for MRPL in Retail for FY 2023-2024.,MRPL,Retail,2023-2024
+total_sales_0543,total_sales,Give the sales volume for MRPL in the Retail SBU during 2023-2024.,MRPL,Retail,2023-2024
+total_sales_0544,total_sales,What is total sales for MRPL in Retail during FY 2024-2025?,MRPL,Retail,2024-2025
+total_sales_0545,total_sales,Show total sales for MRPL in Retail for FY 2024-2025.,MRPL,Retail,2024-2025
+total_sales_0546,total_sales,Give the sales volume for MRPL in the Retail SBU during 2024-2025.,MRPL,Retail,2024-2025
+total_sales_0547,total_sales,What is total sales for MRPL in Retail during FY 2025-2026?,MRPL,Retail,2025-2026
+total_sales_0548,total_sales,Show total sales for MRPL in Retail for FY 2025-2026.,MRPL,Retail,2025-2026
+total_sales_0549,total_sales,Give the sales volume for MRPL in the Retail SBU during 2025-2026.,MRPL,Retail,2025-2026
+total_sales_0550,total_sales,What is total sales for MRPL in Lubes during FY 2023-2024?,MRPL,Lubes,2023-2024
+total_sales_0551,total_sales,Show total sales for MRPL in Lubes for FY 2023-2024.,MRPL,Lubes,2023-2024
+total_sales_0552,total_sales,Give the sales volume for MRPL in the Lubes SBU during 2023-2024.,MRPL,Lubes,2023-2024
+total_sales_0553,total_sales,What is total sales for MRPL in Lubes during FY 2024-2025?,MRPL,Lubes,2024-2025
+total_sales_0554,total_sales,Show total sales for MRPL in Lubes for FY 2024-2025.,MRPL,Lubes,2024-2025
+total_sales_0555,total_sales,Give the sales volume for MRPL in the Lubes SBU during 2024-2025.,MRPL,Lubes,2024-2025
+total_sales_0556,total_sales,What is total sales for MRPL in Lubes during FY 2025-2026?,MRPL,Lubes,2025-2026
+total_sales_0557,total_sales,Show total sales for MRPL in Lubes for FY 2025-2026.,MRPL,Lubes,2025-2026
+total_sales_0558,total_sales,Give the sales volume for MRPL in the Lubes SBU during 2025-2026.,MRPL,Lubes,2025-2026
+total_sales_0559,total_sales,What is total sales for MRPL in LPG during FY 2023-2024?,MRPL,LPG,2023-2024
+total_sales_0560,total_sales,Show total sales for MRPL in LPG for FY 2023-2024.,MRPL,LPG,2023-2024
+total_sales_0561,total_sales,Give the sales volume for MRPL in the LPG SBU during 2023-2024.,MRPL,LPG,2023-2024
+total_sales_0562,total_sales,What is total sales for MRPL in LPG during FY 2024-2025?,MRPL,LPG,2024-2025
+total_sales_0563,total_sales,Show total sales for MRPL in LPG for FY 2024-2025.,MRPL,LPG,2024-2025
+total_sales_0564,total_sales,Give the sales volume for MRPL in the LPG SBU during 2024-2025.,MRPL,LPG,2024-2025
+total_sales_0565,total_sales,What is total sales for MRPL in LPG during FY 2025-2026?,MRPL,LPG,2025-2026
+total_sales_0566,total_sales,Show total sales for MRPL in LPG for FY 2025-2026.,MRPL,LPG,2025-2026
+total_sales_0567,total_sales,Give the sales volume for MRPL in the LPG SBU during 2025-2026.,MRPL,LPG,2025-2026
+total_sales_0568,total_sales,What is total sales for MRPL in NG during FY 2023-2024?,MRPL,NG,2023-2024
+total_sales_0569,total_sales,Show total sales for MRPL in NG for FY 2023-2024.,MRPL,NG,2023-2024
+total_sales_0570,total_sales,Give the sales volume for MRPL in the NG SBU during 2023-2024.,MRPL,NG,2023-2024
+total_sales_0571,total_sales,What is total sales for MRPL in NG during FY 2024-2025?,MRPL,NG,2024-2025
+total_sales_0572,total_sales,Show total sales for MRPL in NG for FY 2024-2025.,MRPL,NG,2024-2025
+total_sales_0573,total_sales,Give the sales volume for MRPL in the NG SBU during 2024-2025.,MRPL,NG,2024-2025
+total_sales_0574,total_sales,What is total sales for MRPL in NG during FY 2025-2026?,MRPL,NG,2025-2026
+total_sales_0575,total_sales,Show total sales for MRPL in NG for FY 2025-2026.,MRPL,NG,2025-2026
+total_sales_0576,total_sales,Give the sales volume for MRPL in the NG SBU during 2025-2026.,MRPL,NG,2025-2026
+total_sales_0577,total_sales,What is total sales for MRPL in Aviation during FY 2023-2024?,MRPL,Aviation,2023-2024
+total_sales_0578,total_sales,Show total sales for MRPL in Aviation for FY 2023-2024.,MRPL,Aviation,2023-2024
+total_sales_0579,total_sales,Give the sales volume for MRPL in the Aviation SBU during 2023-2024.,MRPL,Aviation,2023-2024
+total_sales_0580,total_sales,What is total sales for MRPL in Aviation during FY 2024-2025?,MRPL,Aviation,2024-2025
+total_sales_0581,total_sales,Show total sales for MRPL in Aviation for FY 2024-2025.,MRPL,Aviation,2024-2025
+total_sales_0582,total_sales,Give the sales volume for MRPL in the Aviation SBU during 2024-2025.,MRPL,Aviation,2024-2025
+total_sales_0583,total_sales,What is total sales for MRPL in Aviation during FY 2025-2026?,MRPL,Aviation,2025-2026
+total_sales_0584,total_sales,Show total sales for MRPL in Aviation for FY 2025-2026.,MRPL,Aviation,2025-2026
+total_sales_0585,total_sales,Give the sales volume for MRPL in the Aviation SBU during 2025-2026.,MRPL,Aviation,2025-2026
+total_sales_0586,total_sales,What is total sales for MRPL in I&C during FY 2023-2024?,MRPL,I&C,2023-2024
+total_sales_0587,total_sales,Show total sales for MRPL in I&C for FY 2023-2024.,MRPL,I&C,2023-2024
+total_sales_0588,total_sales,Give the sales volume for MRPL in the I&C SBU during 2023-2024.,MRPL,I&C,2023-2024
+total_sales_0589,total_sales,What is total sales for MRPL in I&C during FY 2024-2025?,MRPL,I&C,2024-2025
+total_sales_0590,total_sales,Show total sales for MRPL in I&C for FY 2024-2025.,MRPL,I&C,2024-2025
+total_sales_0591,total_sales,Give the sales volume for MRPL in the I&C SBU during 2024-2025.,MRPL,I&C,2024-2025
+total_sales_0592,total_sales,What is total sales for MRPL in I&C during FY 2025-2026?,MRPL,I&C,2025-2026
+total_sales_0593,total_sales,Show total sales for MRPL in I&C for FY 2025-2026.,MRPL,I&C,2025-2026
+total_sales_0594,total_sales,Give the sales volume for MRPL in the I&C SBU during 2025-2026.,MRPL,I&C,2025-2026
+total_sales_0595,total_sales,What is total sales for NEL in Retail during FY 2023-2024?,NEL,Retail,2023-2024
+total_sales_0596,total_sales,Show total sales for NEL in Retail for FY 2023-2024.,NEL,Retail,2023-2024
+total_sales_0597,total_sales,Give the sales volume for NEL in the Retail SBU during 2023-2024.,NEL,Retail,2023-2024
+total_sales_0598,total_sales,What is total sales for NEL in Retail during FY 2024-2025?,NEL,Retail,2024-2025
+total_sales_0599,total_sales,Show total sales for NEL in Retail for FY 2024-2025.,NEL,Retail,2024-2025
+total_sales_0600,total_sales,Give the sales volume for NEL in the Retail SBU during 2024-2025.,NEL,Retail,2024-2025
+total_sales_0601,total_sales,What is total sales for NEL in Retail during FY 2025-2026?,NEL,Retail,2025-2026
+total_sales_0602,total_sales,Show total sales for NEL in Retail for FY 2025-2026.,NEL,Retail,2025-2026
+total_sales_0603,total_sales,Give the sales volume for NEL in the Retail SBU during 2025-2026.,NEL,Retail,2025-2026
+total_sales_0604,total_sales,What is total sales for NEL in Lubes during FY 2023-2024?,NEL,Lubes,2023-2024
+total_sales_0605,total_sales,Show total sales for NEL in Lubes for FY 2023-2024.,NEL,Lubes,2023-2024
+total_sales_0606,total_sales,Give the sales volume for NEL in the Lubes SBU during 2023-2024.,NEL,Lubes,2023-2024
+total_sales_0607,total_sales,What is total sales for NEL in Lubes during FY 2024-2025?,NEL,Lubes,2024-2025
+total_sales_0608,total_sales,Show total sales for NEL in Lubes for FY 2024-2025.,NEL,Lubes,2024-2025
+total_sales_0609,total_sales,Give the sales volume for NEL in the Lubes SBU during 2024-2025.,NEL,Lubes,2024-2025
+total_sales_0610,total_sales,What is total sales for NEL in Lubes during FY 2025-2026?,NEL,Lubes,2025-2026
+total_sales_0611,total_sales,Show total sales for NEL in Lubes for FY 2025-2026.,NEL,Lubes,2025-2026
+total_sales_0612,total_sales,Give the sales volume for NEL in the Lubes SBU during 2025-2026.,NEL,Lubes,2025-2026
+total_sales_0613,total_sales,What is total sales for NEL in LPG during FY 2023-2024?,NEL,LPG,2023-2024
+total_sales_0614,total_sales,Show total sales for NEL in LPG for FY 2023-2024.,NEL,LPG,2023-2024
+total_sales_0615,total_sales,Give the sales volume for NEL in the LPG SBU during 2023-2024.,NEL,LPG,2023-2024
+total_sales_0616,total_sales,What is total sales for NEL in LPG during FY 2024-2025?,NEL,LPG,2024-2025
+total_sales_0617,total_sales,Show total sales for NEL in LPG for FY 2024-2025.,NEL,LPG,2024-2025
+total_sales_0618,total_sales,Give the sales volume for NEL in the LPG SBU during 2024-2025.,NEL,LPG,2024-2025
+total_sales_0619,total_sales,What is total sales for NEL in LPG during FY 2025-2026?,NEL,LPG,2025-2026
+total_sales_0620,total_sales,Show total sales for NEL in LPG for FY 2025-2026.,NEL,LPG,2025-2026
+total_sales_0621,total_sales,Give the sales volume for NEL in the LPG SBU during 2025-2026.,NEL,LPG,2025-2026
+total_sales_0622,total_sales,What is total sales for NEL in NG during FY 2023-2024?,NEL,NG,2023-2024
+total_sales_0623,total_sales,Show total sales for NEL in NG for FY 2023-2024.,NEL,NG,2023-2024
+total_sales_0624,total_sales,Give the sales volume for NEL in the NG SBU during 2023-2024.,NEL,NG,2023-2024
+total_sales_0625,total_sales,What is total sales for NEL in NG during FY 2024-2025?,NEL,NG,2024-2025
+total_sales_0626,total_sales,Show total sales for NEL in NG for FY 2024-2025.,NEL,NG,2024-2025
+total_sales_0627,total_sales,Give the sales volume for NEL in the NG SBU during 2024-2025.,NEL,NG,2024-2025
+total_sales_0628,total_sales,What is total sales for NEL in NG during FY 2025-2026?,NEL,NG,2025-2026
+total_sales_0629,total_sales,Show total sales for NEL in NG for FY 2025-2026.,NEL,NG,2025-2026
+total_sales_0630,total_sales,Give the sales volume for NEL in the NG SBU during 2025-2026.,NEL,NG,2025-2026
+total_sales_0631,total_sales,What is total sales for NEL in Aviation during FY 2023-2024?,NEL,Aviation,2023-2024
+total_sales_0632,total_sales,Show total sales for NEL in Aviation for FY 2023-2024.,NEL,Aviation,2023-2024
+total_sales_0633,total_sales,Give the sales volume for NEL in the Aviation SBU during 2023-2024.,NEL,Aviation,2023-2024
+total_sales_0634,total_sales,What is total sales for NEL in Aviation during FY 2024-2025?,NEL,Aviation,2024-2025
+total_sales_0635,total_sales,Show total sales for NEL in Aviation for FY 2024-2025.,NEL,Aviation,2024-2025
+total_sales_0636,total_sales,Give the sales volume for NEL in the Aviation SBU during 2024-2025.,NEL,Aviation,2024-2025
+total_sales_0637,total_sales,What is total sales for NEL in Aviation during FY 2025-2026?,NEL,Aviation,2025-2026
+total_sales_0638,total_sales,Show total sales for NEL in Aviation for FY 2025-2026.,NEL,Aviation,2025-2026
+total_sales_0639,total_sales,Give the sales volume for NEL in the Aviation SBU during 2025-2026.,NEL,Aviation,2025-2026
+total_sales_0640,total_sales,What is total sales for NEL in I&C during FY 2023-2024?,NEL,I&C,2023-2024
+total_sales_0641,total_sales,Show total sales for NEL in I&C for FY 2023-2024.,NEL,I&C,2023-2024
+total_sales_0642,total_sales,Give the sales volume for NEL in the I&C SBU during 2023-2024.,NEL,I&C,2023-2024
+total_sales_0643,total_sales,What is total sales for NEL in I&C during FY 2024-2025?,NEL,I&C,2024-2025
+total_sales_0644,total_sales,Show total sales for NEL in I&C for FY 2024-2025.,NEL,I&C,2024-2025
+total_sales_0645,total_sales,Give the sales volume for NEL in the I&C SBU during 2024-2025.,NEL,I&C,2024-2025
+total_sales_0646,total_sales,What is total sales for NEL in I&C during FY 2025-2026?,NEL,I&C,2025-2026
+total_sales_0647,total_sales,Show total sales for NEL in I&C for FY 2025-2026.,NEL,I&C,2025-2026
+total_sales_0648,total_sales,Give the sales volume for NEL in the I&C SBU during 2025-2026.,NEL,I&C,2025-2026
+total_sales_0649,total_sales,What is total sales for HMEL in Retail during FY 2023-2024?,HMEL,Retail,2023-2024
+total_sales_0650,total_sales,Show total sales for HMEL in Retail for FY 2023-2024.,HMEL,Retail,2023-2024
+total_sales_0651,total_sales,Give the sales volume for HMEL in the Retail SBU during 2023-2024.,HMEL,Retail,2023-2024
+total_sales_0652,total_sales,What is total sales for HMEL in Retail during FY 2024-2025?,HMEL,Retail,2024-2025
+total_sales_0653,total_sales,Show total sales for HMEL in Retail for FY 2024-2025.,HMEL,Retail,2024-2025
+total_sales_0654,total_sales,Give the sales volume for HMEL in the Retail SBU during 2024-2025.,HMEL,Retail,2024-2025
+total_sales_0655,total_sales,What is total sales for HMEL in Retail during FY 2025-2026?,HMEL,Retail,2025-2026
+total_sales_0656,total_sales,Show total sales for HMEL in Retail for FY 2025-2026.,HMEL,Retail,2025-2026
+total_sales_0657,total_sales,Give the sales volume for HMEL in the Retail SBU during 2025-2026.,HMEL,Retail,2025-2026
+total_sales_0658,total_sales,What is total sales for HMEL in Lubes during FY 2023-2024?,HMEL,Lubes,2023-2024
+total_sales_0659,total_sales,Show total sales for HMEL in Lubes for FY 2023-2024.,HMEL,Lubes,2023-2024
+total_sales_0660,total_sales,Give the sales volume for HMEL in the Lubes SBU during 2023-2024.,HMEL,Lubes,2023-2024
+total_sales_0661,total_sales,What is total sales for HMEL in Lubes during FY 2024-2025?,HMEL,Lubes,2024-2025
+total_sales_0662,total_sales,Show total sales for HMEL in Lubes for FY 2024-2025.,HMEL,Lubes,2024-2025
+total_sales_0663,total_sales,Give the sales volume for HMEL in the Lubes SBU during 2024-2025.,HMEL,Lubes,2024-2025
+total_sales_0664,total_sales,What is total sales for HMEL in Lubes during FY 2025-2026?,HMEL,Lubes,2025-2026
+total_sales_0665,total_sales,Show total sales for HMEL in Lubes for FY 2025-2026.,HMEL,Lubes,2025-2026
+total_sales_0666,total_sales,Give the sales volume for HMEL in the Lubes SBU during 2025-2026.,HMEL,Lubes,2025-2026
+total_sales_0667,total_sales,What is total sales for HMEL in LPG during FY 2023-2024?,HMEL,LPG,2023-2024
+total_sales_0668,total_sales,Show total sales for HMEL in LPG for FY 2023-2024.,HMEL,LPG,2023-2024
+total_sales_0669,total_sales,Give the sales volume for HMEL in the LPG SBU during 2023-2024.,HMEL,LPG,2023-2024
+total_sales_0670,total_sales,What is total sales for HMEL in LPG during FY 2024-2025?,HMEL,LPG,2024-2025
+total_sales_0671,total_sales,Show total sales for HMEL in LPG for FY 2024-2025.,HMEL,LPG,2024-2025
+total_sales_0672,total_sales,Give the sales volume for HMEL in the LPG SBU during 2024-2025.,HMEL,LPG,2024-2025
+total_sales_0673,total_sales,What is total sales for HMEL in LPG during FY 2025-2026?,HMEL,LPG,2025-2026
+total_sales_0674,total_sales,Show total sales for HMEL in LPG for FY 2025-2026.,HMEL,LPG,2025-2026
+total_sales_0675,total_sales,Give the sales volume for HMEL in the LPG SBU during 2025-2026.,HMEL,LPG,2025-2026
+total_sales_0676,total_sales,What is total sales for HMEL in NG during FY 2023-2024?,HMEL,NG,2023-2024
+total_sales_0677,total_sales,Show total sales for HMEL in NG for FY 2023-2024.,HMEL,NG,2023-2024
+total_sales_0678,total_sales,Give the sales volume for HMEL in the NG SBU during 2023-2024.,HMEL,NG,2023-2024
+total_sales_0679,total_sales,What is total sales for HMEL in NG during FY 2024-2025?,HMEL,NG,2024-2025
+total_sales_0680,total_sales,Show total sales for HMEL in NG for FY 2024-2025.,HMEL,NG,2024-2025
+total_sales_0681,total_sales,Give the sales volume for HMEL in the NG SBU during 2024-2025.,HMEL,NG,2024-2025
+total_sales_0682,total_sales,What is total sales for HMEL in NG during FY 2025-2026?,HMEL,NG,2025-2026
+total_sales_0683,total_sales,Show total sales for HMEL in NG for FY 2025-2026.,HMEL,NG,2025-2026
+total_sales_0684,total_sales,Give the sales volume for HMEL in the NG SBU during 2025-2026.,HMEL,NG,2025-2026
+total_sales_0685,total_sales,What is total sales for HMEL in Aviation during FY 2023-2024?,HMEL,Aviation,2023-2024
+total_sales_0686,total_sales,Show total sales for HMEL in Aviation for FY 2023-2024.,HMEL,Aviation,2023-2024
+total_sales_0687,total_sales,Give the sales volume for HMEL in the Aviation SBU during 2023-2024.,HMEL,Aviation,2023-2024
+total_sales_0688,total_sales,What is total sales for HMEL in Aviation during FY 2024-2025?,HMEL,Aviation,2024-2025
+total_sales_0689,total_sales,Show total sales for HMEL in Aviation for FY 2024-2025.,HMEL,Aviation,2024-2025
+total_sales_0690,total_sales,Give the sales volume for HMEL in the Aviation SBU during 2024-2025.,HMEL,Aviation,2024-2025
+total_sales_0691,total_sales,What is total sales for HMEL in Aviation during FY 2025-2026?,HMEL,Aviation,2025-2026
+total_sales_0692,total_sales,Show total sales for HMEL in Aviation for FY 2025-2026.,HMEL,Aviation,2025-2026
+total_sales_0693,total_sales,Give the sales volume for HMEL in the Aviation SBU during 2025-2026.,HMEL,Aviation,2025-2026
+total_sales_0694,total_sales,What is total sales for HMEL in I&C during FY 2023-2024?,HMEL,I&C,2023-2024
+total_sales_0695,total_sales,Show total sales for HMEL in I&C for FY 2023-2024.,HMEL,I&C,2023-2024
+total_sales_0696,total_sales,Give the sales volume for HMEL in the I&C SBU during 2023-2024.,HMEL,I&C,2023-2024
+total_sales_0697,total_sales,What is total sales for HMEL in I&C during FY 2024-2025?,HMEL,I&C,2024-2025
+total_sales_0698,total_sales,Show total sales for HMEL in I&C for FY 2024-2025.,HMEL,I&C,2024-2025
+total_sales_0699,total_sales,Give the sales volume for HMEL in the I&C SBU during 2024-2025.,HMEL,I&C,2024-2025
+total_sales_0700,total_sales,What is total sales for HMEL in I&C during FY 2025-2026?,HMEL,I&C,2025-2026
+total_sales_0701,total_sales,Show total sales for HMEL in I&C for FY 2025-2026.,HMEL,I&C,2025-2026
+total_sales_0702,total_sales,Give the sales volume for HMEL in the I&C SBU during 2025-2026.,HMEL,I&C,2025-2026
+total_sales_0703,total_sales,Show sales for HPCL in Retail.,HPCL,Retail,
+total_sales_0704,total_sales,Show sales for HPCL in Lubes.,HPCL,Lubes,
+total_sales_0705,total_sales,Show sales for HPCL in LPG.,HPCL,LPG,
+total_sales_0706,total_sales,Show sales for HPCL in NG.,HPCL,NG,
+total_sales_0707,total_sales,Show sales for HPCL in Aviation.,HPCL,Aviation,
+total_sales_0708,total_sales,Show sales for HPCL in I&C.,HPCL,I&C,
+total_sales_0709,total_sales,Show sales for BPCL in Retail.,BPCL,Retail,
+total_sales_0710,total_sales,Show sales for BPCL in Lubes.,BPCL,Lubes,
+total_sales_0711,total_sales,Show sales for BPCL in LPG.,BPCL,LPG,
+total_sales_0712,total_sales,Show sales for BPCL in NG.,BPCL,NG,
+total_sales_0713,total_sales,Show sales for BPCL in Aviation.,BPCL,Aviation,
+total_sales_0714,total_sales,Show sales for BPCL in I&C.,BPCL,I&C,
+total_sales_0715,total_sales,Show sales for IOCL in Retail.,IOCL,Retail,
+total_sales_0716,total_sales,Show sales for IOCL in Lubes.,IOCL,Lubes,
+total_sales_0717,total_sales,Show sales for IOCL in LPG.,IOCL,LPG,
+total_sales_0718,total_sales,Show sales for IOCL in NG.,IOCL,NG,
+total_sales_0719,total_sales,Show sales for IOCL in Aviation.,IOCL,Aviation,
+total_sales_0720,total_sales,Show sales for IOCL in I&C.,IOCL,I&C,
+total_sales_0721,total_sales,Show sales for SHELL in Retail.,SHELL,Retail,
+total_sales_0722,total_sales,Show sales for SHELL in Lubes.,SHELL,Lubes,
+total_sales_0723,total_sales,Show sales for SHELL in LPG.,SHELL,LPG,
+total_sales_0724,total_sales,Show sales for SHELL in NG.,SHELL,NG,
+total_sales_0725,total_sales,Show sales for SHELL in Aviation.,SHELL,Aviation,
+total_sales_0726,total_sales,Show sales for SHELL in I&C.,SHELL,I&C,
+total_sales_0727,total_sales,Show sales for RIL in Retail.,RIL,Retail,
+total_sales_0728,total_sales,Show sales for RIL in Lubes.,RIL,Lubes,
+total_sales_0729,total_sales,Show sales for RIL in LPG.,RIL,LPG,
+total_sales_0730,total_sales,Show sales for RIL in NG.,RIL,NG,
+total_sales_0731,total_sales,Show sales for RIL in Aviation.,RIL,Aviation,
+total_sales_0732,total_sales,Show sales for RIL in I&C.,RIL,I&C,
+total_sales_0733,total_sales,Show sales for ONGC in Retail.,ONGC,Retail,
+total_sales_0734,total_sales,Show sales for ONGC in Lubes.,ONGC,Lubes,
+total_sales_0735,total_sales,Show sales for ONGC in LPG.,ONGC,LPG,
+total_sales_0736,total_sales,Show sales for ONGC in NG.,ONGC,NG,
+total_sales_0737,total_sales,Show sales for ONGC in Aviation.,ONGC,Aviation,
+total_sales_0738,total_sales,Show sales for ONGC in I&C.,ONGC,I&C,
+total_sales_0739,total_sales,Show sales for OIL in Retail.,OIL,Retail,
+total_sales_0740,total_sales,Show sales for OIL in Lubes.,OIL,Lubes,
+total_sales_0741,total_sales,Show sales for OIL in LPG.,OIL,LPG,
+total_sales_0742,total_sales,Show sales for OIL in NG.,OIL,NG,
+total_sales_0743,total_sales,Show sales for OIL in Aviation.,OIL,Aviation,
+total_sales_0744,total_sales,Show sales for OIL in I&C.,OIL,I&C,
+total_sales_0745,total_sales,Show sales for GAIL in Retail.,GAIL,Retail,
+total_sales_0746,total_sales,Show sales for GAIL in Lubes.,GAIL,Lubes,
+total_sales_0747,total_sales,Show sales for GAIL in LPG.,GAIL,LPG,
+total_sales_0748,total_sales,Show sales for GAIL in NG.,GAIL,NG,
+total_sales_0749,total_sales,Show sales for GAIL in Aviation.,GAIL,Aviation,
+total_sales_0750,total_sales,Show sales for GAIL in I&C.,GAIL,I&C,
+total_sales_0751,total_sales,Show sales for SMA in Retail.,SMA,Retail,
+total_sales_0752,total_sales,Show sales for SMA in Lubes.,SMA,Lubes,
+total_sales_0753,total_sales,Show sales for SMA in LPG.,SMA,LPG,
+total_sales_0754,total_sales,Show sales for SMA in NG.,SMA,NG,
+total_sales_0755,total_sales,Show sales for SMA in Aviation.,SMA,Aviation,
+total_sales_0756,total_sales,Show sales for SMA in I&C.,SMA,I&C,
+total_sales_0757,total_sales,Show sales for CPCL in Retail.,CPCL,Retail,
+total_sales_0758,total_sales,Show sales for CPCL in Lubes.,CPCL,Lubes,
+total_sales_0759,total_sales,Show sales for CPCL in LPG.,CPCL,LPG,
+total_sales_0760,total_sales,Show sales for CPCL in NG.,CPCL,NG,
+total_sales_0761,total_sales,Show sales for CPCL in Aviation.,CPCL,Aviation,
+total_sales_0762,total_sales,Show sales for CPCL in I&C.,CPCL,I&C,
+total_sales_0763,total_sales,Show sales for MRPL in Retail.,MRPL,Retail,
+total_sales_0764,total_sales,Show sales for MRPL in Lubes.,MRPL,Lubes,
+total_sales_0765,total_sales,Show sales for MRPL in LPG.,MRPL,LPG,
+total_sales_0766,total_sales,Show sales for MRPL in NG.,MRPL,NG,
+total_sales_0767,total_sales,Show sales for MRPL in Aviation.,MRPL,Aviation,
+total_sales_0768,total_sales,Show sales for MRPL in I&C.,MRPL,I&C,
+total_sales_0769,total_sales,Show sales for NEL in Retail.,NEL,Retail,
+total_sales_0770,total_sales,Show sales for NEL in Lubes.,NEL,Lubes,
+total_sales_0771,total_sales,Show sales for NEL in LPG.,NEL,LPG,
+total_sales_0772,total_sales,Show sales for NEL in NG.,NEL,NG,
+total_sales_0773,total_sales,Show sales for NEL in Aviation.,NEL,Aviation,
+total_sales_0774,total_sales,Show sales for NEL in I&C.,NEL,I&C,
+total_sales_0775,total_sales,Show sales for HMEL in Retail.,HMEL,Retail,
+total_sales_0776,total_sales,Show sales for HMEL in Lubes.,HMEL,Lubes,
+total_sales_0777,total_sales,Show sales for HMEL in LPG.,HMEL,LPG,
+total_sales_0778,total_sales,Show sales for HMEL in NG.,HMEL,NG,
+total_sales_0779,total_sales,Show sales for HMEL in Aviation.,HMEL,Aviation,
+total_sales_0780,total_sales,Show sales for HMEL in I&C.,HMEL,I&C,
+total_sales_0781,total_sales,Give total volume sold by HPCL.,HPCL,,
+total_sales_0782,total_sales,How much business was generated by HPCL?,HPCL,,
+total_sales_0783,total_sales,Give total volume sold by BPCL.,BPCL,,
+total_sales_0784,total_sales,How much business was generated by BPCL?,BPCL,,
+total_sales_0785,total_sales,Give total volume sold by IOCL.,IOCL,,
+total_sales_0786,total_sales,How much business was generated by IOCL?,IOCL,,
+total_sales_0787,total_sales,Give total volume sold by SHELL.,SHELL,,
+total_sales_0788,total_sales,How much business was generated by SHELL?,SHELL,,
+total_sales_0789,total_sales,Give total volume sold by RIL.,RIL,,
+total_sales_0790,total_sales,How much business was generated by RIL?,RIL,,
+total_sales_0791,total_sales,Give total volume sold by ONGC.,ONGC,,
+total_sales_0792,total_sales,How much business was generated by ONGC?,ONGC,,
+total_sales_0793,total_sales,Give total volume sold by OIL.,OIL,,
+total_sales_0794,total_sales,How much business was generated by OIL?,OIL,,
+total_sales_0795,total_sales,Give total volume sold by GAIL.,GAIL,,
+total_sales_0796,total_sales,How much business was generated by GAIL?,GAIL,,
+total_sales_0797,total_sales,Give total volume sold by SMA.,SMA,,
+total_sales_0798,total_sales,How much business was generated by SMA?,SMA,,
+total_sales_0799,total_sales,Give total volume sold by CPCL.,CPCL,,
+total_sales_0800,total_sales,How much business was generated by CPCL?,CPCL,,
+total_sales_0801,total_sales,Give total volume sold by MRPL.,MRPL,,
+total_sales_0802,total_sales,How much business was generated by MRPL?,MRPL,,
+total_sales_0803,total_sales,Give total volume sold by NEL.,NEL,,
+total_sales_0804,total_sales,How much business was generated by NEL?,NEL,,
+total_sales_0805,total_sales,Give total volume sold by HMEL.,HMEL,,
+total_sales_0806,total_sales,How much business was generated by HMEL?,HMEL,,

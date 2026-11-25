@@ -1,0 +1,198 @@
+[
+  {
+    "original_question": "What is the actual sales in TMT for Retail HSD from Dec 1 2025 to Dec 15 2025?",
+    "category": "total_sales",
+    "question": "What is the actual volume in TMT for Retail HSD from Dec 1 2025 to Dec 15 2025?",
+    "sql": "SELECT round(sum(netweight_tmt)::numeric, 2) AS actual_tmt_sales FROM mom_level WHERE sbu_name != '0' AND sbu_name NOT IN ('Common', 'Mumbai Ref', 'Renewable Energy', 'Visakh Ref') AND sbu_name = 'Retail' AND productname = 'HSD' AND day_id BETWEEN '2025-12-01' AND '2025-12-15';",
+    "complexity": "MEDIUM"
+  },
+  {
+    "original_question": "What is the actual sales in TMT for Retail HSD from Dec 1 2025 to Dec 15 2025?",
+    "category": "total_sales",
+    "question": "What is the actual business in TMT for Retail HSD from Dec 1 2025 to Dec 15 2025?",
+    "sql": "SELECT round(sum(netweight_tmt)::numeric, 2) AS actual_tmt_sales FROM mom_level WHERE sbu_name != '0' AND sbu_name NOT IN ('Common', 'Mumbai Ref', 'Renewable Energy', 'Visakh Ref') AND sbu_name = 'Retail' AND productname = 'HSD' AND day_id BETWEEN '2025-12-01' AND '2025-12-15';",
+    "complexity": "MEDIUM"
+  },
+  {
+    "original_question": "Show actual sales for product MS in MT for Retail in Oct 2025.",
+    "category": "total_sales",
+    "question": "Show actual turnover for product MS in MT for Retail in Oct 2025.",
+    "sql": "SELECT round(sum(netweight_tmt * 1000)::numeric, 2) AS actual_mt_sales FROM mom_level WHERE sbu_name != '0' AND sbu_name NOT IN ('Common', 'Mumbai Ref', 'Renewable Energy', 'Visakh Ref') AND sbu_name = 'Retail' AND productname = 'MS' AND yearmonth = 202510;",
+    "complexity": "HARD"
+  },
+  {
+    "original_question": "Show actual sales for product MS in MT for Retail in Oct 2025.",
+    "category": "total_sales",
+    "question": "Show actual volume for product MS in MT for Retail in Oct 2025.",
+    "sql": "SELECT round(sum(netweight_tmt * 1000)::numeric, 2) AS actual_mt_sales FROM mom_level WHERE sbu_name != '0' AND sbu_name NOT IN ('Common', 'Mumbai Ref', 'Renewable Energy', 'Visakh Ref') AND sbu_name = 'Retail' AND productname = 'MS' AND yearmonth = 202510;",
+    "complexity": "HARD"
+  },
+  {
+    "original_question": "What is market share for IOCL in FY 2024-2025?",
+    "category": "market_share",
+    "question": "What is share for IOCL in FY 2024-2025?",
+    "sql": "SELECT ROUND((SUM(CASE WHEN comname = 'IOCL' THEN netweight_tmt ELSE 0 END) * 100.0) / SUM(netweight_tmt), 2) AS market_share_percentage FROM industry_performance WHERE (category != 'O' OR category IS NULL) AND fiscal_year = '2024-2025';",
+    "complexity": "HARD"
+  },
+  {
+    "original_question": "What is market share for IOCL in FY 2024-2025?",
+    "category": "market_share",
+    "question": "What is contribution % for IOCL in FY 2024-2025?",
+    "sql": "SELECT ROUND((SUM(CASE WHEN comname = 'IOCL' THEN netweight_tmt ELSE 0 END) * 100.0) / SUM(netweight_tmt), 2) AS market_share_percentage FROM industry_performance WHERE (category != 'O' OR category IS NULL) AND fiscal_year = '2024-2025';",
+    "complexity": "HARD"
+  },
+  {
+    "original_question": "Which company has the lowest market share in fiscal year 2024-2025?",
+    "category": "market_share",
+    "question": "Which company has the lowest share in fiscal year 2024-2025?",
+    "sql": "WITH company_sales AS (SELECT comname, SUM(netweight_tmt) AS company_total FROM industry_performance WHERE (category != 'O' OR category IS NULL) AND fiscal_year = '2024-2025' GROUP BY comname), total_market AS (SELECT SUM(netweight_tmt) AS market_total FROM industry_performance WHERE (category != 'O' OR category IS NULL) AND fiscal_year = '2024-2025') SELECT cs.comname, ROUND((cs.company_total * 100.0) / tm.market_total, 2) AS market_share_percentage FROM company_sales cs CROSS JOIN total_market tm ORDER BY market_share_percentage ASC LIMIT 1;",
+    "complexity": "ADVANCED"
+  },
+  {
+    "original_question": "Which company has the lowest market share in fiscal year 2024-2025?",
+    "category": "market_share",
+    "question": "Which company has the lowest contribution % in fiscal year 2024-2025?",
+    "sql": "WITH company_sales AS (SELECT comname, SUM(netweight_tmt) AS company_total FROM industry_performance WHERE (category != 'O' OR category IS NULL) AND fiscal_year = '2024-2025' GROUP BY comname), total_market AS (SELECT SUM(netweight_tmt) AS market_total FROM industry_performance WHERE (category != 'O' OR category IS NULL) AND fiscal_year = '2024-2025') SELECT cs.comname, ROUND((cs.company_total * 100.0) / tm.market_total, 2) AS market_share_percentage FROM company_sales cs CROSS JOIN total_market tm ORDER BY market_share_percentage ASC LIMIT 1;",
+    "complexity": "ADVANCED"
+  },
+  {
+    "original_question": "What is the sales growth percentage for HPCL in Retail SBU from FY 2023-2024 to FY 2024-2025?",
+    "category": "growth",
+    "question": "What is the sales increase percentage for HPCL in Retail SBU from FY 2023-2024 to FY 2024-2025?",
+    "sql": "WITH y1 AS (SELECT SUM(netweight_tmt) AS s1 FROM industry_performance WHERE comname = 'HPCL' AND sbu_name = 'Retail' AND fiscal_year = '2023-2024'), y2 AS (SELECT SUM(netweight_tmt) AS s2 FROM industry_performance WHERE comname = 'HPCL' AND sbu_name = 'Retail' AND fiscal_year = '2024-2025') SELECT ROUND(((y2.s2 - y1.s1) * 100.0) / y1.s1, 2) AS sales_growth_percentage FROM y1, y2;",
+    "complexity": "ADVANCED"
+  },
+  {
+    "original_question": "What is the sales growth percentage for HPCL in Retail SBU from FY 2023-2024 to FY 2024-2025?",
+    "category": "growth",
+    "question": "What is the volume growth percentage for HPCL in Retail SBU from FY 2023-2024 to FY 2024-2025?",
+    "sql": "WITH y1 AS (SELECT SUM(netweight_tmt) AS s1 FROM industry_performance WHERE comname = 'HPCL' AND sbu_name = 'Retail' AND fiscal_year = '2023-2024'), y2 AS (SELECT SUM(netweight_tmt) AS s2 FROM industry_performance WHERE comname = 'HPCL' AND sbu_name = 'Retail' AND fiscal_year = '2024-2025') SELECT ROUND(((y2.s2 - y1.s1) * 100.0) / y1.s1, 2) AS sales_growth_percentage FROM y1, y2;",
+    "complexity": "ADVANCED"
+  },
+  {
+    "original_question": "Show products having growth of more than 5% in actual volume in current fiscal year.",
+    "category": "growth",
+    "question": "Show products having increase of more than 5% in actual volume in current fiscal year.",
+    "sql": "SELECT productname, ROUND((SUM(netweight_tmt) - SUM(target_qty_tmt)) * 100.0 / SUM(target_qty_tmt), 2) AS growth_percentage FROM m60_level WHERE fiscal_year = '2025-2026' GROUP BY productname HAVING ROUND((SUM(netweight_tmt) - SUM(target_qty_tmt)) * 100.0 / SUM(target_qty_tmt), 2) > 5;",
+    "complexity": "ADVANCED"
+  },
+  {
+    "original_question": "Show products having growth of more than 5% in actual volume in current fiscal year.",
+    "category": "growth",
+    "question": "Show products having improvement of more than 5% in actual volume in current fiscal year.",
+    "sql": "SELECT productname, ROUND((SUM(netweight_tmt) - SUM(target_qty_tmt)) * 100.0 / SUM(target_qty_tmt), 2) AS growth_percentage FROM m60_level WHERE fiscal_year = '2025-2026' GROUP BY productname HAVING ROUND((SUM(netweight_tmt) - SUM(target_qty_tmt)) * 100.0 / SUM(target_qty_tmt), 2) > 5;",
+    "complexity": "ADVANCED"
+  },
+  {
+    "original_question": "Rank companies by industry performance sales in AP state.",
+    "category": "ranking",
+    "question": "Rank companies by industry performance volume in AP state.",
+    "sql": "SELECT comname, round(sum(netweight_tmt)::numeric, 2) AS total_sales_tmt FROM industry_performance WHERE (category != 'O' OR category IS NULL) AND statename = 'ANDHRA PRADESH' GROUP BY comname ORDER BY total_sales_tmt DESC;",
+    "complexity": "ADVANCED"
+  },
+  {
+    "original_question": "Rank companies by industry performance sales in AP state.",
+    "category": "ranking",
+    "question": "Rank companies by industry performance turnover in AP state.",
+    "sql": "SELECT comname, round(sum(netweight_tmt)::numeric, 2) AS total_sales_tmt FROM industry_performance WHERE (category != 'O' OR category IS NULL) AND statename = 'ANDHRA PRADESH' GROUP BY comname ORDER BY total_sales_tmt DESC;",
+    "complexity": "ADVANCED"
+  },
+  {
+    "original_question": "Get the top 3 products by actual weight in current fiscal year.",
+    "category": "ranking",
+    "question": "Get the highest 3 products by actual weight in current fiscal year.",
+    "sql": "SELECT productname, round(sum(netweight_tmt)::numeric, 2) AS total_weight FROM mom_level WHERE fiscal_year = '2025-2026' GROUP BY productname ORDER BY total_weight DESC LIMIT 3;",
+    "complexity": "MEDIUM"
+  },
+  {
+    "original_question": "Get the top 3 products by actual weight in current fiscal year.",
+    "category": "ranking",
+    "question": "Get the largest 3 products by actual weight in current fiscal year.",
+    "sql": "SELECT productname, round(sum(netweight_tmt)::numeric, 2) AS total_weight FROM mom_level WHERE fiscal_year = '2025-2026' GROUP BY productname ORDER BY total_weight DESC LIMIT 3;",
+    "complexity": "MEDIUM"
+  },
+  {
+    "original_question": "Get the total target quantity in KL from M60_LEVEL for strategic business unit I&C in North zone.",
+    "category": "comparison",
+    "question": "Get the sum target quantity in KL from M60_LEVEL for strategic business unit I&C in North zone.",
+    "sql": "SELECT sum(target_qty_kl) AS total_target_kl FROM m60_level WHERE sbu_name = 'I&C' AND zone_name = 'North';",
+    "complexity": "MEDIUM"
+  },
+  {
+    "original_question": "Get the total target quantity in KL from M60_LEVEL for strategic business unit I&C in North zone.",
+    "category": "comparison",
+    "question": "Get the total target volume in KL from M60_LEVEL for strategic business unit I&C in North zone.",
+    "sql": "SELECT sum(target_qty_kl) AS total_target_kl FROM m60_level WHERE sbu_name = 'I&C' AND zone_name = 'North';",
+    "complexity": "MEDIUM"
+  },
+  {
+    "original_question": "Compare HPCL and IOCL sales in West zone for FY 2024-2025.",
+    "category": "comparison",
+    "question": "Compare HPCL and IOCL volume in West zone for FY 2024-2025.",
+    "sql": "SELECT comname, round(sum(netweight_tmt)::numeric, 2) AS total_sales FROM industry_performance WHERE comname IN ('HPCL', 'IOCL') AND zone_name = 'West' AND fiscal_year = '2024-2025' GROUP BY comname;",
+    "complexity": "MEDIUM"
+  },
+  {
+    "original_question": "Compare HPCL and IOCL sales in West zone for FY 2024-2025.",
+    "category": "comparison",
+    "question": "Compare HPCL and IOCL business in West zone for FY 2024-2025.",
+    "sql": "SELECT comname, round(sum(netweight_tmt)::numeric, 2) AS total_sales FROM industry_performance WHERE comname IN ('HPCL', 'IOCL') AND zone_name = 'West' AND fiscal_year = '2024-2025' GROUP BY comname;",
+    "complexity": "MEDIUM"
+  },
+  {
+    "original_question": "Show month-wise actual sales trend in TMT for Retail MS in FY 2024-2025.",
+    "category": "trend",
+    "question": "Show month-wise actual volume trend in TMT for Retail MS in FY 2024-2025.",
+    "sql": "SELECT month_name, round(sum(netweight_tmt)::numeric, 2) AS monthly_sales FROM mom_level WHERE sbu_name = 'Retail' AND productname = 'MS' AND fiscal_year = '2024-2025' GROUP BY month_name, yearmonth ORDER BY yearmonth ASC;",
+    "complexity": "HARD"
+  },
+  {
+    "original_question": "Show month-wise actual sales trend in TMT for Retail MS in FY 2024-2025.",
+    "category": "trend",
+    "question": "Show month-wise actual business trend in TMT for Retail MS in FY 2024-2025.",
+    "sql": "SELECT month_name, round(sum(netweight_tmt)::numeric, 2) AS monthly_sales FROM mom_level WHERE sbu_name = 'Retail' AND productname = 'MS' AND fiscal_year = '2024-2025' GROUP BY month_name, yearmonth ORDER BY yearmonth ASC;",
+    "complexity": "HARD"
+  },
+  {
+    "original_question": "Get day-wise actual sales for LPG in strategic business unit LPG from Dec 1 2025 to Dec 10 2025.",
+    "category": "trend",
+    "question": "Get day-wise actual volume for LPG in strategic business unit LPG from Dec 1 2025 to Dec 10 2025.",
+    "sql": "SELECT day_id, round(sum(netweight_tmt)::numeric, 2) AS daily_sales FROM mom_level WHERE sbu_name = 'LPG' AND productname = 'LPG' AND day_id BETWEEN '2025-12-01' AND '2025-12-10' GROUP BY day_id ORDER BY day_id ASC;",
+    "complexity": "MEDIUM"
+  },
+  {
+    "original_question": "Get day-wise actual sales for LPG in strategic business unit LPG from Dec 1 2025 to Dec 10 2025.",
+    "category": "trend",
+    "question": "Get day-wise actual business for LPG in strategic business unit LPG from Dec 1 2025 to Dec 10 2025.",
+    "sql": "SELECT day_id, round(sum(netweight_tmt)::numeric, 2) AS daily_sales FROM mom_level WHERE sbu_name = 'LPG' AND productname = 'LPG' AND day_id BETWEEN '2025-12-01' AND '2025-12-10' GROUP BY day_id ORDER BY day_id ASC;",
+    "complexity": "MEDIUM"
+  },
+  {
+    "original_question": "Show industry performance for HPCL in district AGRA for fiscal year 2021-2022.",
+    "category": "geography",
+    "question": "Show industry contribution for HPCL in district AGRA for fiscal year 2021-2022.",
+    "sql": "SELECT * FROM industry_performance WHERE (category != 'O' OR category IS NULL) AND comname = 'HPCL' AND distname = 'AGRA' AND fiscal_year = '2021-2022';",
+    "complexity": "MEDIUM"
+  },
+  {
+    "original_question": "Show industry performance for HPCL in district AGRA for fiscal year 2021-2022.",
+    "category": "geography",
+    "question": "Show industry volume for HPCL in district AGRA for fiscal year 2021-2022.",
+    "sql": "SELECT * FROM industry_performance WHERE (category != 'O' OR category IS NULL) AND comname = 'HPCL' AND distname = 'AGRA' AND fiscal_year = '2021-2022';",
+    "complexity": "MEDIUM"
+  },
+  {
+    "original_question": "Get the total actual sales in TMT by zone for Retail in FY 2024-2025.",
+    "category": "geography",
+    "question": "Get the total actual volume in TMT by zone for Retail in FY 2024-2025.",
+    "sql": "SELECT zone_name, round(sum(netweight_tmt)::numeric, 2) AS total_sales FROM mom_level WHERE sbu_name = 'Retail' AND fiscal_year = '2024-2025' GROUP BY zone_name ORDER BY total_sales DESC;",
+    "complexity": "MEDIUM"
+  },
+  {
+    "original_question": "Get the total actual sales in TMT by zone for Retail in FY 2024-2025.",
+    "category": "geography",
+    "question": "Get the total actual business in TMT by zone for Retail in FY 2024-2025.",
+    "sql": "SELECT zone_name, round(sum(netweight_tmt)::numeric, 2) AS total_sales FROM mom_level WHERE sbu_name = 'Retail' AND fiscal_year = '2024-2025' GROUP BY zone_name ORDER BY total_sales DESC;",
+    "complexity": "MEDIUM"
+  }
+]

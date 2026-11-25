@@ -1,0 +1,38 @@
+[
+  {
+    "question": "Which company has the lowest market share in the fiscal year 2024-2025",
+    "gold_sql": "WITH company_sales AS (SELECT comname, SUM(netweight_tmt) AS company_total FROM industry_performance WHERE (category != 'O' OR category IS NULL) AND fiscal_year = '2024-2025' GROUP BY comname), total_market AS (SELECT SUM(netweight_tmt) AS market_total FROM industry_performance WHERE (category != 'O' OR category IS NULL) AND fiscal_year = '2024-2025') SELECT company_sales.comname, ROUND((company_sales.company_total * 100.0) / NULLIF(total_market.market_total, 0), 2) AS market_share_percentage FROM company_sales CROSS JOIN total_market ORDER BY market_share_percentage ASC LIMIT 1;",
+    "complexity": "HARD",
+    "max_latency_ms": 1000
+  },
+  {
+    "question": "What is the market share percentage of HPCL in the fiscal year 2024-2025",
+    "gold_sql": "WITH company_sales AS (SELECT comname, SUM(netweight_tmt) AS company_total FROM industry_performance WHERE (category != 'O' OR category IS NULL) AND fiscal_year = '2024-2025' AND comname = 'HPCL' GROUP BY comname), total_market AS (SELECT SUM(netweight_tmt) AS market_total FROM industry_performance WHERE (category != 'O' OR category IS NULL) AND fiscal_year = '2024-2025') SELECT company_sales.comname, ROUND((company_sales.company_total * 100.0) / NULLIF(total_market.market_total, 0), 2) AS market_share_percentage FROM company_sales CROSS JOIN total_market;",
+    "complexity": "HARD",
+    "max_latency_ms": 1000
+  },
+  {
+    "question": "In which month did HMEL have the lowest market share in FY 2024-2025?",
+    "gold_sql": "WITH company_sales AS (SELECT month_name, SUM(netweight_tmt) AS company_total FROM industry_performance WHERE (category != 'O' OR category IS NULL) AND fiscal_year = '2024-2025' AND comname = 'HMEL' GROUP BY month_name), total_market AS (SELECT month_name, SUM(netweight_tmt) AS market_total FROM industry_performance WHERE (category != 'O' OR category IS NULL) AND fiscal_year = '2024-2025' GROUP BY month_name) SELECT company_sales.month_name, ROUND((company_sales.company_total * 100.0) / NULLIF(total_market.market_total, 0), 2) AS market_share_percentage FROM company_sales INNER JOIN total_market ON company_sales.month_name IS NOT DISTINCT FROM total_market.month_name ORDER BY market_share_percentage ASC LIMIT 1;",
+    "complexity": "HARD",
+    "max_latency_ms": 1000
+  },
+  {
+    "question": "Top 10 Zones in the market contribution for FY 2024-2025 for all SBUs",
+    "gold_sql": "WITH zone_sales AS (SELECT zone_name, SUM(netweight_tmt) AS zone_total FROM industry_performance WHERE (category != 'O' OR category IS NULL) AND fiscal_year = '2024-2025' GROUP BY zone_name), total_market AS (SELECT SUM(netweight_tmt) AS market_total FROM industry_performance WHERE (category != 'O' OR category IS NULL) AND fiscal_year = '2024-2025') SELECT zone_sales.zone_name, ROUND((zone_sales.zone_total * 100.0) / NULLIF(total_market.market_total, 0), 2) AS market_share_percentage FROM zone_sales CROSS JOIN total_market ORDER BY market_share_percentage DESC LIMIT 10;",
+    "complexity": "HARD",
+    "max_latency_ms": 1000
+  },
+  {
+    "question": "Compare Lubes sales in South Zone for FY 2024-2025 against FY 2023-2024 and calculate growth percentage.",
+    "gold_sql": "WITH sales_totals AS (SELECT COALESCE(SUM(CASE WHEN fiscal_year = '2023-2024' THEN netweight_tmt ELSE 0 END), 0) AS previous_sales, COALESCE(SUM(CASE WHEN fiscal_year = '2024-2025' THEN netweight_tmt ELSE 0 END), 0) AS current_sales FROM industry_performance WHERE (category != 'O' OR category IS NULL) AND sbu_name = 'LUBES' AND zone_name = 'SZ' AND fiscal_year IN ('2023-2024', '2024-2025')) SELECT ROUND(previous_sales::numeric, 2) AS previous_sales_tmt, ROUND(current_sales::numeric, 2) AS current_sales_tmt, ROUND((current_sales - previous_sales)::numeric, 2) AS sales_difference_tmt, ROUND(CASE WHEN previous_sales = 0 THEN NULL ELSE ((current_sales - previous_sales) * 100.0 / previous_sales)::numeric END, 2) AS sales_growth_percentage FROM sales_totals;",
+    "complexity": "HARD",
+    "max_latency_ms": 1000
+  },
+  {
+    "question": "What is the Actual Cumulative Volume for SMA in the fiscal year 2024-2025",
+    "gold_sql": "SELECT SUM(netweight_tmt) AS actual_cumulative_volume FROM industry_performance WHERE comname = 'SMA' AND fiscal_year = '2024-2025' AND (category != 'O' OR category IS NULL);",
+    "complexity": "MEDIUM",
+    "max_latency_ms": 1000
+  }
+]

@@ -1,0 +1,55 @@
+[
+  {
+    "question": "Compare sales of HPCL and BPCL in Maharashtra",
+    "intent": "COMPARE",
+    "entities": {
+      "company": ["HPCL", "BPCL"],
+      "state": "Maharashtra"
+    },
+    "sql": "SELECT company_name, SUM(netweight_tmt) AS total_sales_tmt FROM industry_performance WHERE statename = 'MAHARASHTRA' AND company_name IN ('HPCL', 'BPCL') GROUP BY company_name ORDER BY total_sales_tmt DESC;"
+  },
+  {
+    "question": "What is the total sales for IOCL in 2024-25?",
+    "intent": "TOTAL_SALES",
+    "entities": {
+      "company": "IOCL",
+      "fiscal_year": "2024-25"
+    },
+    "sql": "SELECT SUM(netweight_tmt) AS total_sales_tmt FROM industry_performance WHERE company_name = 'IOCL' AND fiscal_year = '2024-2025';"
+  },
+  {
+    "question": "What is the market share of ONGC in Karnataka for FY 2024-25?",
+    "intent": "MARKET_SHARE",
+    "entities": {
+      "company": "ONGC",
+      "state": "Karnataka",
+      "fiscal_year": "2024-25"
+    },
+    "sql": "WITH scoped_sales AS (SELECT SUM(netweight_tmt) AS scoped_total_tmt FROM industry_performance WHERE company_name = 'ONGC' AND statename = 'KARNATAKA' AND fiscal_year = '2024-2025'), market_sales AS (SELECT SUM(netweight_tmt) AS market_total_tmt FROM industry_performance WHERE statename = 'KARNATAKA' AND fiscal_year = '2024-2025') SELECT ROUND((scoped_sales.scoped_total_tmt * 100.0) / NULLIF(market_sales.market_total_tmt, 0), 2) AS market_share_percentage FROM scoped_sales CROSS JOIN market_sales;"
+  },
+  {
+    "question": "Show trend of volume for BPCL over months",
+    "intent": "TREND",
+    "entities": {
+      "company": "BPCL"
+    },
+    "sql": "SELECT fiscal_year, month_name, SUM(netweight_tmt) AS total_sales_tmt FROM industry_performance WHERE company_name = 'BPCL' GROUP BY fiscal_year, month_name ORDER BY fiscal_year, MIN(yearmonth);"
+  },
+  {
+    "question": "Show top 5 states by actual sales",
+    "intent": "TOP_N",
+    "entities": {
+      "metric": "sales"
+    },
+    "sql": "SELECT statename, SUM(netweight_tmt) AS total_sales_tmt FROM industry_performance GROUP BY statename ORDER BY total_sales_tmt DESC LIMIT 5;"
+  },
+  {
+    "question": "Rank products in North zone by volume",
+    "intent": "RANKING",
+    "entities": {
+      "zone": "North",
+      "metric": "sales"
+    },
+    "sql": "SELECT productname, SUM(netweight_tmt) AS total_sales_tmt FROM m60_level WHERE zone_name = 'NORTH' GROUP BY productname ORDER BY total_sales_tmt DESC LIMIT 10;"
+  }
+]

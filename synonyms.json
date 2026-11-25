@@ -1,0 +1,17 @@
+{
+  "sales": [
+    "volume",
+    "business",
+    "turnover",
+    "contribution"
+  ],
+  "growth": [
+    "increase",
+    "improvement",
+    "gain"
+  ],
+  "market share": [
+    "share",
+    "contribution %"
+  ]
+}

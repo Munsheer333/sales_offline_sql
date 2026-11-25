@@ -1,0 +1,313 @@
+{
+  "_meta": {
+    "description": "Semantic registry mapping business concepts to database columns across all tables.",
+    "version": "1.0",
+    "generated_at": "2026-06-03",
+    "tables": ["industry_performance", "mom_level", "m60_level"]
+  },
+
+  "concepts": {
+
+    "sales": {
+      "description": "Total actual sales volume",
+      "aliases": ["actual sales", "actual", "netweight", "volume", "offtake", "throughput", "sales volume", "tmt", "mt"],
+      "mappings": {
+        "industry_performance": {
+          "column": "netweight_tmt",
+          "aggregation": "SUM",
+          "expression": "ROUND(SUM(netweight_tmt)::numeric, 2)",
+          "alias": "actual_sales_tmt",
+          "unit_default": "TMT",
+          "unit_mt_expression": "ROUND(SUM(netweight_tmt * 1000)::numeric, 2)"
+        },
+        "mom_level": {
+          "column": "netweight_tmt",
+          "aggregation": "SUM",
+          "expression": "ROUND(SUM(netweight_tmt)::numeric, 2)",
+          "alias": "actual_sales_tmt",
+          "unit_default": "TMT",
+          "unit_mt_expression": "ROUND(SUM(netweight_tmt * 1000)::numeric, 2)"
+        }
+      }
+    },
+
+    "target": {
+      "description": "Target/planned sales quantity",
+      "aliases": ["target", "planned", "budget", "goal", "target quantity", "tgt"],
+      "mappings": {
+        "m60_level": {
+          "column": "target_qty_tmt",
+          "aggregation": "SUM",
+          "expression": "ROUND(SUM(target_qty_tmt)::numeric, 2)",
+          "alias": "target_tmt",
+          "unit_default": "TMT"
+        }
+      }
+    },
+
+    "company": {
+      "description": "Oil marketing company name",
+      "aliases": ["company", "companies", "oil company", "omc", "firm", "organisation", "organization"],
+      "mappings": {
+        "industry_performance": {
+          "column": "comname",
+          "type": "dimension",
+          "filter_operator": "=",
+          "group_by_column": "comname",
+          "examples": ["HPCL", "IOCL", "BPCL", "GAIL", "SHELL", "HMEL", "CPCL", "MRPL", "NRL", "RIL", "NEL"]
+        }
+      }
+    },
+
+    "sbu": {
+      "description": "Strategic Business Unit",
+      "aliases": ["sbu", "business unit", "strategic business unit", "division", "segment", "vertical"],
+      "mappings": {
+        "industry_performance": {
+          "column": "sbu_name",
+          "type": "dimension",
+          "filter_operator": "=",
+          "group_by_column": "sbu_name",
+          "examples": ["RETAIL", "LPG", "I&C", "LUBES"]
+        },
+        "mom_level": {
+          "column": "sbu_name",
+          "type": "dimension",
+          "filter_operator": "=",
+          "group_by_column": "sbu_name",
+          "mandatory_exclusions": ["0", "Common", "Mumbai Ref", "Renewable Energy", "Visakh Ref"],
+          "examples": ["RETAIL", "LPG", "I&C", "LUBES"]
+        },
+        "m60_level": {
+          "column": "sbu_name",
+          "type": "dimension",
+          "filter_operator": "=",
+          "group_by_column": "sbu_name"
+        }
+      }
+    },
+
+    "product": {
+      "description": "Petroleum product name",
+      "aliases": ["product", "products", "fuel", "commodity", "item", "material", "petroleum product"],
+      "mappings": {
+        "industry_performance": {
+          "column": "productname",
+          "type": "dimension",
+          "filter_operator": "=",
+          "group_by_column": "productname",
+          "examples": ["MS", "HSD", "LPG-PKD DOM", "LPG-BULK", "SKO", "NAPHTHA", "PROPANE", "LUBES", "CNG"]
+        },
+        "mom_level": {
+          "column": "productname",
+          "type": "dimension",
+          "filter_operator": "=",
+          "group_by_column": "productname"
+        },
+        "m60_level": {
+          "column": "productname",
+          "type": "dimension",
+          "filter_operator": "=",
+          "group_by_column": "productname"
+        }
+      }
+    },
+
+    "state": {
+      "description": "Indian state or union territory",
+      "aliases": ["state", "states", "province", "territory", "ut"],
+      "mappings": {
+        "industry_performance": {
+          "column": "statename",
+          "type": "dimension",
+          "filter_operator": "=",
+          "group_by_column": "statename",
+          "examples": ["MAHARASHTRA", "GUJARAT", "RAJASTHAN", "UTTAR PRADESH", "DELHI"]
+        }
+      }
+    },
+
+    "district": {
+      "description": "District within a state",
+      "aliases": ["district", "districts", "dist", "taluka", "block"],
+      "mappings": {
+        "industry_performance": {
+          "column": "distname",
+          "type": "dimension",
+          "filter_operator": "=",
+          "group_by_column": "distname",
+          "examples": ["AGRA", "MUMBAI CITY", "PUNE", "SURAT", "LUCKNOW"]
+        }
+      }
+    },
+
+    "zone": {
+      "description": "Sales zone / geographic zone grouping",
+      "aliases": ["zone", "zones", "sales zone", "geographical zone"],
+      "mappings": {
+        "industry_performance": {
+          "column": "zone_name",
+          "type": "dimension",
+          "filter_operator": "=",
+          "group_by_column": "zone_name",
+          "examples": ["East Central Zone", "NCZ", "NZ", "EZ", "West Zone", "South Zone"]
+        },
+        "mom_level": {
+          "column": "zone_name",
+          "type": "dimension",
+          "filter_operator": "=",
+          "group_by_column": "zone_name"
+        },
+        "m60_level": {
+          "column": "zone_name",
+          "type": "dimension",
+          "filter_operator": "=",
+          "group_by_column": "zone_name"
+        }
+      }
+    },
+
+    "region": {
+      "description": "Sales region / regional office area",
+      "aliases": ["region", "regions", "ro", "regional office", "area"],
+      "mappings": {
+        "industry_performance": {
+          "column": "ro",
+          "type": "dimension",
+          "filter_operator": "=",
+          "group_by_column": "ro",
+          "examples": ["NELLORE", "MUMBAI", "KADAPA", "DELHI", "CHENNAI"]
+        },
+        "mom_level": {
+          "column": "region_name",
+          "type": "dimension",
+          "filter_operator": "=",
+          "group_by_column": "region_name"
+        },
+        "m60_level": {
+          "column": "region_name",
+          "type": "dimension",
+          "filter_operator": "=",
+          "group_by_column": "region_name"
+        }
+      }
+    },
+
+    "month": {
+      "description": "Month name in fiscal year (APR = start of Indian FY)",
+      "aliases": ["month", "months", "monthly", "mon"],
+      "mappings": {
+        "industry_performance": {
+          "column": "month_name",
+          "type": "dimension",
+          "filter_operator": "=",
+          "group_by_column": "month_name",
+          "order_expression": "CASE month_name WHEN 'APR' THEN 1 WHEN 'MAY' THEN 2 WHEN 'JUN' THEN 3 WHEN 'JUL' THEN 4 WHEN 'AUG' THEN 5 WHEN 'SEP' THEN 6 WHEN 'OCT' THEN 7 WHEN 'NOV' THEN 8 WHEN 'DEC' THEN 9 WHEN 'JAN' THEN 10 WHEN 'FEB' THEN 11 WHEN 'MAR' THEN 12 END",
+          "examples": ["APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC", "JAN", "FEB", "MAR"]
+        },
+        "mom_level": {
+          "column": "month_name",
+          "type": "dimension",
+          "filter_operator": "=",
+          "group_by_column": "month_name",
+          "secondary_order_column": "yearmonth"
+        },
+        "m60_level": {
+          "column": "month_name",
+          "type": "dimension",
+          "filter_operator": "=",
+          "group_by_column": "month_name"
+        }
+      }
+    },
+
+    "fiscal_year": {
+      "description": "Indian fiscal year running April to March",
+      "aliases": ["fiscal year", "fy", "financial year", "year", "annual", "yearly", "current year", "last year", "previous year"],
+      "mappings": {
+        "industry_performance": {
+          "column": "fiscal_year",
+          "type": "filter",
+          "filter_operator": "=",
+          "format": "YYYY-YYYY",
+          "examples": ["2024-2025", "2025-2026", "2023-2024"]
+        },
+        "mom_level": {
+          "column": "fiscal_year",
+          "type": "filter",
+          "filter_operator": "=",
+          "format": "YYYY-YYYY"
+        },
+        "m60_level": {
+          "column": "fiscal_year",
+          "type": "filter",
+          "filter_operator": "=",
+          "format": "YYYY-YYYY"
+        }
+      }
+    },
+
+    "market_share": {
+      "description": "Percentage of total market sales captured by a company",
+      "aliases": ["market share", "share", "market contribution", "share of market"],
+      "mappings": {
+        "industry_performance": {
+          "expression": "ROUND((SUM(CASE WHEN comname = '<COMPANY>' THEN netweight_tmt ELSE 0 END) * 100.0) / NULLIF(SUM(netweight_tmt), 0), 2)",
+          "alias": "market_share_percentage",
+          "requires_groupby": ["comname"],
+          "type": "ratio"
+        }
+      }
+    },
+
+    "growth": {
+      "description": "Year-over-year or month-over-month percentage change in sales",
+      "aliases": ["growth", "growth rate", "yoy growth", "year on year", "year-on-year", "yoy", "change", "increase", "decline", "mom growth", "month over month"],
+      "mappings": {
+        "industry_performance": {
+          "expression": "ROUND(((current_sales - previous_sales) * 100.0) / NULLIF(previous_sales, 0), 2)",
+          "alias": "growth_percentage",
+          "type": "computed",
+          "requires_two_periods": true
+        }
+      }
+    },
+
+    "category": {
+      "description": "Data category classifier — business rule mandates excluding 'O'",
+      "aliases": ["category"],
+      "mappings": {
+        "industry_performance": {
+          "column": "category",
+          "type": "mandatory_filter",
+          "business_rule": "category != 'O' OR category IS NULL",
+          "note": "ALWAYS apply this filter. Never query industry_performance without it."
+        }
+      }
+    }
+  },
+
+  "business_rules": {
+    "industry_performance": [
+      {
+        "rule_id": "mandatory_category_filter",
+        "description": "Always exclude category = O rows",
+        "sql": "(category != 'O' OR category IS NULL)",
+        "mandatory": true
+      }
+    ],
+    "mom_level": [
+      {
+        "rule_id": "mandatory_sbu_exclusions",
+        "description": "Exclude invalid SBU names from all MOM queries",
+        "sql": "sbu_name != '0' AND sbu_name NOT IN ('Common', 'Mumbai Ref', 'Renewable Energy', 'Visakh Ref')",
+        "mandatory": true
+      }
+    ]
+  },
+
+  "concept_priority": [
+    "company", "sbu", "product", "state", "district", "zone", "region",
+    "fiscal_year", "month", "sales", "target", "market_share", "growth", "category"
+  ]
+}

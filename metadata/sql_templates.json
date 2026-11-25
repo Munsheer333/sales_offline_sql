@@ -1,0 +1,33 @@
+{
+  "_meta": {
+    "description": "SQL templates for different query intents, ensuring clean separation of SQL structure from logic.",
+    "version": "1.0",
+    "generated_at": "2026-06-03"
+  },
+
+  "templates": {
+    "total_sales": {
+      "query": "SELECT {select_cols} FROM {table_name}{where_clause}{group_by_clause}{order_by_clause}{limit_clause};"
+    },
+
+    "market_share": {
+      "query": "WITH company_sales AS (SELECT {group_prefix}SUM({primary_table}.{measure_column}) AS company_total FROM {primary_table}{numerator_where}{group_clause}), total_market AS (SELECT {denominator_group_prefix}SUM({primary_table}.{measure_column}) AS market_total FROM {primary_table}{denominator_where}{denominator_group_clause}) SELECT {final_fields} FROM company_sales{denominator_join}{where_filter_sql}{order_sql}{limit_sql};"
+    },
+
+    "growth": {
+      "query": "WITH y1 AS (SELECT SUM({measure_column}) AS s1 FROM {table_name} WHERE {where_clause_1}), y2 AS (SELECT SUM({measure_column}) AS s2 FROM {table_name} WHERE {where_clause_2}) SELECT ROUND(((y2.s2 - y1.s1) * 100.0) / y1.s1, 2) AS sales_growth_percentage FROM y1, y2;"
+    },
+
+    "ranking": {
+      "query": "SELECT {select_cols} FROM {table_name}{where_clause}{group_by_clause}{order_by_clause}{limit_clause};"
+    },
+
+    "comparison": {
+      "query": "SELECT {select_cols} FROM {table_name}{where_clause}{group_by_clause}{order_by_clause}{limit_clause};"
+    },
+
+    "trend": {
+      "query": "SELECT {select_cols} FROM {table_name}{where_clause}{group_by_clause}{order_by_clause}{limit_clause};"
+    }
+  }
+}

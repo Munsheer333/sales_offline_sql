@@ -1,0 +1,135 @@
+{
+  "metrics": {
+    "sales": {
+      "column": "netweight_tmt",
+      "aliases": [
+        "actual sales",
+        "volume",
+        "sales",
+        "actuals",
+        "actual",
+        "netweight_tmt",
+        "netweight tmt"
+      ],
+      "business_definition": "Total volume of products sold, measured in thousand metric tons (TMT)."
+    },
+    "target": {
+      "column": "target_qty_tmt",
+      "aliases": [
+        "target",
+        "target quantity",
+        "target qty",
+        "target volume",
+        "target_qty_tmt"
+      ],
+      "business_definition": "Target sales volume, measured in thousand metric tons (TMT)."
+    },
+    "netweight_kg": {
+      "column": "netweight_kg",
+      "aliases": [
+        "sales in kg",
+        "kg sales",
+        "netweight in kg"
+      ],
+      "business_definition": "Total net weight of products sold in kilograms."
+    },
+    "target_qty_kl": {
+      "column": "target_qty_kl",
+      "aliases": [
+        "target in kl",
+        "target kiloliters",
+        "target kl"
+      ],
+      "business_definition": "Target sales volume in kiloliters."
+    }
+  },
+  "tables": {
+    "m60_level": {
+      "business_definition": "Primary transactional table containing sales and target data at SBU, Zone, Region, Sales Area, and Product granularity.",
+      "columns": {
+        "sbu_name": {
+          "business_definition": "Strategic Business Unit name (e.g. Retail, Industrial, Lubes)."
+        },
+        "zone_name": {
+          "business_definition": "Geographical zone name (e.g. North, South, East, West)."
+        },
+        "region_name": {
+          "business_definition": "Regional sales office name."
+        },
+        "salesarea_name": {
+          "business_definition": "Local sales area identifier name."
+        },
+        "productname": {
+          "business_definition": "Canonical name of the petroleum or lube product."
+        },
+        "fiscal_year": {
+          "business_definition": "Indian financial year running from April to March."
+        },
+        "month_name": {
+          "business_definition": "Name of the calendar month."
+        },
+        "netweight_tmt": {
+          "business_definition": "Actual sales volume in thousand metric tons."
+        },
+        "target_qty_tmt": {
+          "business_definition": "Target sales volume in thousand metric tons."
+        }
+      }
+    },
+    "mom_level": {
+      "business_definition": "Month-on-Month transactional data containing distribution channels and plant identifiers.",
+      "columns": {
+        "sbu_name": {
+          "business_definition": "Strategic Business Unit name."
+        },
+        "zone_name": {
+          "business_definition": "Geographical zone name."
+        },
+        "region_name": {
+          "business_definition": "Regional sales office name."
+        },
+        "productname": {
+          "business_definition": "Name of the product."
+        },
+        "fiscal_year": {
+          "business_definition": "Indian financial year."
+        },
+        "month_name": {
+          "business_definition": "Name of the calendar month."
+        },
+        "netweight_tmt": {
+          "business_definition": "Actual sales volume in thousand metric tons."
+        },
+        "distribution_channel_cd": {
+          "business_definition": "Distribution channel code."
+        },
+        "plant_cd": {
+          "business_definition": "Refinery or warehouse plant code."
+        }
+      }
+    },
+    "industry_performance": {
+      "business_definition": "Comparative table containing performance metrics across states, companies, and business categories.",
+      "columns": {
+        "statename": {
+          "business_definition": "Indian state or union territory name."
+        },
+        "company_name": {
+          "business_definition": "Company name (e.g. IOCL, BPCL, HPCL, ONGC)."
+        },
+        "category": {
+          "business_definition": "Customer category classification (e.g. Retail, Direct, Others)."
+        },
+        "fiscal_year": {
+          "business_definition": "Indian financial year."
+        },
+        "month_name": {
+          "business_definition": "Name of the calendar month."
+        },
+        "netweight_tmt": {
+          "business_definition": "Actual sales volume in thousand metric tons."
+        }
+      }
+    }
+  }
+}
