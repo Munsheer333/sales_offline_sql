@@ -14,11 +14,13 @@ from urllib.parse import urlparse, urlunparse
 import base64
 import streamlit.components.v1 as components
 import sys
+import os
 
-# Automatically evict cached core modules so long-running Streamlit processes always execute latest code
-for _mod in list(sys.modules.keys()):
-    if _mod == "core" or _mod.startswith("core."):
-        sys.modules.pop(_mod, None)
+# Disable unused TensorFlow/Flax backends before any transformers import
+os.environ.setdefault("USE_TF", "0")
+os.environ.setdefault("USE_FLAX", "0")
+os.environ.setdefault("USE_TORCH", "1")
+os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
 
 def set_db_name_in_url(url: str, db_name: str) -> str:
     try:
@@ -365,6 +367,24 @@ with st.sidebar:
         st.markdown('<div class="warn-box">⚠ No schema loaded yet.<br>Go to Setup tab.</div>', unsafe_allow_html=True)
         st.session_state.schema_loaded = False
 
+    @st.cache_resource
+    def _warm_fast_path_resources(conn_str: str, schema_path_str: str):
+        try:
+            from core.phase6_orchestrator import load_schema, _get_shared_planner, _get_shared_assembler, _get_shared_sql_memory
+            from core.business_entity_catalog import get_business_entity_catalog
+            schema_meta = load_schema(schema_path_str)
+            _get_shared_planner()
+            _get_shared_assembler()
+            _get_shared_sql_memory()
+            if schema_meta:
+                get_business_entity_catalog(conn_str, schema_meta)
+        except Exception:
+            pass
+        return True
+
+    if st.session_state.schema_loaded:
+        _warm_fast_path_resources(st.session_state.conn_str, st.session_state.schema_path)
+
     st.markdown('<div class="section-header">Quick Examples</div>', unsafe_allow_html=True)
     example_questions = [
         "What is the actual sales in TMT for Retail HSD from Dec 1 2025 to Dec 15 2025?",
@@ -508,9 +528,6 @@ with tab_query:
             else:
                 with st.spinner("Thinking..."):
                     try:
-                        for _mod in list(sys.modules.keys()):
-                            if _mod == "core" or _mod.startswith("core."):
-                                sys.modules.pop(_mod, None)
                         from core.phase6_orchestrator import run_pipeline
                         result = run_pipeline(
                             question=run_question,

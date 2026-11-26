@@ -85,6 +85,7 @@ class IntentCache:
     """Two-tier intent cache: fast in-memory LRU + persistent PostgreSQL."""
 
     _stats_lock = threading.Lock()
+    _ensured_conns: set = set()
 
     def __init__(self, capacity: int = 512):
         self._mem = _LRUCache(capacity)
@@ -214,11 +215,17 @@ class IntentCache:
         conn.commit()
         cur.close()
 
+    def _ensure_table_once(self, conn, conn_str: str) -> None:
+        if conn_str in self._ensured_conns:
+            return
+        self._ensure_table(conn)
+        self._ensured_conns.add(conn_str)
+
     def _pg_get(self, conn_str: str, key: str) -> Optional[Dict[str, Any]]:
         try:
             from core.db_pool import pooled_connect
             conn = pooled_connect(conn_str)
-            self._ensure_table(conn)
+            self._ensure_table_once(conn, conn_str)
             cur = conn.cursor()
             cur.execute(
                 """SELECT cache_key, intent, metric, filters, sql, columns, row_count
@@ -254,7 +261,7 @@ class IntentCache:
         try:
             from core.db_pool import pooled_connect
             conn = pooled_connect(conn_str)
-            self._ensure_table(conn)
+            self._ensure_table_once(conn, conn_str)
             cur = conn.cursor()
             cur.execute(
                 """INSERT INTO nlpsql_intent_cache

@@ -34,7 +34,7 @@ def resolve_conversational_query(question: str, session_id: str) -> str:
     has_dual_operands = bool(re.search(r'\b(?:compare\s+.+?\s+(?:and|vs|versus|with)\s+.+|.+?\s+(?:vs|versus)\s+.+|difference\s+between\s+.+?\s+and\s+.+)\b', q_clean))
     is_elliptical_comparison = any(q_clean.startswith(p) for p in ["compare with ", "compare against ", "compare to ", "vs ", "versus ", "against "])
 
-    starts_with_prefix = any(q_clean.startswith(p) for p in ["what is", "what are", "show ", "get ", "find ", "list ", "run ", "calculate ", "compare "])
+    starts_with_prefix = any(q_clean.startswith(p) for p in ["what is", "what are", "show ", "get ", "find ", "list ", "run ", "calculate ", "compare ", "rank "])
     is_followup_phrase = any(q_clean.startswith(p) for p in ["what about", "how about", "only "]) or is_elliptical_comparison
     from core.query_normalizer import detect_incomplete_question
     is_incomplete = detect_incomplete_question(question) is not None
@@ -91,10 +91,10 @@ def resolve_conversational_query(question: str, session_id: str) -> str:
         q_clean.startswith("in ") or
         q_clean.startswith("for ") or
         q_clean.startswith("with ") or
-        any(z.lower() in q_clean for z in ZONES) or
-        any(p.lower() in q_clean for p in PRODUCT_NAMES) or
-        any(s.lower() in q_clean for s in SBU_VALUES) or
-        any(y in q_clean for y in ["fy", "202"])
+        any(re.search(rf"\b{re.escape(z.lower())}\b", q_clean) for z in ZONES) or
+        any(re.search(rf"\b{re.escape(p.lower())}\b", q_clean) for p in PRODUCT_NAMES) or
+        any(re.search(rf"\b{re.escape(s.lower())}\b", q_clean) for s in SBU_VALUES) or
+        any(re.search(rf"\b{y}", q_clean) for y in ["fy", "202"])
     )
 
     if is_refinement:

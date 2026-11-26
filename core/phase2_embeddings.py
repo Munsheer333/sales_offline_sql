@@ -7,6 +7,12 @@ Uses a lazy-loaded local embedding model so application imports stay cheap.
 import json
 import asyncio
 import os
+
+os.environ.setdefault("USE_TF", "0")
+os.environ.setdefault("USE_FLAX", "0")
+os.environ.setdefault("USE_TORCH", "1")
+os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
+
 import psycopg2
 from functools import lru_cache
 from typing import Any, List

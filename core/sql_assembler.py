@@ -42,7 +42,7 @@ class SQLAssembler:
                         self.templates[name] = f.read()
 
     def _determine_table(self, filters: Dict[str, Any], dimension: str, dimensions: Optional[List[str]] = None) -> str:
-        industry_keys = {"company", "state", "category"}
+        industry_keys = {"company", "state"}
         keys_present = set(filters.keys())
         if dimension:
             keys_present.add(dimension)
@@ -50,6 +50,8 @@ class SQLAssembler:
             keys_present.update(dimensions)
             
         if keys_present.intersection(industry_keys):
+            return "industry_performance"
+        if "category" in filters and "sbu" not in filters:
             return "industry_performance"
         return "m60_level"
 
@@ -212,7 +214,13 @@ class SQLAssembler:
             
             # Determine limit (default to 5 for N lists, 10 for standard rankings)
             limit = 5 if intent in ("TOP_N", "BOTTOM_N") else 10
-            # Check if query contains digits to override limit
+            if question:
+                limit_match = re.search(
+                    r"\b(?:top|bottom|highest|lowest|largest|smallest|first|last)\s+(\d{1,3})\b",
+                    question.lower(),
+                )
+                if limit_match:
+                    limit = int(limit_match.group(1))
             
             sql = template.replace("{{source_table}}", table)\
                          .replace("{{filters}}", filters_str)\

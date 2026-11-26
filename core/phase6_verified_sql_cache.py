@@ -9,7 +9,9 @@ against current data by the orchestrator.
 import hashlib
 import json
 import re
-from typing import Any, Optional
+import threading
+import time
+from typing import Any, Dict, Optional, Set, Tuple
 
 import psycopg2
 from core.db_pool import pooled_connect
@@ -24,6 +26,31 @@ VERIFIED_SQL_CACHE_VERSION = "verified-sql-cache-v1"
 COMPILER_VERSION = "phase3-sql-compiler-v1"
 ONTOLOGY_VERSION = "business-ontology-v1"
 VALID_STATUSES = {"candidate", "verified", "rejected", "superseded"}
+_ENSURED_CONNS: set = set()
+_ENSURE_LOCK = threading.Lock()
+_REJECTED_CACHE: Dict[str, Tuple[float, Set[Tuple[str, str]]]] = {}
+_VERIFIED_COUNT_CACHE: Dict[str, Tuple[float, int]] = {}
+_CACHE_TTL_SECONDS = 2.0
+
+
+def _invalidate_mem_caches(conn_str: Optional[str] = None) -> None:
+    if conn_str is None:
+        _REJECTED_CACHE.clear()
+        _VERIFIED_COUNT_CACHE.clear()
+    else:
+        _REJECTED_CACHE.pop(conn_str, None)
+        _VERIFIED_COUNT_CACHE.pop(conn_str, None)
+
+
+def _ensure_tables_once(conn, cur, conn_str: str) -> None:
+    if conn_str in _ENSURED_CONNS:
+        return
+    with _ENSURE_LOCK:
+        if conn_str in _ENSURED_CONNS:
+            return
+        create_verified_sql_cache_tables(cur)
+        conn.commit()
+        _ENSURED_CONNS.add(conn_str)
 
 
 def normalize_question(question: str) -> str:
@@ -120,8 +147,10 @@ def ensure_verified_sql_cache(conn_str: str) -> bool:
     try:
         with pooled_connect(conn_str) as conn:
             with conn.cursor() as cur:
-                create_verified_sql_cache_tables(cur)
+                _ensure_tables_once(conn, cur, conn_str)
             conn.commit()
+        if status == "verified":
+            _invalidate_mem_caches(conn_str)
         return True
     except Exception:
         return False
@@ -132,7 +161,7 @@ def backfill_rejected_feedback(conn_str: str) -> int:
     try:
         with pooled_connect(conn_str) as conn:
             with conn.cursor() as cur:
-                create_verified_sql_cache_tables(cur)
+                _ensure_tables_once(conn, cur, conn_str)
                 cur.execute(
                     """
                     SELECT id, question, generated_sql
@@ -170,9 +199,13 @@ def backfill_rejected_feedback(conn_str: str) -> int:
 def get_verified_sql(conn_str: str, question: str, schema_metadata: dict) -> Optional[dict]:
     """Return approved SQL only. Candidates and rejected entries are never reused."""
     try:
+        now = time.monotonic()
+        cached_cnt = _VERIFIED_COUNT_CACHE.get(conn_str)
+        if cached_cnt and (now - cached_cnt[0]) < _CACHE_TTL_SECONDS and cached_cnt[1] == 0:
+            return None
         with pooled_connect(conn_str) as conn:
             with conn.cursor() as cur:
-                create_verified_sql_cache_tables(cur)
+                _ensure_tables_once(conn, cur, conn_str)
                 q_fp = question_fingerprint(question)
                 s_fp = schema_fingerprint(schema_metadata)
                 cur.execute(
@@ -192,7 +225,10 @@ def get_verified_sql(conn_str: str, question: str, schema_metadata: dict) -> Opt
                 )
                 row = cur.fetchone()
                 if not row:
+                    cur.execute("SELECT 1 FROM nlpsql_verified_sql_cache WHERE status = 'verified' LIMIT 1")
+                    _VERIFIED_COUNT_CACHE[conn_str] = (now, 1 if cur.fetchone() else 0)
                     return None
+                _VERIFIED_COUNT_CACHE[conn_str] = (now, 1)
                 cur.execute(
                     """
                     UPDATE nlpsql_verified_sql_cache
@@ -253,22 +289,22 @@ def is_rejected_sql(conn_str: str, question: str, sql: str) -> bool:
     if not question or not sql:
         return False
     try:
+        now = time.monotonic()
+        cached = _REJECTED_CACHE.get(conn_str)
+        if cached and (now - cached[0]) < _CACHE_TTL_SECONDS:
+            if not cached[1]:
+                return False
+            return (question_fingerprint(question), sql_fingerprint(sql)) in cached[1]
         with pooled_connect(conn_str) as conn:
             with conn.cursor() as cur:
-                create_verified_sql_cache_tables(cur)
-                cur.execute(
-                    """
-                    SELECT 1
-                    FROM nlpsql_rejected_sql
-                    WHERE question_fingerprint = %s
-                      AND sql_fingerprint = %s
-                    LIMIT 1
-                    """,
-                    (question_fingerprint(question), sql_fingerprint(sql)),
-                )
-                rejected = bool(cur.fetchone())
+                _ensure_tables_once(conn, cur, conn_str)
+                cur.execute("SELECT question_fingerprint, sql_fingerprint FROM nlpsql_rejected_sql LIMIT 2000")
+                pairs = {(r[0], r[1]) for r in cur.fetchall()}
+                _REJECTED_CACHE[conn_str] = (now, pairs)
             conn.commit()
-        return rejected
+        if not pairs:
+            return False
+        return (question_fingerprint(question), sql_fingerprint(sql)) in pairs
     except Exception:
         return False
 
@@ -280,7 +316,7 @@ def reject_sql_for_question(conn_str: str, question: str, sql: str, reason: str)
     try:
         with pooled_connect(conn_str) as conn:
             with conn.cursor() as cur:
-                create_verified_sql_cache_tables(cur)
+                _ensure_tables_once(conn, cur, conn_str)
                 q_fp = question_fingerprint(question)
                 sql_fp = sql_fingerprint(sql)
                 cur.execute(
@@ -306,6 +342,7 @@ def reject_sql_for_question(conn_str: str, question: str, sql: str, reason: str)
                     (q_fp, normalize_question(question), question, sql_fp, sql, reason),
                 )
             conn.commit()
+        _invalidate_mem_caches(conn_str)
         return True
     except Exception:
         return False
@@ -315,7 +352,7 @@ def reject_cache_entry(conn_str: str, cache_id: int, reason: str) -> bool:
     try:
         with pooled_connect(conn_str) as conn:
             with conn.cursor() as cur:
-                create_verified_sql_cache_tables(cur)
+                _ensure_tables_once(conn, cur, conn_str)
                 cur.execute(
                     """
                     UPDATE nlpsql_verified_sql_cache
@@ -325,6 +362,7 @@ def reject_cache_entry(conn_str: str, cache_id: int, reason: str) -> bool:
                     (reason, cache_id),
                 )
             conn.commit()
+        _invalidate_mem_caches(conn_str)
         return True
     except Exception:
         return False
@@ -335,7 +373,7 @@ def record_query_feedback(conn_str: str, query_id: int, feedback: int) -> bool:
     try:
         with pooled_connect(conn_str) as conn:
             with conn.cursor() as cur:
-                create_verified_sql_cache_tables(cur)
+                _ensure_tables_once(conn, cur, conn_str)
                 create_query_pattern_cache_tables(cur)
                 cur.execute(
                     "SELECT question, generated_sql FROM nlpsql_query_history WHERE id = %s",
@@ -423,6 +461,7 @@ def record_query_feedback(conn_str: str, query_id: int, feedback: int) -> bool:
                         (q_fp, normalize_question(question), question, sql_fp, sql, query_id),
                     )
             conn.commit()
+        _invalidate_mem_caches(conn_str)
         return True
     except Exception:
         return False
@@ -441,7 +480,7 @@ def _store_sql(
     try:
         with pooled_connect(conn_str) as conn:
             with conn.cursor() as cur:
-                create_verified_sql_cache_tables(cur)
+                _ensure_tables_once(conn, cur, conn_str)
                 q_fp = question_fingerprint(question)
                 s_fp = schema_fingerprint(schema_metadata)
                 sql_fp = sql_fingerprint(sql)
@@ -501,6 +540,8 @@ def _store_sql(
                     ),
                 )
             conn.commit()
+        if status == "verified":
+            _invalidate_mem_caches(conn_str)
         return True
     except Exception:
         return False

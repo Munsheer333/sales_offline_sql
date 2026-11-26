@@ -953,7 +953,8 @@ def validate_and_execute(
     llm_heal_fn=None,
     schema_ddl: str = "",
     max_retries: int = 3,
-    question: Optional[str] = None
+    question: Optional[str] = None,
+    skip_explain: bool = False,
 ) -> dict:
     """Full validation + self-healing execution pipeline."""
     current_sql = sql
@@ -1109,9 +1110,12 @@ def validate_and_execute(
             }, timings)
 
         # Step 4: EXPLAIN plan check
-        with observed_stage("validation.explain", attempt=attempt) as timer:
-            plan_ok, plan_msg, plan = explain_query(current_sql, conn_str)
-        _add_timing(timings, "explain_ms", timer.elapsed_seconds)
+        if skip_explain:
+            plan_ok, plan_msg, plan = True, "Skipped EXPLAIN for pre-verified cached SQL", None
+        else:
+            with observed_stage("validation.explain", attempt=attempt) as timer:
+                plan_ok, plan_msg, plan = explain_query(current_sql, conn_str)
+            _add_timing(timings, "explain_ms", timer.elapsed_seconds)
         if plan_ok:
             break
         if llm_heal_fn and attempt < max_retries - 1:

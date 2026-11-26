@@ -4,6 +4,7 @@ Production Orchestrator — ties all phases together
 """
 
 import json
+import os
 import time
 import psycopg2
 import logging
@@ -72,6 +73,8 @@ SCHEMA_PATH = "data/schema_metadata.json"
 
 _planner_instance = None
 _assembler_instance = None
+_sql_memory_instance = None
+_SCHEMA_CACHE: dict = {}
 
 
 def _get_shared_planner():
@@ -90,11 +93,24 @@ def _get_shared_assembler():
     return _assembler_instance
 
 
+def _get_shared_sql_memory():
+    global _sql_memory_instance
+    if _sql_memory_instance is None:
+        from core.sql_memory import SQLMemory
+        _sql_memory_instance = SQLMemory()
+    return _sql_memory_instance
+
 
 def load_schema(schema_path: str = SCHEMA_PATH) -> Optional[dict]:
     try:
+        mtime = os.path.getmtime(schema_path)
+        cached = _SCHEMA_CACHE.get(schema_path)
+        if cached and cached[0] == mtime:
+            return cached[1]
         with open(schema_path) as f:
-            return json.load(f)
+            data = json.load(f)
+        _SCHEMA_CACHE[schema_path] = (mtime, data)
+        return data
     except FileNotFoundError:
         return None
 
@@ -612,7 +628,7 @@ def _try_early_pattern_fast_path(
             "semantic_coverage": semantic_report,
             "entity_analysis": entity_analysis,
             "examples_used": 0,
-        }, start_perf, request_id)
+        }, start_perf, request_id, conn_str=conn_str)
     except Exception as exc:
         log_event("query_pattern.early_error", level=logging.WARNING, request_id=request_id, error=str(exc))
         return None
@@ -697,7 +713,7 @@ def _try_early_compiler_fast_path(
             "semantic_coverage": semantic_report,
             "entity_analysis": entity_analysis,
             "examples_used": 0,
-        }, start_perf, request_id)
+        }, start_perf, request_id, conn_str=conn_str)
     except SQLCompilerError:
         return None
     except Exception as exc:
@@ -807,6 +823,7 @@ def run_pipeline(
                 schema_ddl="",
                 max_retries=1,
                 question=question,
+                skip_explain=True,
             )
         observe_validation(
             validation_timer.elapsed_seconds,
@@ -874,10 +891,14 @@ def run_pipeline(
         plan = planner.plan(question)
         # Build cache key plan from original_question (before normalize_shorthand_query)
         # to ensure consistent keys across paraphrases
-        _original_plan = planner.plan(original_question)
+        if original_question == question:
+            _original_plan = plan
+        else:
+            _original_plan = planner.plan(original_question)
         
         # Merge dynamically matched database entities into planner filters
-        for p in (plan, _original_plan):
+        plans_to_update = (plan,) if _original_plan is plan else (plan, _original_plan)
+        for p in plans_to_update:
             if p and "filters" in p:
                 p_dim = p.get("dimension")
                 p_comp_dim = p.get("comparison_dimension") or p_dim
@@ -943,6 +964,7 @@ def run_pipeline(
                             schema_ddl="",
                             max_retries=1,
                             question=question,
+                            skip_explain=True,
                         )
                     observe_validation(timer.elapsed_seconds, "success" if exec_result.get("success") else "error")
                     if exec_result.get("success"):
@@ -1045,8 +1067,7 @@ def run_pipeline(
     # Route: confidence between 70%-95% (0.70 <= confidence <= 0.95): Planner -> Example SQL Memory
     elif plan and 0.70 <= planner_confidence <= 0.95:
         try:
-            from core.sql_memory import SQLMemory
-            sql_mem = SQLMemory()
+            sql_mem = _get_shared_sql_memory()
             memory_match = sql_mem.retrieve(
                 query=question,
                 intent=plan.get("intent", "TOTAL_SALES"),
@@ -1101,6 +1122,31 @@ def run_pipeline(
                 log_event("memory.no_match", level=logging.INFO, request_id=request_id, question=question)
         except Exception as exc:
             log_event("memory.retrieve_error", level=logging.WARNING, request_id=request_id, error=str(exc))
+
+    # Deterministic pattern & compiler fast paths BEFORE loading heavy embedding models
+    early_pattern_result = _try_early_pattern_fast_path(
+        question=question,
+        conn_str=conn_str,
+        schema_metadata=schema_metadata,
+        entity_analysis=entity_analysis,
+        start_total=start_total,
+        start_perf=start_perf,
+        request_id=request_id,
+    )
+    if early_pattern_result is not None:
+        return early_pattern_result
+
+    early_compiler_result = _try_early_compiler_fast_path(
+        question=question,
+        conn_str=conn_str,
+        schema_metadata=schema_metadata,
+        entity_analysis=entity_analysis,
+        start_total=start_total,
+        start_perf=start_perf,
+        request_id=request_id,
+    )
+    if early_compiler_result is not None:
+        return early_compiler_result
 
     if embedder is None:
         embedder = get_local_embedder()
@@ -1257,6 +1303,7 @@ def run_pipeline(
                         schema_ddl="",
                         max_retries=1,
                         question=question,
+                        skip_explain=True,
                     )
                 observe_validation(
                     validation_timer.elapsed_seconds,

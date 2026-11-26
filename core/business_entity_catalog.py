@@ -3,11 +3,17 @@
 import re
 import threading
 import time
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Tuple
 
 import psycopg2
 from core.db_pool import pooled_connect
-from core.phase3_query_planner import COMPANY_NAMES, PRODUCT_NAMES, SBU_VALUES
+from core.phase3_query_planner import COMPANY_NAMES, PRODUCT_NAMES, SBU_VALUES, STATE_ALIASES
+
+
+CATALOG_TTL_SECONDS = 300
+_CACHE: Dict[str, Dict[str, Any]] = {}
+_INDEX_CACHE: Dict[int, Dict[str, Any]] = {}
+_LOCK = threading.Lock()
 
 
 CATALOG_TTL_SECONDS = 300
@@ -28,6 +34,11 @@ ENTITY_COLUMNS = {
     ),
     "state": (("industry_performance", "statename"),),
     "district": (("industry_performance", "distname"),),
+    "region": (
+        ("industry_performance", "region_name"),
+        ("mom_level", "region_name"),
+        ("m60_level", "region_name"),
+    ),
     "zone": (
         ("industry_performance", "zone_name"),
         ("mom_level", "zone_name"),
@@ -58,8 +69,64 @@ def invalidate_business_entity_catalog(conn_str: Optional[str] = None) -> None:
     with _LOCK:
         if conn_str is None:
             _CACHE.clear()
+            _INDEX_CACHE.clear()
         else:
             _CACHE.pop(conn_str, None)
+
+
+_COLUMN_MAP = {
+    "company": "comname",
+    "sbu": "sbu_name",
+    "product": "productname",
+    "state": "statename",
+    "district": "distname",
+    "region": "region_name",
+    "zone": "zone_name",
+}
+_ALNUM_TOKEN_RE = re.compile(r"[a-z0-9]+")
+
+
+def _build_catalog_index(catalog: Dict[str, List[str]]) -> Dict[str, Any]:
+    merged = _with_curated_entities(catalog)
+    token_buckets: Dict[str, List[Tuple[str, str, str, re.Pattern]]] = {}
+    fallback_entries: List[Tuple[str, str, str, re.Pattern]] = []
+
+    for entity_type, values in merged.items():
+        for value in sorted(values, key=lambda item: len(str(item)), reverse=True):
+            val_str = str(value)
+            normalized_value = _normalize(val_str)
+            if len(normalized_value) < 2:
+                continue
+            pattern = re.compile(rf"(?<![a-z0-9]){re.escape(normalized_value)}(?![a-z0-9])")
+            entry = (entity_type, val_str, normalized_value, pattern)
+            if normalized_value[0].isalnum():
+                m = _ALNUM_TOKEN_RE.match(normalized_value)
+                if m:
+                    token_buckets.setdefault(m.group(0), []).append(entry)
+                    continue
+            fallback_entries.append(entry)
+
+    return {
+        "merged": merged,
+        "token_buckets": token_buckets,
+        "fallback_entries": fallback_entries,
+    }
+
+
+def _get_catalog_index(catalog: Dict[str, List[str]]) -> Dict[str, Any]:
+    key = id(catalog)
+    with _LOCK:
+        cached = _INDEX_CACHE.get(key)
+        if cached is not None and cached.get("_source_ref") is catalog:
+            return cached
+    indexed = _build_catalog_index(catalog)
+    indexed["_source_ref"] = catalog
+    if len(_INDEX_CACHE) > 32:
+        with _LOCK:
+            _INDEX_CACHE.clear()
+    with _LOCK:
+        _INDEX_CACHE[key] = indexed
+    return indexed
 
 
 def analyze_business_entities(
@@ -69,44 +136,81 @@ def analyze_business_entities(
     catalog: Optional[Dict[str, List[str]]] = None,
 ) -> Dict[str, Any]:
     """Extract catalog-backed entities and explicit unresolved labels."""
-    catalog = catalog if catalog is not None else (
-        get_business_entity_catalog(conn_str, schema_metadata) if conn_str else {}
-    )
-    catalog = _with_curated_entities(catalog)
+    if catalog is None:
+        raw_catalog = get_business_entity_catalog(conn_str, schema_metadata) if conn_str else {}
+        indexed = _get_catalog_index(raw_catalog)
+    else:
+        indexed = _build_catalog_index(catalog)
+
+    merged_catalog = indexed["merged"]
+    token_buckets = indexed["token_buckets"]
+    fallback_entries = indexed["fallback_entries"]
+
     q_norm = _normalize(question)
+    q_tokens = set(_ALNUM_TOKEN_RE.findall(q_norm))
     matches: List[Dict[str, Any]] = []
 
-    for entity_type, values in catalog.items():
-        for value in sorted(values, key=lambda item: len(str(item)), reverse=True):
-            normalized_value = _normalize(str(value))
-            if len(normalized_value) < 2 or not _contains_phrase(q_norm, normalized_value):
-                continue
-            if entity_type == "sbu" and not _sbu_context(q_norm, normalized_value):
-                continue
-            if entity_type == "product" and _sbu_context(q_norm, normalized_value) and not _labeled_context(q_norm, normalized_value, "product"):
-                continue
-            if entity_type in {"district", "zone"} and not _entity_has_context(q_norm, normalized_value, entity_type):
-                continue
-            matches.append({
-                "type": entity_type,
-                "value": str(value),
-                "column": {
-                    "company": "comname",
-                    "sbu": "sbu_name",
-                    "product": "productname",
-                    "state": "statename",
-                    "district": "distname",
-                    "zone": "zone_name",
-                }[entity_type],
-                "source": "database_entity_catalog",
-                "confidence": 0.98,
-            })
+    candidates: List[Tuple[str, str, str, re.Pattern]] = list(fallback_entries)
+    for tok in q_tokens:
+        bucket = token_buckets.get(tok)
+        if bucket:
+            candidates.extend(bucket)
+
+    for entity_type, val_str, normalized_value, pattern in candidates:
+        if normalized_value not in q_norm or not pattern.search(q_norm):
+            continue
+        if (
+            entity_type == "company"
+            and normalized_value == "hpcl"
+            and re.search(r"\bsbu\s+hpcl\s+mkt\b", q_norm)
+            and not re.search(r"\bhpcl\b(?!\s+mkt\b)", q_norm)
+        ):
+            continue
+        if entity_type == "sbu" and not _sbu_context(q_norm, normalized_value):
+            continue
+        if entity_type == "product" and _sbu_context(q_norm, normalized_value) and not _labeled_context(q_norm, normalized_value, "product"):
+            continue
+        if entity_type in {"district", "zone"} and not _entity_has_context(q_norm, normalized_value, entity_type):
+            continue
+        matches.append({
+            "type": entity_type,
+            "value": val_str,
+            "column": _COLUMN_MAP[entity_type],
+            "source": "database_entity_catalog",
+            "confidence": 0.98,
+        })
+
+    # Resolve explicit state aliases (e.g. "in AP state" -> "ANDHRA PRADESH") against catalog states
+    state_catalog_by_norm = {
+        _normalize(str(v)): str(v) for v in merged_catalog.get("state", [])
+    }
+    known_companies_norm = {_normalize(str(v)) for v in merged_catalog.get("company", [])}
 
     matches = _drop_embedded_matches(q_norm, _prefer_longest_matches(_dedupe_matches(matches)))
     unresolved = []
     for entity_type, raw_value in _explicit_labeled_entities(q_norm):
         if entity_type == "sbu" and raw_value in {"all", "every"}:
             continue
+        if (
+            entity_type == "sbu"
+            and _normalize(raw_value) in known_companies_norm
+            and re.search(rf"\b{re.escape(_normalize(raw_value))}\s+sbu\s+[a-z0-9]", q_norm)
+        ):
+            continue
+        if entity_type == "state":
+            alias_target = STATE_ALIASES.get(_normalize(raw_value))
+            if alias_target:
+                matched_state = state_catalog_by_norm.get(_normalize(alias_target))
+                if matched_state:
+                    if not any(item["type"] == "state" and _normalize(item["value"]) == _normalize(matched_state) for item in matches):
+                        matches.append({
+                            "type": "state",
+                            "value": matched_state,
+                            "column": "statename",
+                            "source": "database_entity_catalog",
+                            "confidence": 0.98,
+                        })
+                    continue
         if not any(
             item["type"] == entity_type
             and (
@@ -117,10 +221,12 @@ def analyze_business_entities(
         ):
             unresolved.append({"type": entity_type, "value": raw_value, "source": "explicit_label"})
 
+    matches = _drop_embedded_matches(q_norm, _prefer_longest_matches(_dedupe_matches(matches)))
+
     return {
         "matches": matches,
         "unresolved": unresolved,
-        "catalog_counts": {key: len(values) for key, values in catalog.items()},
+        "catalog_counts": {key: len(values) for key, values in merged_catalog.items()},
     }
 
 

@@ -68,7 +68,15 @@ class LogicalQueryPlanner:
 
         # Group matched entities by entity_type
         groups = defaultdict(list)
+        q_lower_raw = query.lower()
+        kl_uom_context = (
+            "kerala" not in q_lower_raw
+            and "state" not in q_lower_raw
+            and bool(re.search(r"\b(?:in|quantity|target|volume|sales)\s+kl\b|\bkl\s+(?:from|for|in)\b", q_lower_raw))
+        )
         for entity_type, canonical, raw, pos in entity_matches:
+            if entity_type == "state" and canonical == "Kerala" and raw == "kl" and kl_uom_context:
+                continue
             groups[entity_type].append({
                 "canonical": canonical,
                 "raw": raw,
@@ -105,21 +113,27 @@ class LogicalQueryPlanner:
         has_specific_product = any(len(v.get("canonical", "")) > 0 for v in groups.get("product", []))
         has_specific_company = any(len(v.get("canonical", "")) > 0 for v in groups.get("company", []))
         has_specific_sbu = any(len(v.get("canonical", "")) > 0 for v in groups.get("sbu", []))
+        has_specific_state = any(len(v.get("canonical", "")) > 0 for v in groups.get("state", []))
+        has_specific_zone = any(len(v.get("canonical", "")) > 0 for v in groups.get("zone", []))
+        has_specific_region = any(len(v.get("canonical", "")) > 0 for v in groups.get("region", []))
 
         if any(k in q_lower for k in ["product performance", "products performance", "by product", "per product", "product sales"]) or \
-           ("product" in q_lower and not has_specific_product):
+           (("product" in q_lower or "products" in q_lower) and not has_specific_product):
             breakdown_dim = "product"
         elif any(k in q_lower for k in ["company performance", "companies performance", "by company", "per company", "company sales"]) or \
-             ("company" in q_lower and not has_specific_company):
+             (("company" in q_lower or "companies" in q_lower) and not has_specific_company):
             breakdown_dim = "company"
         elif any(k in q_lower for k in ["sbu performance", "sbus performance", "by sbu", "per sbu", "sbu sales"]) or \
-             ("sbu" in q_lower and not has_specific_sbu):
+             (("sbu" in q_lower or "sbus" in q_lower) and not has_specific_sbu):
             breakdown_dim = "sbu"
-        elif any(k in q_lower for k in ["state performance", "states performance", "by state", "per state", "state sales", "state"]):
+        elif any(k in q_lower for k in ["state performance", "states performance", "by state", "per state", "state sales"]) or \
+             ("states" in q_lower or ("state" in q_lower and not has_specific_state)):
             breakdown_dim = "state"
-        elif any(k in q_lower for k in ["zone performance", "zones performance", "by zone", "per zone", "zone sales", "zone"]):
+        elif any(k in q_lower for k in ["zone performance", "zones performance", "by zone", "per zone", "zone sales"]) or \
+             ("zones" in q_lower or ("zone" in q_lower and not has_specific_zone)):
             breakdown_dim = "zone"
-        elif any(k in q_lower for k in ["region performance", "regions performance", "by region", "per region", "region sales", "region"]):
+        elif any(k in q_lower for k in ["region performance", "regions performance", "by region", "per region", "region sales"]) or \
+             ("regions" in q_lower or ("region" in q_lower and not has_specific_region)):
             breakdown_dim = "region"
 
         if is_two_fy and breakdown_dim:
@@ -255,6 +269,9 @@ class LogicalQueryPlanner:
                         {"canonical": item if target_etype == "fiscal_year" else item.upper(), "raw": item, "pos": i}
                         for i, item in enumerate(comp_items)
                     ]
+
+        if not dimension and breakdown_dim:
+            dimension = breakdown_dim
 
         if not dimension:
             # Fallback check for dimension keywords if no multiple values found

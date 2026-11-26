@@ -266,10 +266,11 @@ def extract_filters(
         sbu_value = explicit_sbu.upper() if table == "industry_performance" else explicit_sbu
         filters.append(_filter(table, "sbu_name", "equal", sbu_value, "sbu", False))
 
+    q_company_norm = re.sub(r"\b(?:strategic\s+business\s+unit|sbu)\s+hpcl\s+mkt(?:\s+ds)?\b", " ", q_norm)
     for company in COMPANY_NAMES:
         if explicit_sbu and company.lower() in explicit_sbu.lower():
             continue
-        if re.search(rf"\b{re.escape(company.lower())}\b", q_norm):
+        if re.search(rf"\b{re.escape(company.lower())}\b", q_company_norm):
             company_col = _first_existing(columns, ["comname", "coname", "company_name"])
             if company_col:
                 filters.append(_filter(table, company_col, "equal", company, "company_name", False))
@@ -333,6 +334,10 @@ def extract_filters(
             district_col = _first_existing(columns, ["distname", "dist"])
             if district_col:
                 filters.append(_filter(table, district_col, "equal", entity.get("value"), "database_entity_catalog", False))
+        elif entity_type == "region":
+            region_col = _first_existing(columns, ["region_name", "ro", "region"])
+            if region_col:
+                filters.append(_filter(table, region_col, "equal", entity.get("value"), "database_entity_catalog", False))
         elif entity_type == "zone" and "zone_name" in columns:
             value = entity.get("value")
             value = _map_zone_to_base_if_needed(value, q_norm, table)
@@ -535,7 +540,10 @@ def infer_projection(
 
 
 def infer_limit(q_norm: str) -> Optional[int]:
-    top_match = re.search(r"\b(?:top|bottom|first|last)\s+(\d{1,3})\b", q_norm)
+    top_match = re.search(
+        r"\b(?:top|bottom|highest|lowest|largest|smallest|best|worst|first|last)\s+(\d{1,3})\b",
+        q_norm,
+    )
     if top_match:
         return int(top_match.group(1))
     if any(term in q_norm for term in ["highest", "lowest", "largest", "smallest", "best", "worst"]):
@@ -593,8 +601,9 @@ def _infer_tables(
     explicit: List[Dict[str, Any]] = []
     known_tables = schema_index.get("tables", {})
 
+    q_company_norm = re.sub(r"\b(?:strategic\s+business\s+unit|sbu)\s+hpcl\s+mkt(?:\s+ds)?\b", " ", q_norm)
     company_signal = any(
-        re.search(rf"\b{re.escape(company.lower())}\b", q_norm)
+        re.search(rf"\b{re.escape(company.lower())}\b", q_company_norm)
         for company in COMPANY_NAMES
     )
     company_signal = company_signal or any(item.get("type") == "company" for item in entity_matches or [])
@@ -623,6 +632,12 @@ def _infer_tables(
         and not company_signal
     ):
         add("mom_level", "mom_actual_or_date_keyword", 0.84)
+
+    if not explicit and not company_signal and (
+        "volume" in q_norm or "sales" in q_norm or "product" in q_norm or "products" in q_norm
+        or any(item.get("type") == "region" for item in entity_matches or [])
+    ):
+        add("mom_level", "volume_or_product_default", 0.80)
 
     # If both industry_performance and mom_level are matched, keep only the highest confidence one
     if len(explicit) > 1:

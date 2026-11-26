@@ -95,10 +95,10 @@ class DeterministicIntentClassifier:
                 ["minimum", "min", "trough", "lowest value"]
             ),
             
-            # 7. Total Sales
+            # 7. Total Sales / Target / Performance
             IntentRule(
                 "TOTAL_SALES", 0.85,
-                ["total sales", "actual sales", "volume", "sum of sales", "revenue", "turnover", "sold", "sales"]
+                ["total sales", "actual sales", "volume", "sum of sales", "revenue", "turnover", "sold", "sales", "target quantity", "total target", "industry performance"]
             )
         ]
 

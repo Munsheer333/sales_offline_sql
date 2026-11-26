@@ -772,13 +772,24 @@ def ensure_query_pattern_cache(conn_str: str) -> bool:
     try:
         conn = pooled_connect(conn_str)
         cur = conn.cursor()
-        create_query_pattern_cache_tables(cur)
+        _ensure_pattern_tables_once(conn, cur, conn_str)
         conn.commit()
         cur.close()
         conn.close()
         return True
     except Exception:
         return False
+
+
+_ENSURED_PATTERN_CONNS: set = set()
+
+
+def _ensure_pattern_tables_once(conn, cur, conn_str: str) -> None:
+    if conn_str in _ENSURED_PATTERN_CONNS:
+        return
+    create_query_pattern_cache_tables(cur)
+    conn.commit()
+    _ENSURED_PATTERN_CONNS.add(conn_str)
 
 
 def get_cached_pattern_result(
@@ -789,7 +800,7 @@ def get_cached_pattern_result(
     try:
         conn = pooled_connect(conn_str)
         cur = conn.cursor()
-        create_query_pattern_cache_tables(cur)
+        _ensure_pattern_tables_once(conn, cur, conn_str)
         cur.execute(
             """
             SELECT pattern_id, question, sql, parameterized_sql, params_json,
@@ -851,7 +862,7 @@ def store_pattern_result(
     try:
         conn = pooled_connect(conn_str)
         cur = conn.cursor()
-        create_query_pattern_cache_tables(cur)
+        _ensure_pattern_tables_once(conn, cur, conn_str)
         cur.execute(
             """
             INSERT INTO nlpsql_query_pattern_cache (
@@ -897,7 +908,7 @@ def reject_cached_pattern_result(conn_str: str, execution_fingerprint: str) -> b
     try:
         conn = pooled_connect(conn_str)
         cur = conn.cursor()
-        create_query_pattern_cache_tables(cur)
+        _ensure_pattern_tables_once(conn, cur, conn_str)
         cur.execute(
             """
             UPDATE nlpsql_query_pattern_cache
